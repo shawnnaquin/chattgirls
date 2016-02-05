@@ -1,0 +1,28 @@
+//variables
+$slow:500ms;
+$med:300ms;
+$fast:200ms;
+
+//overrides
+.is-dropdown-submenu-parent.is-down-arrow > a::after {
+    top:0;
+}
+
+//imports
+@import "shawn_modules/navigation";
+@import "shawn_modules/footer";
+@import "shawn_modules/sidebar";
+
+// Components
+@import "shawn_components/buttons";
+@import "shawn_components/featured-image";
+@import "shawn_components/dividers";
+@import "shawn_components/links";
+
+// Templates
+@import "shawn_templates/front";
+@import "shawn_templates/kitchen-sink";
+@import "shawn_templates/page-default";
+@import "shawn_templates/page-sidebar-left";
+@import "shawn_templates/page-full-width";
+@import "shawn_templates/single-post";

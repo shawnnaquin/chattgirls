@@ -6606,4 +6606,21 @@ table.hover tr:nth-of-type(even):hover {
         #single-post .main-content:last-child:not(:first-child) {
           float: right; } }
 
+.is-dropdown-submenu-parent.is-down-arrow > a::after {
+  top: 0; }
+
+/* Tablet and desktop menu */
+.top-bar .menu a {
+  line-height: 1rem; }
+
+.top-bar .menu > li:not(.menu-text) > a {
+  padding: 1rem .5rem;
+  transition: padding 200ms ease; }
+  @media screen and (min-width: 64em) {
+    .top-bar .menu > li:not(.menu-text) > a {
+      padding: 1rem; } }
+
+.top-bar .dropdown.menu .has-submenu.is-down-arrow > a::after {
+  top: 0; }
+
 /*# sourceMappingURL=foundation.css.map */

@@ -1,0 +1,27 @@
+/* Tablet and desktop menu */
+.top-bar {
+
+  .menu .home a {}
+
+  .menu a {
+    line-height:1rem;
+    &:hover:not(.button) {
+    }
+  }
+
+  .menu>li:not(.menu-text)>a {
+    padding:1rem .5rem;
+    transition:padding $fast ease;
+    @media #{$large-up} { 
+      padding:1rem;
+    }
+  }
+  .menu li:not(:last-child) {}
+
+  .dropdown.menu .submenu {}
+
+  .dropdown.menu .has-submenu.is-down-arrow a {}
+  .dropdown.menu .has-submenu.is-down-arrow>a::after {
+    top:0;
+  }
+}
