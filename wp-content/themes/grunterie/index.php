@@ -5,9 +5,21 @@
 	
 	<?php if ( have_posts() ) : ?>
 	
-		<?php /* Start the Loop */ ?>
+		<?php 
+			query_posts( 
+				array ( 
+					'category_name' => 'Homepage', 
+					'posts_per_page' => 10
+				) 
+			);
+		?>
+
 		<?php while ( have_posts() ) : the_post(); ?>
-			<?php get_template_part( 'content', get_post_format() ); ?>
+			<?php 
+				//Get the Posts
+				get_template_part( 'content', get_post_format() );
+			?>
+
 		<?php endwhile; ?>
 		
 		<?php else : ?>

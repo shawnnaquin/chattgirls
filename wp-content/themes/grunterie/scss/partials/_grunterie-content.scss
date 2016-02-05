@@ -34,7 +34,7 @@ $content-padding: rem-calc(50);
   background-color: #fbfbfb;
   border: none;
   padding: rem-calc(50) rem-calc(80);
-  margin: rem-calc(50) (-($column-gutter/2));
+  // margin: rem-calc(50) (-($column-gutter/2));
   .avatar {
     margin-right: rem-calc(40);
     margin-bottom: rem-calc(24);

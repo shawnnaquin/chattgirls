@@ -33,7 +33,7 @@
 
 @media #{$large-up} {
   #sidebar {
-    padding-left: $column-gutter;
+    // padding-left: $column-gutter;
     padding-right: 0;
     margin-top: rem-calc(0);
   }
