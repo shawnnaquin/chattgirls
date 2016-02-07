@@ -6747,6 +6747,9 @@ table.hover tr:nth-of-type(even):hover {
         #single-post .main-content:last-child:not(:first-child) {
           float: right; } }
 
+body:not(.home) .page-loader-wrapper {
+  display: none; }
+
 .loader {
   float: left;
   z-index: 13;

@@ -1,3 +1,7 @@
+body:not(.home) .page-loader-wrapper {
+	display:none;
+}
+
 .loader {
 	// display:block;
 	// display:none;

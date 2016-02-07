@@ -76,20 +76,20 @@
         };
 
         var settings = {
-            PAGE : elements.$body.attr('data-page'),
+            PAGE : $('body').attr('class').split(' ')[0],
         };
 
         var pages = {
 
             all: {
                 init: function(){
-                    // console.log('main');
+                    console.log('main');
+                    
                     // console.log(Foundation.MediaQuery.current);
                 }
             },
             home: {
                 init: function(){
-
                     $('.your-class li img').unwrap();
 
                     $('.slick').slick();
@@ -160,7 +160,7 @@
 
             // initialize foundation first
             // $(document).foundation();
-
+            console.log('init');
             // load specific page events/plugin initialization
             if(settings.PAGE && pages.hasOwnProperty(settings.PAGE)){
                 pages[settings.PAGE].init();
@@ -302,8 +302,12 @@
     
     App.main.init();
 
+    var nS = Foundation.MediaQuery.current;
+    var oS = null;
+
+    determineSize(nS,oS);
+
     $(window).on('changed.zf.mediaquery', function(event, newSize, oldSize){
-        // console.log(event);
         determineSize(newSize, oldSize);
     });
 

@@ -22,7 +22,7 @@
 		<link rel="apple-touch-icon-precomposed" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/icons/apple-touch-icon-precomposed.png">
 		<?php wp_head(); ?>
 	</head>
-	<body <?php body_class(); ?> data-page="home">
+	<body <?php body_class(); ?> >
 	<?php do_action( 'foundationpress_after_body' ); ?>
 	
 	<?php if ( get_theme_mod( 'wpt_mobile_menu_layout' ) == 'offcanvas' ) : ?>

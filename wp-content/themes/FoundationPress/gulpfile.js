@@ -50,8 +50,7 @@ var PATHS = {
     'assets/components/foundation-sites/js/foundation.tooltip.js',
     'assets/components/slick-carousel/slick/slick.js',
     'assets/components/nprogress/nprogress.js',
-
-
+    
     // Motion UI
     'assets/components/motion-ui/motion-ui.js',
 
