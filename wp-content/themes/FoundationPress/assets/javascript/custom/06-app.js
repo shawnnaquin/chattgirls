@@ -85,9 +85,6 @@
                 init: function(){
                     // console.log('main');
                     // console.log(Foundation.MediaQuery.current);
-
-                    // this needs to be at the bottom of this function
-                    App.utils.loader(elements.$loader);
                 }
             },
             home: {
@@ -148,7 +145,9 @@
                         }, 300);
 
                     }
-
+                    
+                    // this needs to be at the bottom of this function
+                    App.utils.loader(elements.$loader);
                 },
             },
             contact: {
