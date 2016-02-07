@@ -1,4 +1,5 @@
 wp-content/themes/grunterie/bower_components/
 wp-content/themes/grunterie/node_modules/
 wp-content/themes/grunterie/css/*
-uploads/*
+wp-content/uploads
+wp-content/uploads/*
