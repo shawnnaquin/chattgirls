@@ -26,17 +26,29 @@
 	<?php do_action( 'foundationpress_after_body' ); ?>
 	
 	<?php if ( get_theme_mod( 'wpt_mobile_menu_layout' ) == 'offcanvas' ) : ?>
+
+
 	<div class="off-canvas-wrapper">
 		<div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
-		<?php get_template_part( 'parts/mobile-off-canvas' ); ?>
-	<?php endif; ?>
+			<?php get_template_part( 'parts/mobile-off-canvas' ); ?>
+			<?php endif; ?>
+		</div>
+	</div>
+	<?php $upload_dir = wp_upload_dir(); ?>
+	<div class="page-loader-wrapper js-page-loader-wrapper">
+		<div class="page-loader-container js-page-loader-container">
+			<div class="loader">
+				<?php echo '<img src="' . $upload_dir['baseurl'] . '/skater_opt.svg" />'; ?>
+				<?php echo '<img src="' . $upload_dir['baseurl'] . '/skater_opt.svg" />'; ?>
+			</div>
+			<div class="bar" role="bar">
+				<div class="peg"></div>
+			</div>
+		</div>
+	</div><!-- / page-loader-wrapper -->
 
 	<?php do_action( 'foundationpress_layout_start' ); ?>
-	<?php $upload_dir = wp_upload_dir(); ?>
-	<div class="loader">
-		<?php echo '<img src="' . $upload_dir['baseurl'] . '/skater.png" />'; ?>
-		<?php echo '<img src="' . $upload_dir['baseurl'] . '/skater.png" />'; ?>
-	</div>
+
 	<header id="masthead" class="site-header" role="banner">
 		<div class="ham">
 			<button class="menu-icon" type="button" data-toggle="offCanvas"></button>
@@ -75,7 +87,7 @@
 		</nav>
 	</header>
 
-	<div class="your-class">
+	<div class="slick slick-slider-home">
 	<?php
 		$media_items = get_attachments_by_media_tags('media_tags=featured&return_type=li');
 		if ($media_items) {

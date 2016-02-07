@@ -8,30 +8,33 @@
     ------------------------------------------------------------------------------------------------------------------*/
 
     // initialize the page loader
-    // App.utils.loader = function($loader){
+    App.utils.loader = function($loader){
+        NProgress
+            .configure({
+                showSpinner: false,
+                trickleRate: 0.035,
+                trickleSpeed: 1000,
+                template: $loader.html(),
+            })
+            .start();
 
-    //     NProgress
-    //         .configure({
-    //             showSpinner: false,
-    //             trickleRate: 0.035,
-    //             trickleSpeed: 1000,
-    //             template: $loader.html(),
-    //         })
-    //         .start();
+        // utils.load_images();
+        App.utils.progress($loader);
+    };
 
-    //     // utils.load_images();
-    //     App.utils.progress();
-    // };
-
-    // // recurse until all the things are loaded
-    // App.utils.progress = function(){
-    //     NProgress.inc();
-    //     if($.active > 0){
-    //         setTimeout(App.utils.progress, 300);
-    //     } else {
-    //         NProgress.done();
-    //     }
-    // };
+    // recurse until all the things are loaded
+    App.utils.progress = function($loader){
+        // console.log('loader');
+        NProgress.inc();
+        if($.active > 0){
+            setTimeout(App.utils.progress, 300);
+        }
+        else {
+            $($loader).delay(800).animate({'opacity':'0'}, 5000, function(){
+                NProgress.done();
+            });
+        }
+    };
 
     // /** mobile menu
     // ------------------------------------------------------------------------------------------------------------------*/
@@ -59,6 +62,19 @@
             $loader : $('.js-page-loader-wrapper'),
         };
 
+        var colors = {
+            $primary    : '#030f19',
+            $secondary  : '#003e7e',
+            $success    : '#3adb76',
+            $warning    : '#ffae00',
+            $alert      : '#ec5840',
+            $lightGray  : '#e6e6e6',
+            $mediumGray : '#bec0c2',
+            $darkGray   : '#8a8a8a',
+            $black      : '#0a0a0a',
+            $white      : '#fefefe',
+        };
+
         var settings = {
             PAGE : elements.$body.attr('data-page'),
         };
@@ -68,9 +84,10 @@
             all: {
                 init: function(){
                     // console.log('main');
-                    console.log(Foundation.MediaQuery.current);
+                    // console.log(Foundation.MediaQuery.current);
+
                     // this needs to be at the bottom of this function
-                    // App.utils.loader(elements.$loader);
+                    App.utils.loader(elements.$loader);
                 }
             },
             home: {
@@ -78,8 +95,61 @@
 
                     $('.your-class li img').unwrap();
 
-                    $('.your-class').slick();
-                }
+                    $('.slick').slick();
+
+                    $('.slick').on('swipe', function(event, slick, direction){
+
+                        if ( direction == 'right') {
+                            slickNextIt();
+                            // console.log('right');
+                        }
+                        else {
+                            slickPrevIt();
+                        }
+                    });
+
+                    $('.slick').on('keydown', function(e) {
+                        // does not work w/o 2nd conditional
+                        if (e.which == 37) {
+                            slickNextIt();
+                        }
+
+                        else if (e.which == 39) {
+                            slickPrevIt();
+                        }
+
+                    });
+
+                    $('.slick-prev')
+                        .html('<i class="fa fa-arrow-circle-o-left"></i>');
+                    $('.slick-next')
+                        .html('<i class="fa fa-arrow-circle-o-right"></i>');
+
+                    function slickNextIt() {
+                        $('.slick-prev')
+                            .css({
+                                'color':App.main.colors.$secondary,
+                                'text-shadow':'2px 2px 10px rgba(250,250,250,.8)'
+                            });
+                        setTimeout(function(){
+                            $('.slick-prev').removeAttr('style');
+                        }, 300);
+                    }
+
+                    function slickPrevIt() {
+                        // console.log('next');
+                        $('.slick-next')
+                            .css({
+                                'color':App.main.colors.$secondary,
+                                'text-shadow':'2px 2px 10px rgba(250,250,250,.8)'
+                            });
+                        setTimeout(function(){
+                            $('.slick-next').removeAttr('style');
+                        }, 300);
+
+                    }
+
+                },
             },
             contact: {
                 init: function(){
@@ -105,6 +175,7 @@
         return {
             elements : elements,
             settings : settings,
+            colors: colors,
             init : init,
         };
     }());
@@ -233,6 +304,7 @@
     App.main.init();
 
     $(window).on('changed.zf.mediaquery', function(event, newSize, oldSize){
+        // console.log(event);
         determineSize(newSize, oldSize);
     });
 

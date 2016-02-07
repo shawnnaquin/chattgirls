@@ -1,12 +1,43 @@
-.your-class {
-    float: left;
-    margin-top: 10rem;
-    width: 100%;
-    padding:8rem;
-    height:600px;
-    overflow:hidden;
-    img {
-        max-width:100%;
-        height:auto;
+.slick-slider {
+    .slick {
+        &-arrow {
+            position:absolute;
+            opacity:.8;
+            font-size:1.5rem;
+            top:45%;
+            left:0;
+            z-index:10;
+            text-align:center;
+            display:block;
+            width:4rem;
+            text-shadow:2px 2px 8px transparentize($black,.8);
+            transition:color $med ease;
+            transition-property:color, text-shadow;
+            &:hover {
+                color:$secondary-color;
+                text-shadow:2px 2px 8px transparentize($white,.8);
+            }
+            @media #{$medium-up} {
+                font-size:3rem;
+            }
+            @media #{$xlarge-up} {
+                font-size:5rem;
+                width:6rem;
+            }
+            &.slick-next {
+                left:auto;
+                right:0;
+            }
+        }
+        &-slide img {
+            width:100%;
+        }
+    }
+    &-home {
+        top:0rem;
+        overflow:hidden;
+        @media #{$medium-up} {
+            top:9rem;
+        }
     }
 }
