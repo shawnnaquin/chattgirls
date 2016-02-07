@@ -22,9 +22,9 @@
 		<link rel="apple-touch-icon-precomposed" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/icons/apple-touch-icon-precomposed.png">
 		<?php wp_head(); ?>
 	</head>
-	<body <?php body_class(); ?>>
+	<body <?php body_class(); ?> data-page="home">
 	<?php do_action( 'foundationpress_after_body' ); ?>
-
+	
 	<?php if ( get_theme_mod( 'wpt_mobile_menu_layout' ) == 'offcanvas' ) : ?>
 	<div class="off-canvas-wrapper">
 		<div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
@@ -32,21 +32,39 @@
 	<?php endif; ?>
 
 	<?php do_action( 'foundationpress_layout_start' ); ?>
-
+	<?php $upload_dir = wp_upload_dir(); ?>
+	<div class="loader">
+		<?php echo '<img src="' . $upload_dir['baseurl'] . '/skater.png" />'; ?>
+		<?php echo '<img src="' . $upload_dir['baseurl'] . '/skater.png" />'; ?>
+	</div>
 	<header id="masthead" class="site-header" role="banner">
-		<div class="title-bar" data-responsive-toggle="site-navigation">
+		<div class="ham">
 			<button class="menu-icon" type="button" data-toggle="offCanvas"></button>
+		</div>
+		<div class="title-bar" data-responsive-toggle="site-navigation">
 			<div class="title-bar-title">
 				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
 			</div>
 		</div>
+		
+		
+		<div class="logo">
+			<?php echo file_get_contents($upload_dir['baseurl'] . "/rollergirls_opt.svg")?>
+		</div>
+
+		<div class="logo-text">
+			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
+		</div>
 
 		<nav id="site-navigation" class="main-navigation top-bar" role="navigation">
-			<div class="top-bar-left">
+
+			<!-- </div> -->
+<!-- 			<div class="top-bar-left">
 				<ul class="menu">
-					<li class="home"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></li>
+					<li class="logo"></li>
+					<li class="home"></li>
 				</ul>
-			</div>
+			</div> -->
 			<div class="top-bar-right">
 				<?php foundationpress_top_bar_r(); ?>
 
@@ -56,6 +74,15 @@
 			</div>
 		</nav>
 	</header>
+
+	<div class="your-class">
+	<?php
+		$media_items = get_attachments_by_media_tags('media_tags=featured&return_type=li');
+		if ($media_items) {
+		    echo $media_items;
+		}
+	?>
+	</div>
 
 	<section class="container">
 		<?php do_action( 'foundationpress_after_header' ); ?>

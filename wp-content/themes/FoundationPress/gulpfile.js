@@ -23,11 +23,6 @@ var COMPATIBILITY = ['last 2 versions', 'ie >= 9'];
 
 // File paths to various assets are defined here.
 var PATHS = {
-  sass: [
-    'assets/components/foundation-sites/scss',
-    'assets/components/motion-ui/src',
-    'assets/components/fontawesome/scss'
-  ],
   javascript: [
     'assets/components/what-input/what-input.js',
     'assets/components/foundation-sites/js/foundation.core.js',
@@ -44,7 +39,7 @@ var PATHS = {
     'assets/components/foundation-sites/js/foundation.interchange.js',
     'assets/components/foundation-sites/js/foundation.magellan.js',
     'assets/components/foundation-sites/js/foundation.offcanvas.js',
-    'assets/components/foundation-sites/js/foundation.orbit.js',
+    // 'assets/components/foundation-sites/js/foundation.orbit.js',
     'assets/components/foundation-sites/js/foundation.responsiveMenu.js',
     'assets/components/foundation-sites/js/foundation.responsiveToggle.js',
     'assets/components/foundation-sites/js/foundation.reveal.js',
@@ -53,12 +48,18 @@ var PATHS = {
     'assets/components/foundation-sites/js/foundation.tabs.js',
     'assets/components/foundation-sites/js/foundation.toggler.js',
     'assets/components/foundation-sites/js/foundation.tooltip.js',
+    'assets/components/slick-carousel/slick/slick.js',
 
     // Motion UI
     'assets/components/motion-ui/motion-ui.js',
 
     // Include your own custom scripts (located in the custom folder)
     'assets/javascript/custom/*.js'
+  ],
+  sass: [
+    'assets/components/foundation-sites/scss',
+    'assets/components/motion-ui/src',
+    'assets/components/fontawesome/scss',
   ],
   phpcs: [
     '**/*.php',

@@ -1,17 +1,8 @@
-//variables
-$slow:500ms;
-$med:300ms;
-$fast:200ms;
-
-//overrides
-.is-dropdown-submenu-parent.is-down-arrow > a::after {
-    top:0;
-}
-
 //imports
 @import "shawn_modules/navigation";
 @import "shawn_modules/footer";
 @import "shawn_modules/sidebar";
+@import "shawn_modules/header";
 
 // Components
 @import "shawn_components/buttons";

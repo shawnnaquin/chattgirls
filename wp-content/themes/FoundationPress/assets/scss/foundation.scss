@@ -8,7 +8,8 @@
 */
 
 //  Settings
-@import "global/settings"; // Foundation settings file.
+// @import "global/settings"; // Foundation settings file.
+@import "custom_scss/settings";
 
 // Foundation mixins & browser resets
 @import '../components/foundation-sites/scss/foundation';
@@ -20,6 +21,8 @@
 // Third-party libraries
 @import 'font-awesome';
 @import 'motion-ui';
+@import '../components/slick-carousel/slick/slick.scss';
+// @import '../components/slick-carousel/slick/slick-theme.scss';
 
 // Foundation global styles
 @include foundation-global-styles;
