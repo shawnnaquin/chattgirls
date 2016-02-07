@@ -87,14 +87,5 @@
 		</nav>
 	</header>
 
-	<div class="slick slick-slider-home">
-	<?php
-		$media_items = get_attachments_by_media_tags('media_tags=featured&return_type=li');
-		if ($media_items) {
-		    echo $media_items;
-		}
-	?>
-	</div>
-
 	<section class="container">
 		<?php do_action( 'foundationpress_after_header' ); ?>
