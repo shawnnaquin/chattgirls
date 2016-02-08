@@ -8,7 +8,6 @@
  * @subpackage FoundationPress
  * @since FoundationPress 1.0.0
  */
-
 ?>
 
 		</section>

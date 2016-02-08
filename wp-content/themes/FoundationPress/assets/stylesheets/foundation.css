@@ -6750,6 +6750,18 @@ table.hover tr:nth-of-type(even):hover {
 body:not(.home) .page-loader-wrapper {
   display: none; }
 
+.off-canvas.position-left {
+  min-height: 100%; }
+
+.off-canvas-wrapper-inner, .off-canvas-wrapper {
+  min-height: 100vh; }
+
+.menu.vertical > li:nth-child(even) {
+  background: #dedede; }
+
+.current-menu-item > a, .current-menu-ancestor > a {
+  color: #ec5840; }
+
 .loader {
   float: left;
   z-index: 13;
@@ -6828,15 +6840,14 @@ body:not(.home) .page-loader-wrapper {
       height: 250px; } }
   .logo-text {
     opacity: 0;
+    display: none;
     float: left;
-    position: absolute;
-    top: 0;
-    height: 6rem;
     width: 100%;
     background: #030f19;
     transition: opacity 700ms ease; }
     @media screen and (min-width: 40em) {
       .logo-text {
+        display: block;
         opacity: 1;
         padding-right: 2rem; } }
     .logo-text a {
@@ -6859,10 +6870,10 @@ body:not(.home) .page-loader-wrapper {
 /* Tablet and desktop menu */
 .top-bar {
   background: #fefefe;
-  position: absolute;
+  position: relative;
+  float: left;
   width: 100%;
   z-index: 10;
-  top: 6rem;
   box-shadow: 2px 2px 8px rgba(3, 15, 25, 0.2); }
   .top-bar ul {
     background: transparent; }
@@ -6895,14 +6906,6 @@ body:not(.home) .page-loader-wrapper {
 
 .title-bar {
   background: #e6e6e6; }
-  .title-bar:after {
-    display: block;
-    -webkit-transform: translateY(12px) translateX(-12px);
-        -ms-transform: translateY(12px) translateX(-12px);
-            transform: translateY(12px) translateX(-12px);
-    height: 4px;
-    background: white;
-    width: 100%; }
   .title-bar-title {
     width: 100%;
     display: block; }
@@ -6974,15 +6977,16 @@ body:not(.home) .page-loader-wrapper {
   width: 100%; }
 
 .slick-slider-home {
-  top: 0rem;
-  overflow: hidden; }
-  @media screen and (min-width: 40em) {
-    .slick-slider-home {
-      top: 9rem; } }
+  float: left;
+  width: 100%; }
 
 html, body {
   background: linear-gradient(to bottom, #030f19 0%, #001832 25%);
   height: auto; }
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  float: left;
+  width: 100%; }
 
 /* page-loader
 ----------------------------------------------------------------------------------------------------------------------*/

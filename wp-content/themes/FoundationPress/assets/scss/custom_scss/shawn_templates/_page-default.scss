@@ -6,7 +6,10 @@ html, body {
     // background-size:100%;
     // background-repeat:none;
 }
-
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+    float:left;
+    width:100%;
+}
 /* page-loader
 ----------------------------------------------------------------------------------------------------------------------*/
 // prevent weird things with the page loader

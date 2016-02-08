@@ -34,10 +34,7 @@
         }
     }
     &-home {
-        top:0rem;
-        overflow:hidden;
-        @media #{$medium-up} {
-            top:9rem;
-        }
+        float:left;
+        width:100%;
     }
 }

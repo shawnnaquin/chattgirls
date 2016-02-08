@@ -31,7 +31,7 @@
         }
         else {
             
-              $($loader).delay(300).animate({'opacity':'0'}, 300, function(){
+              $($loader).delay(800).animate({'opacity':'0'}, 300, function(){
                 NProgress.done();
               });   
         }

@@ -8,8 +8,8 @@
  * @subpackage FoundationPress
  * @since FoundationPress 1.0.0
  */
-
 ?>
+
 <!doctype html>
 <html class="no-js" <?php language_attributes(); ?> >
 	<head>
@@ -31,9 +31,8 @@
 	<div class="off-canvas-wrapper">
 		<div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
 			<?php get_template_part( 'parts/mobile-off-canvas' ); ?>
-			<?php endif; ?>
-		</div>
-	</div>
+			<?php endif; ?>			
+
 	<?php $upload_dir = wp_upload_dir(); ?>
 	<div class="page-loader-wrapper js-page-loader-wrapper">
 		<div class="page-loader-container js-page-loader-container">
