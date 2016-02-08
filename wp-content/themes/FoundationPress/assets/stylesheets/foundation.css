@@ -6758,6 +6758,9 @@ body:not(.home) .page-loader-wrapper {
 
 .menu.vertical > li:nth-child(even) {
   background: #dedede; }
+  @media screen and (min-width: 40em) {
+    .menu.vertical > li:nth-child(even) {
+      background: #f3f3f3; } }
 
 .current-menu-item > a, .current-menu-ancestor > a {
   color: #ec5840; }
@@ -6819,8 +6822,7 @@ body:not(.home) .page-loader-wrapper {
       display: none; } }
 
 .logo {
-  display: block;
-  position: absolute;
+  display: none;
   left: .5rem;
   top: .5rem;
   z-index: 11;
@@ -6828,6 +6830,8 @@ body:not(.home) .page-loader-wrapper {
   transition-property: width, height, top, left; }
   @media screen and (min-width: 40em) {
     .logo {
+      display: block;
+      position: absolute;
       width: 100px;
       height: 100px; } }
   @media screen and (min-width: 64em) {
@@ -6914,7 +6918,7 @@ body:not(.home) .page-loader-wrapper {
       width: 100%;
       color: #030f19;
       font-family: Bangers;
-      font-size: 2rem;
+      font-size: 1rem;
       text-align: center;
       letter-spacing: 2px; }
 
@@ -6979,6 +6983,20 @@ body:not(.home) .page-loader-wrapper {
 .slick-slider-home {
   float: left;
   width: 100%; }
+
+.home_middle_sidebar, .middle-item {
+  float: left; }
+
+.middle-item {
+  opacity: .9;
+  background: #003e7e;
+  border-radius: 4px;
+  width: 90%;
+  margin: 5%;
+  padding: 1rem; }
+
+.after-slick {
+  padding-top: 4rem; }
 
 html, body {
   background: linear-gradient(to bottom, #030f19 0%, #001832 25%);

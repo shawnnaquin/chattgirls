@@ -11,7 +11,11 @@ body:not(.home) .page-loader-wrapper {
 
 .menu.vertical > li:nth-child(even) {
 	background:darken($light-gray, 3%);
+	@media #{$medium-up} {
+		background:lighten($light-gray,5%);
+	}
 }
+
 .current-menu-item, .current-menu-ancestor {
 	> a {
 		color:$alert-color;	
@@ -70,14 +74,15 @@ body:not(.home) .page-loader-wrapper {
 }
 
 .logo {
-	display: block;
-	position: absolute;
+	display:none;
 	left:.5rem;
 	top:.5rem;
 	z-index: 11;
 	transition:width $fast ease;
 	transition-property:width, height, top, left;
 	@media #{$medium-up} {
+		display: block;
+		position: absolute;
 		width: 100px;
 		height: 100px;
 	}
@@ -199,7 +204,7 @@ body:not(.home) .page-loader-wrapper {
 			width:100%;
 			color:$primary-color;
 			font-family:Bangers;
-			font-size:2rem;
+			font-size:1rem;
 			text-align:center;
 			letter-spacing:2px;
 		}

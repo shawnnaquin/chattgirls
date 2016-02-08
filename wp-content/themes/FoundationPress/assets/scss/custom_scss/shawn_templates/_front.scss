@@ -38,3 +38,19 @@
         width:100%;
     }
 }
+.home_middle_sidebar, .middle-item {
+    float:left;
+}
+
+.middle-item {
+    opacity:.9;
+    background:$secondary-color;
+    border-radius:$global-radius;
+    width:90%;
+    margin:5%;
+    padding:1rem;
+}
+
+.after-slick {
+    padding-top:4rem;
+}
