@@ -2627,12 +2627,12 @@ button {
     padding-left: 0;
     padding-right: 0; }
   .row .row {
-    margin-left: -0.625rem;
-    margin-right: -0.625rem; }
+    margin-left: 0;
+    margin-right: 0; }
     @media screen and (min-width: 40em) {
       .row .row {
-        margin-left: -0.9375rem;
-        margin-right: -0.9375rem; } }
+        margin-left: 0;
+        margin-right: 0; } }
     .row .row.collapse {
       margin-left: 0;
       margin-right: 0; }
@@ -2643,14 +2643,14 @@ button {
       margin-right: auto; }
 
 .column, .columns {
-  padding-left: 0.625rem;
-  padding-right: 0.625rem;
+  padding-left: 0;
+  padding-right: 0;
   width: 100%;
   float: left; }
   @media screen and (min-width: 40em) {
     .column, .columns {
-      padding-left: 0.9375rem;
-      padding-right: 0.9375rem; } }
+      padding-left: 0;
+      padding-right: 0; } }
   .column:last-child:not(:first-child), .columns:last-child:not(:first-child) {
     float: right; }
   .column.end:last-child:last-child, .end.columns:last-child:last-child {
@@ -2913,8 +2913,8 @@ button {
   margin-right: 0; }
 
 .small-uncollapse > .column, .small-uncollapse > .columns {
-  padding-left: 0.625rem;
-  padding-right: 0.625rem; }
+  padding-left: 0;
+  padding-right: 0; }
 
 .small-centered {
   float: none;
@@ -3123,8 +3123,8 @@ button {
     margin-left: 0;
     margin-right: 0; }
   .medium-uncollapse > .column, .medium-uncollapse > .columns {
-    padding-left: 0.9375rem;
-    padding-right: 0.9375rem; }
+    padding-left: 0;
+    padding-right: 0; }
   .medium-centered {
     float: none;
     margin-left: auto;
@@ -3331,8 +3331,8 @@ button {
     margin-left: 0;
     margin-right: 0; }
   .large-uncollapse > .column, .large-uncollapse > .columns {
-    padding-left: 0.9375rem;
-    padding-right: 0.9375rem; }
+    padding-left: 0;
+    padding-right: 0; }
   .large-centered {
     float: none;
     margin-left: auto;
@@ -3646,7 +3646,7 @@ kbd {
   border: 1px solid transparent;
   border-radius: 4px;
   padding: 0.85em 1em;
-  margin: 0 0 1rem 0;
+  margin: 0 0 0 0;
   font-size: 0.9rem;
   background-color: #030f19;
   color: #fff; }
@@ -4132,7 +4132,7 @@ select {
 
 .breadcrumbs {
   list-style: none;
-  margin: 0 0 1rem 0; }
+  margin: 0 0 0 0; }
   .breadcrumbs::before, .breadcrumbs::after {
     content: ' ';
     display: table; }
@@ -4496,7 +4496,7 @@ select {
     color: #fefefe; }
 
 .media-object {
-  margin-bottom: 1rem;
+  margin-bottom: 0;
   display: block; }
   .media-object img {
     max-width: none; }
@@ -4504,7 +4504,7 @@ select {
     .media-object.stack-for-small .media-object-section {
       display: block;
       padding: 0;
-      padding-bottom: 1rem; }
+      padding-bottom: 0; }
       .media-object.stack-for-small .media-object-section img {
         width: 100%; } }
 
@@ -4512,9 +4512,9 @@ select {
   display: table-cell;
   vertical-align: top; }
   .media-object-section:first-child {
-    padding-right: 1rem; }
+    padding-right: 0; }
   .media-object-section:last-child:not(:nth-child(2)) {
-    padding-left: 1rem; }
+    padding-left: 0; }
   .media-object-section.middle {
     vertical-align: middle; }
   .media-object-section.bottom {
@@ -4770,7 +4770,7 @@ body {
 
 .pagination {
   margin-left: 0;
-  margin-bottom: 1rem; }
+  margin-bottom: 0; }
   .pagination::before, .pagination::after {
     content: ' ';
     display: table; }
@@ -4826,7 +4826,7 @@ body {
 .progress {
   background-color: #bec0c2;
   height: 1rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0;
   border-radius: 4px; }
   .progress.primary .progress-meter {
     background-color: #030f19; }
@@ -4980,7 +4980,7 @@ body.is-reveal-open {
 .reveal {
   display: none;
   z-index: 1006;
-  padding: 1rem;
+  padding: 0;
   border: 1px solid #bec0c2;
   margin: 6.25rem auto 0;
   background-color: #fefefe;
@@ -5032,7 +5032,7 @@ body.is-reveal-open {
     border: 0; }
 
 .switch {
-  margin-bottom: 1rem;
+  margin-bottom: 0;
   outline: 0;
   position: relative;
   -webkit-user-select: none;
@@ -5136,7 +5136,7 @@ body.is-reveal-open {
 
 table {
   width: 100%;
-  margin-bottom: 1rem;
+  margin-bottom: 0;
   border-radius: 4px; }
   table thead,
   table tbody,
@@ -5254,7 +5254,7 @@ table.hover tr:nth-of-type(even):hover {
   max-width: 100%;
   transition: box-shadow 200ms ease-out;
   border-radius: 4px;
-  margin-bottom: 1rem; }
+  margin-bottom: 0; }
   .thumbnail:hover, .thumbnail:focus {
     box-shadow: 0 0 6px 1px rgba(3, 15, 25, 0.5); }
 
@@ -6147,27 +6147,27 @@ table.hover tr:nth-of-type(even):hover {
       padding: 0; }
 
 .sidebar {
-  padding-left: 0.625rem;
-  padding-right: 0.625rem;
+  padding-left: 0;
+  padding-right: 0;
   width: 100%;
   float: left; }
   @media screen and (min-width: 40em) {
     .sidebar {
-      padding-left: 0.9375rem;
-      padding-right: 0.9375rem; } }
+      padding-left: 0;
+      padding-right: 0; } }
   .sidebar:last-child:not(:first-child) {
     float: right; }
   @media screen and (min-width: 40em) {
     .sidebar {
-      padding-left: 0.625rem;
-      padding-right: 0.625rem;
+      padding-left: 0;
+      padding-right: 0;
       width: 33.33333%;
       float: left;
       margin-top: 1rem; } }
   @media screen and (min-width: 40em) and (min-width: 40em) {
     .sidebar {
-      padding-left: 0.9375rem;
-      padding-right: 0.9375rem; } }
+      padding-left: 0;
+      padding-right: 0; } }
   @media screen and (min-width: 40em) {
       .sidebar:last-child:not(:first-child) {
         float: right; } }
@@ -6234,30 +6234,30 @@ table.hover tr:nth-of-type(even):hover {
       height: 42.8125rem;
       margin: 0 0 4.5rem; } }
   #front-hero #watch {
-    padding-left: 0.625rem;
-    padding-right: 0.625rem;
+    padding-left: 0;
+    padding-right: 0;
     width: 58.33333%;
     float: left;
     position: relative;
     left: -41.66667%; }
     @media screen and (min-width: 40em) {
       #front-hero #watch {
-        padding-left: 0.9375rem;
-        padding-right: 0.9375rem; } }
+        padding-left: 0;
+        padding-right: 0; } }
     #front-hero #watch:last-child:not(:first-child) {
       float: right; }
     @media screen and (min-width: 40em) {
       #front-hero #watch {
-        padding-left: 0.625rem;
-        padding-right: 0.625rem;
+        padding-left: 0;
+        padding-right: 0;
         width: 100%;
         float: left;
         position: relative;
         left: 0%; } }
   @media screen and (min-width: 40em) and (min-width: 40em) {
     #front-hero #watch {
-      padding-left: 0.9375rem;
-      padding-right: 0.9375rem; } }
+      padding-left: 0;
+      padding-right: 0; } }
     @media screen and (min-width: 40em) {
         #front-hero #watch:last-child:not(:first-child) {
           float: right; } }
@@ -6287,27 +6287,27 @@ table.hover tr:nth-of-type(even):hover {
       color: #B4C9D1;
       margin-right: 0.5rem; }
   #front-hero .tagline {
-    padding-left: 0.625rem;
-    padding-right: 0.625rem;
+    padding-left: 0;
+    padding-right: 0;
     width: 66.66667%;
     float: left; }
     @media screen and (min-width: 40em) {
       #front-hero .tagline {
-        padding-left: 0.9375rem;
-        padding-right: 0.9375rem; } }
+        padding-left: 0;
+        padding-right: 0; } }
     #front-hero .tagline:last-child:not(:first-child) {
       float: right; }
     @media screen and (min-width: 40em) {
       #front-hero .tagline {
-        padding-left: 0.625rem;
-        padding-right: 0.625rem;
+        padding-left: 0;
+        padding-right: 0;
         width: 41.66667%;
         float: left;
         padding-top: 6rem; } }
   @media screen and (min-width: 40em) and (min-width: 40em) {
     #front-hero .tagline {
-      padding-left: 0.9375rem;
-      padding-right: 0.9375rem; } }
+      padding-left: 0;
+      padding-right: 0; } }
     @media screen and (min-width: 40em) {
         #front-hero .tagline:last-child:not(:first-child) {
           float: right; } }
@@ -6335,27 +6335,27 @@ table.hover tr:nth-of-type(even):hover {
   .intro::after {
     clear: both; }
   .intro .fp-intro {
-    padding-left: 0.625rem;
-    padding-right: 0.625rem;
+    padding-left: 0;
+    padding-right: 0;
     width: 100%;
     float: left; }
     @media screen and (min-width: 40em) {
       .intro .fp-intro {
-        padding-left: 0.9375rem;
-        padding-right: 0.9375rem; } }
+        padding-left: 0;
+        padding-right: 0; } }
     .intro .fp-intro:last-child:not(:first-child) {
       float: right; }
     @media screen and (min-width: 40em) {
       .intro .fp-intro {
-        padding-left: 0.625rem;
-        padding-right: 0.625rem;
+        padding-left: 0;
+        padding-right: 0;
         width: 83.33333%;
         float: left;
         margin-left: 8.33333%; } }
   @media screen and (min-width: 40em) and (min-width: 40em) {
     .intro .fp-intro {
-      padding-left: 0.9375rem;
-      padding-right: 0.9375rem; } }
+      padding-left: 0;
+      padding-right: 0; } }
     @media screen and (min-width: 40em) {
         .intro .fp-intro:last-child:not(:first-child) {
           float: right; }
@@ -6378,15 +6378,15 @@ table.hover tr:nth-of-type(even):hover {
   .section-divider::after {
     clear: both; }
   .section-divider hr {
-    padding-left: 0.625rem;
-    padding-right: 0.625rem;
+    padding-left: 0;
+    padding-right: 0;
     width: 100%;
     float: left;
     box-sizing: border-box; }
     @media screen and (min-width: 40em) {
       .section-divider hr {
-        padding-left: 0.9375rem;
-        padding-right: 0.9375rem; } }
+        padding-left: 0;
+        padding-right: 0; } }
     .section-divider hr:last-child:not(:first-child) {
       float: right; }
 
@@ -6401,14 +6401,14 @@ table.hover tr:nth-of-type(even):hover {
   .benefits::after {
     clear: both; }
   .benefits header {
-    padding-left: 0.625rem;
-    padding-right: 0.625rem;
+    padding-left: 0;
+    padding-right: 0;
     width: 100%;
     float: left; }
     @media screen and (min-width: 40em) {
       .benefits header {
-        padding-left: 0.9375rem;
-        padding-right: 0.9375rem; } }
+        padding-left: 0;
+        padding-right: 0; } }
     .benefits header:last-child:not(:first-child) {
       float: right; }
     .benefits header h2 {
@@ -6421,8 +6421,8 @@ table.hover tr:nth-of-type(even):hover {
   .benefits .responsive,
   .benefits .customizable,
   .benefits .professional {
-    padding-left: 0.625rem;
-    padding-right: 0.625rem;
+    padding-left: 0;
+    padding-right: 0;
     width: 100%;
     float: left; }
     @media screen and (min-width: 40em) {
@@ -6430,8 +6430,8 @@ table.hover tr:nth-of-type(even):hover {
       .benefits .responsive,
       .benefits .customizable,
       .benefits .professional {
-        padding-left: 0.9375rem;
-        padding-right: 0.9375rem; } }
+        padding-left: 0;
+        padding-right: 0; } }
     .benefits .semantic:last-child:not(:first-child),
     .benefits .responsive:last-child:not(:first-child),
     .benefits .customizable:last-child:not(:first-child),
@@ -6442,8 +6442,8 @@ table.hover tr:nth-of-type(even):hover {
       .benefits .responsive,
       .benefits .customizable,
       .benefits .professional {
-        padding-left: 0.625rem;
-        padding-right: 0.625rem;
+        padding-left: 0;
+        padding-right: 0;
         width: 25%;
         float: left; } }
   @media screen and (min-width: 40em) and (min-width: 40em) {
@@ -6451,8 +6451,8 @@ table.hover tr:nth-of-type(even):hover {
     .benefits .responsive,
     .benefits .customizable,
     .benefits .professional {
-      padding-left: 0.9375rem;
-      padding-right: 0.9375rem; } }
+      padding-left: 0;
+      padding-right: 0; } }
     @media screen and (min-width: 40em) {
         .benefits .semantic:last-child:not(:first-child),
         .benefits .responsive:last-child:not(:first-child),
@@ -6481,8 +6481,8 @@ table.hover tr:nth-of-type(even):hover {
     max-width: 100%;
     margin-left: auto;
     margin-right: auto;
-    padding-left: 0.625rem;
-    padding-right: 0.625rem;
+    padding-left: 0;
+    padding-right: 0;
     width: 100%;
     float: left;
     margin-top: 4rem; }
@@ -6493,8 +6493,8 @@ table.hover tr:nth-of-type(even):hover {
       clear: both; }
     @media screen and (min-width: 40em) {
       .benefits .why-foundation {
-        padding-left: 0.9375rem;
-        padding-right: 0.9375rem; } }
+        padding-left: 0;
+        padding-right: 0; } }
     .benefits .why-foundation:last-child:not(:first-child) {
       float: right; }
 
@@ -6509,42 +6509,42 @@ table.hover tr:nth-of-type(even):hover {
   #kitchen-sink::after {
     clear: both; }
   #kitchen-sink header {
-    padding-left: 0.625rem;
-    padding-right: 0.625rem;
+    padding-left: 0;
+    padding-right: 0;
     width: 100%;
     float: left; }
     @media screen and (min-width: 40em) {
       #kitchen-sink header {
-        padding-left: 0.9375rem;
-        padding-right: 0.9375rem; } }
+        padding-left: 0;
+        padding-right: 0; } }
     #kitchen-sink header:last-child:not(:first-child) {
       float: right; }
     #kitchen-sink header .lead {
       font-size: 125%;
       line-height: 1.6; }
   #kitchen-sink #components {
-    padding-left: 0.625rem;
-    padding-right: 0.625rem;
+    padding-left: 0;
+    padding-right: 0;
     width: 100%;
     float: left; }
     #kitchen-sink #components hr {
       margin: 3rem 0; }
     @media screen and (min-width: 40em) {
       #kitchen-sink #components {
-        padding-left: 0.9375rem;
-        padding-right: 0.9375rem; } }
+        padding-left: 0;
+        padding-right: 0; } }
     #kitchen-sink #components:last-child:not(:first-child) {
       float: right; }
     @media screen and (min-width: 64em) {
       #kitchen-sink #components {
-        padding-left: 0.625rem;
-        padding-right: 0.625rem;
+        padding-left: 0;
+        padding-right: 0;
         width: 75%;
         float: left; } }
   @media screen and (min-width: 64em) and (min-width: 40em) {
     #kitchen-sink #components {
-      padding-left: 0.9375rem;
-      padding-right: 0.9375rem; } }
+      padding-left: 0;
+      padding-right: 0; } }
     @media screen and (min-width: 64em) {
         #kitchen-sink #components:last-child:not(:first-child) {
           float: right; } }
@@ -6552,16 +6552,16 @@ table.hover tr:nth-of-type(even):hover {
     display: none; }
     @media screen and (min-width: 64em) {
       #kitchen-sink #kitchen-sink-nav {
-        padding-left: 0.625rem;
-        padding-right: 0.625rem;
+        padding-left: 0;
+        padding-right: 0;
         width: 25%;
         float: left;
         display: block;
         float: right; } }
   @media screen and (min-width: 64em) and (min-width: 40em) {
     #kitchen-sink #kitchen-sink-nav {
-      padding-left: 0.9375rem;
-      padding-right: 0.9375rem; } }
+      padding-left: 0;
+      padding-right: 0; } }
     @media screen and (min-width: 64em) {
         #kitchen-sink #kitchen-sink-nav:last-child:not(:first-child) {
           float: right; }
@@ -6602,26 +6602,26 @@ table.hover tr:nth-of-type(even):hover {
   #page::after {
     clear: both; }
   #page .main-content {
-    padding-left: 0.625rem;
-    padding-right: 0.625rem;
+    padding-left: 0;
+    padding-right: 0;
     width: 100%;
     float: left; }
     @media screen and (min-width: 40em) {
       #page .main-content {
-        padding-left: 0.9375rem;
-        padding-right: 0.9375rem; } }
+        padding-left: 0;
+        padding-right: 0; } }
     #page .main-content:last-child:not(:first-child) {
       float: right; }
     @media screen and (min-width: 40em) {
       #page .main-content {
-        padding-left: 0.625rem;
-        padding-right: 0.625rem;
+        padding-left: 0;
+        padding-right: 0;
         width: 66.66667%;
         float: left; } }
   @media screen and (min-width: 40em) and (min-width: 40em) {
     #page .main-content {
-      padding-left: 0.9375rem;
-      padding-right: 0.9375rem; } }
+      padding-left: 0;
+      padding-right: 0; } }
     @media screen and (min-width: 40em) {
         #page .main-content:last-child:not(:first-child) {
           float: right; } }
@@ -6637,46 +6637,46 @@ table.hover tr:nth-of-type(even):hover {
   #page-sidebar-left::after {
     clear: both; }
   #page-sidebar-left .main-content {
-    padding-left: 0.625rem;
-    padding-right: 0.625rem;
+    padding-left: 0;
+    padding-right: 0;
     width: 100%;
     float: left; }
     @media screen and (min-width: 40em) {
       #page-sidebar-left .main-content {
-        padding-left: 0.9375rem;
-        padding-right: 0.9375rem; } }
+        padding-left: 0;
+        padding-right: 0; } }
     #page-sidebar-left .main-content:last-child:not(:first-child) {
       float: right; }
     @media screen and (min-width: 40em) {
       #page-sidebar-left .main-content {
-        padding-left: 0.625rem;
-        padding-right: 0.625rem;
+        padding-left: 0;
+        padding-right: 0;
         width: 66.66667%;
         float: left;
         position: relative;
         left: 33.33333%; } }
   @media screen and (min-width: 40em) and (min-width: 40em) {
     #page-sidebar-left .main-content {
-      padding-left: 0.9375rem;
-      padding-right: 0.9375rem; } }
+      padding-left: 0;
+      padding-right: 0; } }
     @media screen and (min-width: 40em) {
         #page-sidebar-left .main-content:last-child:not(:first-child) {
           float: right; } }
   #page-sidebar-left .sidebar {
-    padding-left: 0.625rem;
-    padding-right: 0.625rem;
+    padding-left: 0;
+    padding-right: 0;
     width: 100%;
     float: left; }
     @media screen and (min-width: 40em) {
       #page-sidebar-left .sidebar {
-        padding-left: 0.9375rem;
-        padding-right: 0.9375rem; } }
+        padding-left: 0;
+        padding-right: 0; } }
     #page-sidebar-left .sidebar:last-child:not(:first-child) {
       float: right; }
     @media screen and (min-width: 40em) {
       #page-sidebar-left .sidebar {
-        padding-left: 0.625rem;
-        padding-right: 0.625rem;
+        padding-left: 0;
+        padding-right: 0;
         width: 33.33333%;
         float: left;
         position: relative;
@@ -6684,8 +6684,8 @@ table.hover tr:nth-of-type(even):hover {
         margin-top: 1rem; } }
   @media screen and (min-width: 40em) and (min-width: 40em) {
     #page-sidebar-left .sidebar {
-      padding-left: 0.9375rem;
-      padding-right: 0.9375rem; } }
+      padding-left: 0;
+      padding-right: 0; } }
     @media screen and (min-width: 40em) {
         #page-sidebar-left .sidebar:last-child:not(:first-child) {
           float: right; } }
@@ -6701,14 +6701,14 @@ table.hover tr:nth-of-type(even):hover {
   #page-full-width::after {
     clear: both; }
   #page-full-width .main-content {
-    padding-left: 0.625rem;
-    padding-right: 0.625rem;
+    padding-left: 0;
+    padding-right: 0;
     width: 100%;
     float: left; }
     @media screen and (min-width: 40em) {
       #page-full-width .main-content {
-        padding-left: 0.9375rem;
-        padding-right: 0.9375rem; } }
+        padding-left: 0;
+        padding-right: 0; } }
     #page-full-width .main-content:last-child:not(:first-child) {
       float: right; }
 
@@ -6723,26 +6723,26 @@ table.hover tr:nth-of-type(even):hover {
   #single-post::after {
     clear: both; }
   #single-post .main-content {
-    padding-left: 0.625rem;
-    padding-right: 0.625rem;
+    padding-left: 0;
+    padding-right: 0;
     width: 100%;
     float: left; }
     @media screen and (min-width: 40em) {
       #single-post .main-content {
-        padding-left: 0.9375rem;
-        padding-right: 0.9375rem; } }
+        padding-left: 0;
+        padding-right: 0; } }
     #single-post .main-content:last-child:not(:first-child) {
       float: right; }
     @media screen and (min-width: 40em) {
       #single-post .main-content {
-        padding-left: 0.625rem;
-        padding-right: 0.625rem;
+        padding-left: 0;
+        padding-right: 0;
         width: 66.66667%;
         float: left; } }
   @media screen and (min-width: 40em) and (min-width: 40em) {
     #single-post .main-content {
-      padding-left: 0.9375rem;
-      padding-right: 0.9375rem; } }
+      padding-left: 0;
+      padding-right: 0; } }
     @media screen and (min-width: 40em) {
         #single-post .main-content:last-child:not(:first-child) {
           float: right; } }
@@ -6983,20 +6983,6 @@ body:not(.home) .page-loader-wrapper {
 .slick-slider-home {
   float: left;
   width: 100%; }
-
-.home_middle_sidebar, .middle-item {
-  float: left; }
-
-.middle-item {
-  opacity: .9;
-  background: #003e7e;
-  border-radius: 4px;
-  width: 90%;
-  margin: 5%;
-  padding: 1rem; }
-
-.after-slick {
-  padding-top: 4rem; }
 
 html, body {
   background: linear-gradient(to bottom, #030f19 0%, #001832 25%);

@@ -34,9 +34,14 @@ $body-background: $primary-color;
 $body-font-color: $medium-gray;
 $body-font-family: 'Bitter', Helvetica, Roboto, Arial, sans-serif;
 $body-antialiased: true;
-$global-margin: 1rem;
-$global-padding: 1rem;
+$global-margin: 0;
+$global-padding: 0;
 $global-weight-normal: normal;
 $global-weight-bold: bold;
 $global-radius: 4px;
 $global-text-direction: ltr;
+
+$grid-column-responsive-gutter: (
+  small: 0,
+  medium: 0,
+);

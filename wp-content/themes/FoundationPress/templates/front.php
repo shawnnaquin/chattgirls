@@ -15,15 +15,15 @@ get_header(); ?>
 			}
 		?>
 	</div>
-
-	<div class="after-slick home_middle_sidebar middle-item-wrapper small-12 medium-8 columns">
-		<?php dynamic_sidebar( 'home_middle_sidebar' ); ?>
-	</div>
-
-	<div class="after-slick middle-item-wrapper small-12 medium-4 columns">
-		<div class="middle-item">
+	
+	<div class="small-12 medium-4 columns">
+		<div>
 			<?php get_sidebar(); ?>
 		</div>
+	</div>
+
+	<div class="small-12 medium-8 columns">
+		<?php dynamic_sidebar( 'home_middle_sidebar' ); ?>
 	</div>
 
 <section class="intro" role="main">
