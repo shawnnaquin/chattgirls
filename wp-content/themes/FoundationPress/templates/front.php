@@ -1,8 +1,18 @@
+
+
 <?php
 /*
 Template Name: Front
 */
+$image_src = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
+?>
+<?php
 get_header(); ?>
+<style type="text/css">
+body {
+	background-image:url('<?php echo $image_src ?>');
+}
+</style>
 
 <?php do_action( 'foundationpress_before_content' ); ?>
 <?php while ( have_posts() ) : the_post(); ?>
@@ -16,14 +26,18 @@ get_header(); ?>
 		?>
 	</div>
 	
-	<div class="small-12 medium-4 columns">
+	<div class="small-12 medium-4 columns no-padding">
 		<div>
 			<?php get_sidebar(); ?>
 		</div>
 	</div>
 
-	<div class="small-12 medium-8 columns">
+	<div class="small-12 medium-8 large-4 columns no-padding">
 		<?php dynamic_sidebar( 'home_middle_sidebar' ); ?>
+	</div>
+
+	<div class="small-12 medium-8 large-4 columns no-padding">
+		<?php dynamic_sidebar( 'home_right_sidebar' ); ?>
 	</div>
 
 <section class="intro" role="main">
@@ -31,9 +45,6 @@ get_header(); ?>
 
 		<div <?php post_class() ?> id="post-<?php the_ID(); ?>">
 			<?php do_action( 'foundationpress_page_before_entry_content' ); ?>
-			<div class="entry-content">
-				<?php the_content(); ?>
-			</div>
 			<footer>
 				<?php wp_link_pages( array('before' => '<nav id="page-nav"><p>' . __( 'Pages:', 'foundationpress' ), 'after' => '</p></nav>' ) ); ?>
 				<p><?php the_tags(); ?></p>
@@ -46,6 +57,7 @@ get_header(); ?>
 	</div>
 
 </section>
+
 <?php endwhile;?>
 <?php do_action( 'foundationpress_after_content' ); ?>
 

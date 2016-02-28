@@ -1,8 +1,10 @@
 html, body {
-    background:linear-gradient(to bottom, $primary-color 0%, darken($secondary-color, 15%) 25%);
+    background-image:linear-gradient(to bottom, $primary-color 0%, darken($secondary-color, 15%) 25%);
     height:auto;
+      background-size:cover;
+      background-repeat:no-repeat;
     // background-image:url('#{$path}rollergirls_opt.svg');
-    // background-position:cover;
+    background-position:25% 0%;
     // background-size:100%;
     // background-repeat:none;
 }

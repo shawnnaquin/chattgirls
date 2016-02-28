@@ -13,7 +13,16 @@ function arphabet_widgets_init() {
     register_sidebar( array(
         'name'          => 'Home Middle Sidebar',
         'id'            => 'home_middle_sidebar',
-        'before_widget' => '<div class="middle-item-wrapper small-12 large-6 columns"><div class="middle-item">',
+        'before_widget' => '<div class="middle-item-wrapper small-12 large-6 columns no-padding"><div class="middle-item">',
+        'after_widget'  => '</div></div>',
+        'before_title'  => '<h2 class="rounded">',
+        'after_title'   => '</h2>',
+    ) );
+
+    register_sidebar( array(
+        'name'          => 'Home Right Sidebar',
+        'id'            => 'home_right_sidebar',
+        'before_widget' => '<div class="right-item-bg middle-item-wrapper small-12 large-6 columns no-padding"><div class="middle-item">',
         'after_widget'  => '</div></div>',
         'before_title'  => '<h2 class="rounded">',
         'after_title'   => '</h2>',

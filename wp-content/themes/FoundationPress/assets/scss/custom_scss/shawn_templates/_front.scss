@@ -1,5 +1,11 @@
 .slick-slider {
     .slick {
+        &-track {
+            height:auto;
+            @media #{$xlarge-up} {
+                height:400px;
+            }
+        }
         &-arrow {
             position:absolute;
             opacity:.8;

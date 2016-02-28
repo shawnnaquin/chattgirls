@@ -33,6 +33,7 @@
             
               $($loader).delay(800).animate({'opacity':'0'}, 300, function(){
                 NProgress.done();
+                $($loader).remove();
               });   
         }
     };

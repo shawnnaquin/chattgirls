@@ -7,12 +7,12 @@
   Licensed under MIT Open Source
 */
 
+// Foundation mixins & browser resets
+@import '../components/foundation-sites/scss/foundation';
+
 //  Settings
 // @import "global/settings"; // Foundation settings file.
 @import "custom_scss/settings";
-
-// Foundation mixins & browser resets
-@import '../components/foundation-sites/scss/foundation';
 
 // WP overrides
 @import "global/wp-admin"; // Fix issues with wp-admin bar positioning
