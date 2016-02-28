@@ -24,7 +24,7 @@ class schedule_widget extends WP_Widget {
         ?>
               <?php echo $before_widget; ?>
                   <?php if ( $title ) ?>
-                       <h2><?php echo date('Y'); ?>&nbsp;<?php echo $title ?></h2>
+                       <h2><?php echo date('Y'); ?> <?php echo $title ?></h2>
                         <a class="button" href="/events"><?php echo $message; ?></a>
                         <h3>Next Bout</h2>
                         <?php 

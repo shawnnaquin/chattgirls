@@ -99,7 +99,7 @@ body:not(.home) .page-loader-wrapper {
 		display:none;
 		float: left;
 	    width: 100%;
-		background:$primary-color;
+		background:transparentize($primary-color,.3);
 		transition:opacity $slow ease;
 		@media #{$medium-up} {
 			display:block;
