@@ -1,0 +1,90 @@
+.skater {
+    float:left;
+    position:relative;
+    width:100%;
+    height:100%;
+    overflow:hidden;
+    > div {
+        opacity:.9;
+        transform:translateY(0);
+        position: absolute;
+        z-index: 1;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background: $secondary-color;
+        transition:opacity 200ms ease;
+        transition-property:opacity, transform;
+        @media #{$large-up} { 
+            opacity:0;
+            transform:translateY(-25%);
+        }
+    }
+    .overlay {
+          position: absolute;
+          width: 100%;
+          background: transparent;
+          top: 0;
+          left: 0;
+        @media #{$large-up} {
+            background:$primary-color;
+        }
+    }
+
+    .button {
+        opacity:0;
+        position: absolute;
+        z-index: 1;
+        display:block;
+        width: 40%;
+        left: 25%;
+        top: 35%;
+        transition:top 200ms ease;
+        transition-property:left, top, opacity;
+    }
+    &:hover {
+        > div {
+            opacity:.9;
+            transform:translateY(0);
+        }
+        .button {
+            opacity:1;
+            left:30%;
+            top:40%;
+        }
+    }
+}
+
+.page-template-skaters {
+    .featured-skater-widget {
+        background:$primary-color;
+        padding:1rem;
+        @media #{$medium-up} {
+            padding:5rem;
+            background:$primary-color;
+        }
+        > .row:nth-child(2) {
+            margin-top:3rem;
+        }
+    }
+    .featured-skater-years {
+        border-radius:$global-radius;
+        padding:1rem;
+        margin-bottom:1rem;
+        height:auto; 
+        overflow:hidden;
+
+        @media #{$medium-up} {
+            height:300px;
+        }
+        &:nth-child(even) {
+            background:transparentize($white, .95);
+        }
+    }
+    @media #{$large-up} {
+    .featured-skater-name h3 {
+            margin-left:1rem;
+        }
+    }
+}
+

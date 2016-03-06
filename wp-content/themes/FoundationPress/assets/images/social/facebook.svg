@@ -1,0 +1,5 @@
+<svg class="social-icon social-icon-facebook" xmlns="http://www.w3.org/2000/svg" version="1.1" x="0" y="0" viewBox="0 0 500 500" xml:space="preserve">
+    <rect class="social-icon-inner social-icon-inner-facebook" x="32.5" y="32.5" class="st0" width="435" height="435"/>
+    <path class="social-icon-outer social-icon-outer-facebook" d="M487.5 487.5h-475v-475h475V487.5zM37.5 462.5h425v-425h-425V462.5z"/>
+    <path class="social-icon-logo social-icon-logo-facebook" d="M269.7 203v-28c0-12.6 2.8-19 22.4-19h24.6v-47h-41c-50.3 0-66.9 23.1-66.9 62.6V203h-33v47h33v141h60.9V250h41.4l5.6-47H269.7z"/>
+</svg>

@@ -1,0 +1,12 @@
+<svg class="social-icon social-icon-instagram" xmlns="http://www.w3.org/2000/svg" version="1.1" x="0" y="0" viewBox="0 0 500 500" xml:space="preserve">
+
+    <rect class="social-icon-inner social-icon-inner-instagram" x="32.5" y="32.5" class="st0" width="435" height="435"/>
+
+    <path class="social-icon-outer social-icon-outer-instagram" d="M487.5 487.5h-475v-475h475V487.5zM37.5 462.5h425v-425h-425V462.5z"/>
+
+    <g class="social-icon-logo social-icon-logo-instagram" >
+        <circle cx="249.7" cy="251.2" r="54.7"/>
+        <path d="M196.2 197.3c14.5-14.5 33.7-22.5 54.1-22.5s39.7 8.1 54.1 22.6c9.2 9.2 15.7 20.2 19.3 32.5h57.5v-77.2c0-18.1-14-32.1-32.1-32.1H152.2c-18.1 0-33.5 14-33.5 32.1v77.2h58.2C180.5 217.5 187 206.5 196.2 197.3zM359.4 177.3c0 4.8-3.9 8.8-8.7 8.8h-26.2c-4.8 0-8.8-3.9-8.8-8.8v-26.2c0-4.8 3.9-8.8 8.8-8.8h26.2c4.8 0 8.7 3.9 8.7 8.8V177.3z"/><path d="M304.5 305.6c-14.5 14.5-33.7 22.3-54.1 22.3s-39.7-7.8-54.1-22.3c-14.4-14.4-22.4-34.1-22.4-53.9h-55v97.8c0 18.1 15.4 33.5 33.5 33.5h196.9c18.1 0 32.1-15.4 32.1-33.5v-97.8h-54.3C326.9 271.5 318.9 291.1 304.5 305.6z"/>
+    </g>
+
+</svg>

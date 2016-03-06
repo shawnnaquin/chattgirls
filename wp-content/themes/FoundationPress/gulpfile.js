@@ -42,15 +42,16 @@ var PATHS = {
     // 'assets/components/foundation-sites/js/foundation.orbit.js',
     'assets/components/foundation-sites/js/foundation.responsiveMenu.js',
     'assets/components/foundation-sites/js/foundation.responsiveToggle.js',
-    'assets/components/foundation-sites/js/foundation.reveal.js',
+    // 'assets/components/foundation-sites/js/foundation.reveal.js',
     'assets/components/foundation-sites/js/foundation.slider.js',
     'assets/components/foundation-sites/js/foundation.sticky.js',
     'assets/components/foundation-sites/js/foundation.tabs.js',
     'assets/components/foundation-sites/js/foundation.toggler.js',
     'assets/components/foundation-sites/js/foundation.tooltip.js',
+    'assets/components/sharrre/jquery.sharrre.min.js',
     'assets/components/slick-carousel/slick/slick.js',
     'assets/components/nprogress/nprogress.js',
-    
+    'assets/components/magnific-popup/dist/jquery.magnific-popup.js',
     // Motion UI
     'assets/components/motion-ui/motion-ui.js',
 

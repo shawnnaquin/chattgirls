@@ -30,10 +30,11 @@ class featured_skater_widget extends WP_Widget {
                         $args = array(
                           'post_type'=>'skater', 
                           'orderby'=>'rand',
+                          'meta_key' => 'display_name',
                           'meta_key' => 'number',
                           'meta_key' => 'years_with',
                           'meta_key' => 'likes',
-                          'posts_per_page'=>'1'
+                          'posts_per_page'=>'1',
                         );
 
                         // query
@@ -57,10 +58,9 @@ class featured_skater_widget extends WP_Widget {
                               <div class="columns small-6 featured-skater-image">
                                   <?php the_post_thumbnail( 'full' ); ?>
                               </div>
-
                               <div class="columns small-6 featured-skater-info">
                                   <div class="small-12 columns featured-skater-name no-padding">
-                                    <h3 class="featured-skater-name"><?php the_title();?> #<?php echo get_field('number'); ?></h3>
+                                    <h3 class="featured-skater-name"><?php if ( get_field('display_name') ): echo get_field('display_name'); else: echo the_title(); endif; ?> <br/>#<?php echo get_field('number'); ?></h3>
                                   </div>
                                   <div class="small-12 columns featured-skater-years no-padding">
                                     <p class="featured-skater-label">Years with CRG:</p>

@@ -1,0 +1,111 @@
+.social-icon {
+    display:block;
+    float:none;
+    margin:0 auto;
+    width:100%;
+    height:auto;
+    &-wrapper {
+        margin-top:3rem;
+        padding-top: 1.5rem;
+        padding-bottom: 1.5rem;
+        background: transparentize($white, .4);
+        border-radius: 12px;
+        margin-bottom: 1rem;
+        // display:none;
+        opacity:1;
+        transition:opacity 400ms ease;
+        @media #{$large-up} { 
+            opacity:0;
+        }
+    }
+    &-a {
+        float:left;
+        width:100%;
+    }
+    &-inner {
+        opacity:0;
+        background:transparent;
+        transition: opacity 200ms ease;
+        transition-property: background, opacity;
+    }
+
+    &-outer {
+        opacity:.8;
+        fill:$primary-color;
+        transition:opacity 400ms ease;
+    }
+    &-logo {
+        opacity:.8;
+        fill:$primary-color;
+        transition:fill 600ms ease;
+        &-pinterest {
+            width:60%;
+            height:60%;
+            margin:20% auto;
+        }
+    }
+}
+.social-icon-a:hover {
+    .social-icon-inner {
+        opacity:1;
+        background:$white;
+    }
+    .social-icon-outer {
+        opacity:0;
+    }
+    .social-icon-logo {
+        fill:$secondary-color;
+    }
+}
+
+
+/**
+ * Fade-zoom animation for first dialog
+ */
+
+/**
+ * Fade-move animation for second dialog
+ */
+.mfp-bg {
+    background:$primary-color;
+}
+.mfp-close-btn-in .mfp-close {
+    color:$white;
+    transition:color 200ms ease;
+    transtion-property:color, transform;
+    &:hover {
+        transform:rotate(520deg);
+        color:$alert-color;
+    }
+}
+/* at start */
+.slide-bottom .zoom-anim-dialog {
+    opacity: 0;
+    transition: opacity 0.2s ease-out;
+
+}
+
+/* animate in */
+.slide-bottom.mfp-ready .zoom-anim-dialog {
+    opacity: 1;
+}
+
+/* animate out */
+.slide-bottom.mfp-removing .zoom-anim-dialog {
+    opacity: 0;
+}
+
+/* Dark overlay, start state */
+.slide-bottom.mfp-bg {
+    opacity: 0;
+    transition: opacity 0.3s ease-out;
+}
+/* animate in */
+.slide-bottom.mfp-ready.mfp-bg {
+    opacity: 1;
+}
+/* animate out */
+.slide-bottom.mfp-removing.mfp-bg {
+    opacity: 0;
+}
+

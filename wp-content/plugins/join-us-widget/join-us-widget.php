@@ -47,12 +47,19 @@ class join_us_widget extends WP_Widget {
                                   <a href="<?php echo site_url(); ?>/join-us"><?php the_post_thumbnail( 'full' ); ?></a>
                                </div>
                              </div>
-                             <div class="row">
+                             <?php $upload_dir = wp_upload_dir(); ?>
 
-                             <div class="columns small-12">
-                               <a class="button" href="<?php echo site_url(); ?>/join-us/"><?php the_title(); ?></a>
+                              <?php $url = get_template_directory();?>
+
+
+                             <div class="row">
+                               <div class="columns small-12">
+                                 <a class="button" href="<?php echo site_url(); ?>/join-us/"><?php the_title(); ?></a>
+                               </div>
                              </div>
-                             </div>
+
+                             <?php $sharrre_url = '/join-us'; $data_text = 'Join Us!'; include( $url . '/parts/social.php' );?>
+
                           </div>
                         <?php endwhile; ?>
                         <?php endif; ?>

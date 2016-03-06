@@ -87,6 +87,13 @@ class home_tickets_widget extends WP_Widget {
                           </div>
                         </div>
                         <a class="button bright">buy tickets</a>
+
+                          <?php 
+                            $url = get_template_directory();
+                          ?>
+                          
+                         <?php $sharrre_url = '/events'; $data_text = 'Chattanooga Roller Girls!'; include( $url . '/parts/social.php' );?>
+
                         <?php endwhile; ?>
                         <?php endif; ?>
                         <?php wp_reset_query();  // Restore global post data stomped by the_post(). ?>

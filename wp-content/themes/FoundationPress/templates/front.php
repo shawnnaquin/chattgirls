@@ -25,21 +25,21 @@ body {
 			}
 		?>
 	</div>
-	
-	<div class="small-12 medium-4 columns no-padding">
+	<div class="js-add-equalizer" >
+	<div class="small-12 medium-4 columns no-padding js-add-equalizer-watch home-left-sidebar" >
 		<div>
 			<?php get_sidebar(); ?>
 		</div>
 	</div>
 
-	<div class="small-12 medium-8 large-4 columns no-padding">
+	<div class="small-12 medium-8 large-4 columns no-padding js-add-equalizer-watch home-middle-sidebar" >
 		<?php dynamic_sidebar( 'home_middle_sidebar' ); ?>
 	</div>
 
-	<div class="small-12 medium-8 large-4 columns no-padding">
+	<div class="small-12 medium-8 large-4 columns no-padding js-add-equalizer-watch home-right-sidebar" >
 		<?php dynamic_sidebar( 'home_right_sidebar' ); ?>
 	</div>
-
+	</div>
 <section class="intro" role="main">
 	<div class="fp-intro">
 

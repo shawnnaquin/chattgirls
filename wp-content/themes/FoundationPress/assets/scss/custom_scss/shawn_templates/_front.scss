@@ -45,3 +45,13 @@
         width:100%;
     }
 }
+
+.home-left-sidebar {
+    background:transparentize($primary-color, .1);
+}
+.home-middle-sidebar {
+    background:transparentize($primary-color, .3);
+}
+.home-right-sidebar {
+    background:transparentize($third-color,.4);
+}
