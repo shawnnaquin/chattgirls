@@ -7462,30 +7462,33 @@ html.nprogress-busy {
     left: 30%;
     top: 40%; }
 
-.page-template-skaters .featured-skater-widget {
-  background: #05050a;
-  padding: 1rem; }
-  @media screen and (min-width: 40em) {
-    .page-template-skaters .featured-skater-widget {
-      padding: 5rem;
-      background: #05050a; } }
-  .page-template-skaters .featured-skater-widget > .row:nth-child(2) {
-    margin-top: 3rem; }
-
-.page-template-skaters .featured-skater-years {
-  border-radius: 0.56818rem;
-  padding: 1rem;
-  margin-bottom: 1rem;
-  height: auto;
-  overflow: hidden; }
-  @media screen and (min-width: 40em) {
-    .page-template-skaters .featured-skater-years {
-      height: 300px; } }
-  .page-template-skaters .featured-skater-years:nth-child(even) {
-    background: rgba(255, 255, 255, 0.05); }
-
-@media screen and (min-width: 64em) {
-  .page-template-skaters .featured-skater-name h3 {
-    margin-left: 1rem; } }
+.page-template-skaters {
+  background: #5c5855; }
+  .page-template-skaters .js-height {
+    opacity: 0;
+    transition: opacity 300ms cubic-bezier(0.6, 0.04, 0.98, 0.335); }
+  .page-template-skaters .featured-skater-widget {
+    background: #05050a;
+    padding: 1rem; }
+    @media screen and (min-width: 40em) {
+      .page-template-skaters .featured-skater-widget {
+        padding: 5rem;
+        background: #05050a; } }
+    .page-template-skaters .featured-skater-widget > .row:nth-child(2) {
+      margin-top: 3rem; }
+  .page-template-skaters .featured-skater-years {
+    border-radius: 0.56818rem;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    height: auto;
+    overflow: hidden; }
+    @media screen and (min-width: 40em) {
+      .page-template-skaters .featured-skater-years {
+        height: 300px; } }
+    .page-template-skaters .featured-skater-years:nth-child(even) {
+      background: rgba(255, 255, 255, 0.05); }
+  @media screen and (min-width: 64em) {
+    .page-template-skaters .featured-skater-name h3 {
+      margin-left: 1rem; } }
 
 /*# sourceMappingURL=foundation.css.map */

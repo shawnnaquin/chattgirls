@@ -18,7 +18,8 @@ get_header(); ?>
 
     <?php
     $args = array(
-        'post_type'=>'skater', 
+        'post_type'=>'skater',
+        'orderby'=>'rand',
         'meta_key' => 'display_name',
         'meta_key' => 'number',
         'meta_key' => 'years_with',

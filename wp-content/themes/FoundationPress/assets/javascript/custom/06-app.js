@@ -311,9 +311,22 @@
                     });
 
                     function jsHeight() {
+                        
                         var theHeight = $('.js-height').width()-120;
-
-                        $('.js-height').css({'height': theHeight });
+                        var fadeTime;
+                        
+                        $('.js-height').each(function(i){
+                            fadeTime = String(100 * i);
+                            $(this)
+                                .css({
+                                    'opacity':'1',
+                                    'height': theHeight,
+                                    'transition-delay': fadeTime+'ms',
+                                });
+                        });
+                        
+                        $('.js-height:nth-last-child(1)')
+                            .addClass('end');
                     }
 
                     function magnificPopup(){
