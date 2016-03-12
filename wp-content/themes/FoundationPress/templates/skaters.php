@@ -19,7 +19,7 @@ get_header(); ?>
     <?php
     $args = array(
         'post_type'=>'skater',
-        'orderby'=>'rand',
+        'orderby' => 'menu_order',
         'meta_key' => 'display_name',
         'meta_key' => 'number',
         'meta_key' => 'years_with',
@@ -32,6 +32,7 @@ get_header(); ?>
         'meta_key' => 'favorite_moment',
         'meta_key' => 'best_thing',
         'meta_key' => 'hardest_thing',
+        'meta_key' => 'action_shot',
         'posts_per_page'=> -1,
         );
 // query
@@ -40,64 +41,65 @@ get_header(); ?>
     <div class="row">
         <?php if( $the_query->have_posts() ): ?>
             <?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
-                <div class="js-height small-12 medium-6 large-4 xlarge-2 xxlarge-2 columns no-padding">
-                    <a class="popup skater" href="#<?php echo get_field('number');?>">
+                <div class="js-height small-12 medium-6 large-3 xlarge-2 xxlarge-2 columns no-padding">
+                    <a class="popup skater" href="#<?php echo get_field('number');?>" style="background-image:url('<?php the_post_thumbnail_url( 'large' ); ?> ');">
                         <div class="overlay">
                             <button class="button bright">View More</button>
                         </div>
                         <div>
                             <h3><?php echo the_title();?> #<?php echo get_field('number');?></h3>
                         </div>
-                        <?php the_post_thumbnail( 'large' ); ?>
                     </a>
 
                     <div id="<?php echo get_field('number');?>" class="zoom-anim-dialog mfp-hide">
-                        <div class="featured-skater-widget">
+                        <div class="featured-skater-widget number-<?php echo get_field('number'); ?>" style="background-image:url('<?php echo get_field('action_shot'); ?>');" >
 
-                            <div class="row">
-                                <div class="columns small-6 medium-3 large-2 featured-skater-image">
+<!--                             <div class="row">
+                                <div class="columns small-offset-3 small-6 featured-skater-image">
                                     <?php the_post_thumbnail( 'full' ); ?>
                                 </div>
-                                <div class="small-6 medium-9 large-10 columns featured-skater-name no-padding">
+                            </div> -->
+                            <div class="row">
+                                <div class="small-12 columns featured-skater-name no-padding">
                                     <h3 class="featured-skater-name"><?php if ( get_field('display_name') ): echo get_field('display_name'); else: echo the_title(); endif; ?> <br/>#<?php echo get_field('number'); ?></h3>
                                 </div>
                             </div>
 
                             <div class="row">
                                 <div class="featured-skater-info">
-                                    <div class="featured-skater-years small-12 medium-4 large-2 columns" >
+                                    <div class="featured-skater-years small-12" >
                                         <p class="featured-skater-label">Years with CRG:</p>
                                         <p class="featured-skater-answer"><?php echo get_field('years_with');?></p>
                                     </div>
-                                    <div class="featured-skater-years small-12 medium-4 large-2 columns" >
+                                    <div class="featured-skater-years small-12" >
                                         <p class="featured-skater-label">Gear:</p>
                                         <p class="featured-skater-answer"><?php echo get_field('gear');?></p>
                                     </div>
-                                    <div class="featured-skater-years small-12 medium-4 large-2 columns" >
+                                    <div class="featured-skater-years small-12" >
                                         <p class="featured-skater-label">Occupation:</p>
                                         <p class="featured-skater-answer"><?php echo get_field('occupation');?></p>
                                     </div>
-                                    <div class="featured-skater-years small-12 medium-4 large-2 columns" >
+                                    <div class="featured-skater-years small-12" >
                                         <p class="featured-skater-label">Likes:</p>
                                         <p class="featured-skater-answer"><?php echo get_field('likes');?></p>
                                     </div>
-                                    <div class="featured-skater-years small-12 medium-4 large-2 columns" >
+                                    <div class="featured-skater-years small-12" >
                                         <p class="featured-skater-label">dislikes:</p>
                                         <p class="featured-skater-answer"><?php echo get_field('dislikes');?></p>
                                     </div>
-                                    <div class="featured-skater-years small-12 medium-4 large-2 columns" >
+                                    <div class="featured-skater-years small-12" >
                                         <p class="featured-skater-label">Prior Athletic Experience:</p>
                                         <p class="featured-skater-answer"><?php echo get_field('prior_athletic');?></p>
                                     </div>
-                                    <div class="featured-skater-years small-12 medium-4 large-2 columns" >
+                                    <div class="featured-skater-years small-12" >
                                         <p class="featured-skater-label">Why I Joined Roller Derby:</p>
                                         <p class="featured-skater-answer"><?php echo get_field('why');?></p>
                                     </div>
-                                    <div class="featured-skater-years small-12 medium-4 large-2 columns" >
+                                    <div class="featured-skater-years small-12" >
                                         <p class="featured-skater-label">Favorite Roller Derby Moment:</p>
                                         <p class="featured-skater-answer"><?php echo get_field('favorite_moment');?></p>
                                     </div>
-                                    <div class="featured-skater-years small-12 medium-4 large-2 columns end" >
+                                    <div class="featured-skater-years small-12 end" >
                                         <p class="featured-skater-label">Hardest thing about Roller Derby:</p>
                                         <p class="featured-skater-answer"><?php echo get_field('hardest_thing');?></p>
                                     </div>

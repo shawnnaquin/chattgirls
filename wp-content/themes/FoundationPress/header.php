@@ -59,7 +59,7 @@
 		</div>
 		
 		
-		<div class="logo">
+		<div class="js-big-logo logo">
 			<?php echo file_get_contents($upload_dir['baseurl'] . "/rollergirls_opt.svg")?>
 		</div>
 
@@ -70,12 +70,17 @@
 		<nav id="site-navigation" class="main-navigation top-bar" role="navigation">
 
 			<!-- </div> -->
-<!-- 			<div class="top-bar-left">
+<!-- 			
 				<ul class="menu">
 					<li class="logo"></li>
 					<li class="home"></li>
 				</ul>
 			</div> -->
+			<div class="top-bar-left">
+				<div class="js-small-logo logo">
+					<?php echo file_get_contents($upload_dir['baseurl'] . "/rollergirls_opt.svg")?>
+				</div>
+			</div>
 			<div class="top-bar-right">
 				<?php foundationpress_top_bar_r(); ?>
 

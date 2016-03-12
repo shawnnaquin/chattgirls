@@ -7206,6 +7206,15 @@ p.featured-skater-answer {
   padding-left: .2rem;
   color: #ffffff; }
 
+.top-bar-left .logo {
+  opacity: 0;
+  width: 2.75rem;
+  margin-left: 5.5rem;
+  transition: opacity 800ms ease; }
+
+.js-big-logo {
+  transition: opacity 800ms ease; }
+
 .social-icon {
   display: block;
   float: none;
@@ -7262,12 +7271,33 @@ p.featured-skater-answer {
  * Fade-move animation for second dialog
  */
 .mfp-bg {
-  background: #05050a; }
+  background: rgba(5, 5, 10, 0.5); }
+
+.mfp-content > div > div {
+  border-radius: 0.56818rem;
+  width: 100%;
+  float: none;
+  margin: 3rem auto; }
+  @media screen and (min-width: 40em) {
+    .mfp-content > div > div {
+      width: 70%; } }
+  @media screen and (min-width: 64em) {
+    .mfp-content > div > div {
+      width: 60%; } }
 
 .mfp-close-btn-in .mfp-close {
   color: #ffffff;
   transition: color 200ms ease;
-  transtion-property: color, transform; }
+  transtion-property: color, transform;
+  top: 3.5rem;
+  right: 0;
+  left: auto; }
+  @media screen and (min-width: 40em) {
+    .mfp-close-btn-in .mfp-close {
+      right: 16%; } }
+  @media screen and (min-width: 64em) {
+    .mfp-close-btn-in .mfp-close {
+      right: 21%; } }
   .mfp-close-btn-in .mfp-close:hover {
     -webkit-transform: rotate(520deg);
         -ms-transform: rotate(520deg);
@@ -7411,8 +7441,11 @@ html.nprogress-busy {
   position: relative;
   width: 100%;
   height: 100%;
-  overflow: hidden; }
+  overflow: hidden;
+  background-size: cover;
+  background-position: top center; }
   .skater > div {
+    height: auto;
     opacity: .9;
     -webkit-transform: translateY(0);
         -ms-transform: translateY(0);
@@ -7426,14 +7459,26 @@ html.nprogress-busy {
     transition: opacity 200ms ease;
     transition-property: opacity, -webkit-transform;
     transition-property: opacity, transform;
-    transition-property: opacity, transform, -webkit-transform; }
+    transition-property: opacity, transform, -webkit-transform;
+    display: table; }
+    .skater > div a {
+      width: 100%;
+      display: block; }
+    .skater > div h3 {
+      display: table-cell;
+      vertical-align: middle;
+      width: 100%;
+      padding-left: 1rem;
+      padding-right: 1rem; }
     @media screen and (min-width: 64em) {
       .skater > div {
         opacity: 0;
         -webkit-transform: translateY(-25%);
             -ms-transform: translateY(-25%);
-                transform: translateY(-25%); } }
+                transform: translateY(-25%);
+        height: 100%; } }
   .skater .overlay {
+    height: 100%;
     position: absolute;
     width: 100%;
     background: transparent;
@@ -7443,15 +7488,18 @@ html.nprogress-busy {
       .skater .overlay {
         background: #05050a; } }
   .skater .button {
+    display: block;
     opacity: 0;
     position: absolute;
     z-index: 1;
-    display: block;
     width: 40%;
     left: 25%;
     top: 35%;
     transition: top 200ms ease;
     transition-property: left, top, opacity; }
+    @media screen and (min-width: 64em) {
+      .skater .button {
+        display: none; } }
   .skater:hover > div {
     opacity: .9;
     -webkit-transform: translateY(0);
@@ -7460,35 +7508,104 @@ html.nprogress-busy {
   .skater:hover .button {
     opacity: 1;
     left: 30%;
-    top: 40%; }
+    top: 35%; }
 
-.page-template-skaters {
+.page-template-skaters, .page-template-personnel {
   background: #5c5855; }
-  .page-template-skaters .js-height {
+  @media screen and (min-width: 64em) {
+    .page-template-skaters section.container, .page-template-personnel section.container {
+      margin-top: 5rem;
+      border-top: 5px solid transparent;
+      -webkit-animation-name: borderTrans;
+              animation-name: borderTrans;
+      -webkit-animation-duration: 1600ms;
+              animation-duration: 1600ms;
+      -webkit-animation-delay: 400ms;
+              animation-delay: 400ms;
+      -webkit-animation-timing-function: ease;
+              animation-timing-function: ease;
+      -webkit-animation-iteration-count: 1;
+              animation-iteration-count: 1;
+      -webkit-animation-fill-mode: forwards;
+              animation-fill-mode: forwards; } }
+
+@-webkit-keyframes borderTrans {
+  100% {
+    border-top: 5px solid white; } }
+
+@keyframes borderTrans {
+  100% {
+    border-top: 5px solid white; } }
+  .page-template-skaters img, .page-template-personnel img {
+    width: 100%; }
+  .page-template-skaters .js-height, .page-template-personnel .js-height {
     opacity: 0;
     transition: opacity 300ms cubic-bezier(0.6, 0.04, 0.98, 0.335); }
-  .page-template-skaters .featured-skater-widget {
-    background: #05050a;
-    padding: 1rem; }
+  .page-template-skaters .featured-skater-widget, .page-template-personnel .featured-skater-widget {
+    background-color: #05050a;
+    padding: 1rem;
+    background-size: cover;
+    background-position: center top; }
     @media screen and (min-width: 40em) {
-      .page-template-skaters .featured-skater-widget {
+      .page-template-skaters .featured-skater-widget, .page-template-personnel .featured-skater-widget {
         padding: 5rem;
-        background: #05050a; } }
-    .page-template-skaters .featured-skater-widget > .row:nth-child(2) {
-      margin-top: 3rem; }
-  .page-template-skaters .featured-skater-years {
+        background-color: #05050a; } }
+    .page-template-skaters .featured-skater-widget > .row:nth-child(2), .page-template-personnel .featured-skater-widget > .row:nth-child(2) {
+      margin: .5rem; }
+      @media screen and (min-width: 40em) {
+        .page-template-skaters .featured-skater-widget > .row:nth-child(2), .page-template-personnel .featured-skater-widget > .row:nth-child(2) {
+          margin: 1rem; } }
+      @media screen and (min-width: 64em) {
+        .page-template-skaters .featured-skater-widget > .row:nth-child(2), .page-template-personnel .featured-skater-widget > .row:nth-child(2) {
+          margin: 3rem; } }
+    .page-template-skaters .featured-skater-widget div > h3, .page-template-personnel .featured-skater-widget div > h3 {
+      text-align: center; }
+    .page-template-skaters .featured-skater-widget.number-101, .page-template-personnel .featured-skater-widget.number-101 {
+      background-position: 1360px center; }
+      @media screen and (min-width: 40em) {
+        .page-template-skaters .featured-skater-widget.number-101, .page-template-personnel .featured-skater-widget.number-101 {
+          background-position: center top; } }
+    .page-template-skaters .featured-skater-widget.number-rt66, .page-template-personnel .featured-skater-widget.number-rt66 {
+      background-position: 1200px center; }
+      @media screen and (min-width: 40em) {
+        .page-template-skaters .featured-skater-widget.number-rt66, .page-template-personnel .featured-skater-widget.number-rt66 {
+          background-position: center top; } }
+    .page-template-skaters .featured-skater-widget.number-30, .page-template-personnel .featured-skater-widget.number-30 {
+      background-position: 1333px center; }
+      @media screen and (min-width: 40em) {
+        .page-template-skaters .featured-skater-widget.number-30, .page-template-personnel .featured-skater-widget.number-30 {
+          background-position: center top; } }
+    .page-template-skaters .featured-skater-widget.number-9er, .page-template-personnel .featured-skater-widget.number-9er {
+      background-position: 1333px center; }
+      @media screen and (min-width: 40em) {
+        .page-template-skaters .featured-skater-widget.number-9er, .page-template-personnel .featured-skater-widget.number-9er {
+          background-position: center top; } }
+    .page-template-skaters .featured-skater-widget.number-480, .page-template-personnel .featured-skater-widget.number-480 {
+      background-position: 1290px center; }
+      @media screen and (min-width: 40em) {
+        .page-template-skaters .featured-skater-widget.number-480, .page-template-personnel .featured-skater-widget.number-480 {
+          background-position: center top; } }
+      @media screen and (min-width: 40em) {
+        .page-template-skaters .featured-skater-widget.number-480, .page-template-personnel .featured-skater-widget.number-480 {
+          background-position: 1500px top; } }
+  .page-template-skaters .featured-skater-years, .page-template-personnel .featured-skater-years {
     border-radius: 0.56818rem;
     padding: 1rem;
     margin-bottom: 1rem;
     height: auto;
     overflow: hidden; }
-    @media screen and (min-width: 40em) {
-      .page-template-skaters .featured-skater-years {
-        height: 300px; } }
-    .page-template-skaters .featured-skater-years:nth-child(even) {
+    .page-template-skaters .featured-skater-years:nth-child(even), .page-template-personnel .featured-skater-years:nth-child(even) {
       background: rgba(255, 255, 255, 0.05); }
   @media screen and (min-width: 64em) {
-    .page-template-skaters .featured-skater-name h3 {
+    .page-template-skaters .featured-skater-name h3, .page-template-personnel .featured-skater-name h3 {
       margin-left: 1rem; } }
+
+@-webkit-keyframes fadeIn {
+  100% {
+    opacity: 1; } }
+
+@keyframes fadeIn {
+  100% {
+    opacity: 1; } }
 
 /*# sourceMappingURL=foundation.css.map */

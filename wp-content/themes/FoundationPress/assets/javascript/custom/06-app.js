@@ -39,6 +39,26 @@
         }
     };
 
+    App.utils.jsHeight= function() {
+
+        var theHeight = $('.js-height').width()-50;
+        var fadeTime;
+        
+        $('.js-height').each(function(i){
+            fadeTime = String(100 * i);
+            $(this)
+                .css({
+                    'opacity':'1',
+                    'height': theHeight,
+                    'transition-delay': fadeTime+'ms',
+                });
+        });
+        
+        $('.js-height:nth-last-child(1)')
+            .addClass('end');
+            
+    };
+
     App.utils.sharrre = function() {
         var theHref = $('.js-sharrre').attr('data-href');
         var theText = $('.js-sharrre').attr('data-text');
@@ -205,8 +225,10 @@
                     $(window).on('scroll', function(){
                         if ( $('body').scrollTop() >= 104 ) {
                             $('#site-navigation').css({'position':'fixed'});
+                            $('.js-small-logo').css({'opacity':'1'});
+                            $('.js-big-logo').css({'opacity':'0'});
                         } else {
-                            $('#site-navigation').removeAttr('style');
+                            $('#site-navigation, .js-small-logo, .js-big-logo').removeAttr('style');
                         }
                     });
 
@@ -297,37 +319,14 @@
             singular: {
                 init: function(){
                     
-                    if ( $('body').hasClass('page-template-skaters') ) {
-                        jsHeight();
+                        App.utils.jsHeight();
                         magnificPopup();
-                    }
 
                     $(window).on('resize', function(){
                         setTimeout(function(){
-                            if ( $('body').hasClass('page-template-skaters') ) {
-                                jsHeight();
-                            }
+                                App.utils.jsHeight();
                         }, 100);
                     });
-
-                    function jsHeight() {
-                        
-                        var theHeight = $('.js-height').width()-120;
-                        var fadeTime;
-                        
-                        $('.js-height').each(function(i){
-                            fadeTime = String(100 * i);
-                            $(this)
-                                .css({
-                                    'opacity':'1',
-                                    'height': theHeight,
-                                    'transition-delay': fadeTime+'ms',
-                                });
-                        });
-                        
-                        $('.js-height:nth-last-child(1)')
-                            .addClass('end');
-                    }
 
                     function magnificPopup(){
                         $('.popup').magnificPopup({

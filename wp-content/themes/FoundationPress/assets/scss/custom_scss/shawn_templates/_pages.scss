@@ -4,7 +4,10 @@
     width:100%;
     height:100%;
     overflow:hidden;
+    background-size:cover;
+    background-position:top center;
     > div {
+        height:auto;
         opacity:.9;
         transform:translateY(0);
         position: absolute;
@@ -15,12 +18,27 @@
         background: $secondary-color;
         transition:opacity 200ms ease;
         transition-property:opacity, transform;
+        display:table;
+        a {
+            width:100%;
+            display:block;
+        }
+        h3 {
+            display:table-cell;
+            vertical-align:middle;
+            width:100%;
+            padding-left:1rem;
+            padding-right:1rem;
+        }
         @media #{$large-up} { 
             opacity:0;
             transform:translateY(-25%);
+            height:100%;
+
         }
     }
     .overlay {
+        height:100%;
           position: absolute;
           width: 100%;
           background: transparent;
@@ -32,15 +50,18 @@
     }
 
     .button {
+        display:block;
         opacity:0;
         position: absolute;
         z-index: 1;
-        display:block;
         width: 40%;
         left: 25%;
         top: 35%;
         transition:top 200ms ease;
         transition-property:left, top, opacity;
+        @media #{$large-up} {
+            display:none;
+        }
     }
     &:hover {
         > div {
@@ -50,27 +71,84 @@
         .button {
             opacity:1;
             left:30%;
-            top:40%;
+            top:35%;
         }
     }
 }
 
-.page-template-skaters {
+.page-template-skaters, .page-template-personnel {
     background:#5c5855;
+    section.container {
+        @media #{$large-up} {
+            margin-top: 5rem;
+            border-top: 5px solid transparent;
+            animation-name:borderTrans;
+            animation-duration:1600ms;
+            animation-delay:400ms;
+            animation-timing-function:ease;
+            animation-iteration-count:1;
+            animation-fill-mode:forwards;
+        }
+    }
+    @keyframes borderTrans{
+        100% { border-top:5px solid white;}
+    }
+    img {
+        width:100%;
+    }
     .js-height {
         opacity:0;
         transition:opacity 300ms cubic-bezier(0.6, 0.04, 0.98, 0.335);
     }
     .featured-skater-widget {
-        background:$primary-color;
+        background-color:$primary-color;
         padding:1rem;
+        background-size:cover;
+        background-position:center top;
         @media #{$medium-up} {
             padding:5rem;
-            background:$primary-color;
+            background-color:$primary-color;
         }
         > .row:nth-child(2) {
-            margin-top:3rem;
+            margin:.5rem;
+            @media #{$medium-up} {
+                margin:1rem;
+            }
+            @media #{$large-up} {
+                margin:3rem;
+            }
         }
+        div > h3 {
+            text-align:center;
+        }
+        // indiviual pictures 
+
+        @mixin bg-pos($num) {
+            background-position:$num center;
+            @media #{$medium-up} {
+                background-position:center top;
+            }
+        }
+
+        &.number-101 {
+            @include bg-pos(1360px);
+        }
+        &.number-rt66 {
+            @include bg-pos(1200px);
+        }
+        &.number-30 {
+            @include bg-pos(1333px);
+        }
+        &.number-9er {
+            @include bg-pos(1333px);
+        }
+        &.number-480 {
+            @include bg-pos(1290px);
+            @media #{$medium-up} {
+                background-position:1500px top;
+            }
+        }
+
     }
     .featured-skater-years {
         border-radius:$global-radius;
@@ -80,7 +158,6 @@
         overflow:hidden;
 
         @media #{$medium-up} {
-            height:300px;
         }
         &:nth-child(even) {
             background:transparentize($white, .95);
@@ -92,4 +169,46 @@
         }
     }
 }
+@keyframes fadeIn {
+    100% {opacity:1;};
+}
+// .page-template-personnel {
+//     .skater {
+//         pointer-events:hover;
+//         .overlay {
+//             @media #{$large-up} {
+//                 background:transparent;
+//             }
+//         }
+//     }
+//     .no-padding {
+//         display:table;
+//         > h3 {
+//             color:$secondary-color;
+
+//             display:table-cell;
+//             vertical-align:middle;
+//             background:$primary-color;
+//             float:left;
+//             padding-top:1rem;
+//             padding-bottom:1rem;
+//             box-shadow:2px 2px 10px rgba(0,0,0,.2);
+
+//             opacity:0;
+//             transition:color 200ms ease;
+//             transition-property:color, background;
+
+//             animation:fadeIn;
+//             animation-duration:1000ms;
+//             animation-timing-function:ease;
+//             animation-iteration-count:1;
+//             animation-fill-mode:forwards;
+//             animation-delay:100ms;
+//             &:hover {
+//                 background:$alert-color;
+//                 color:$white;
+//             }
+//         }
+//     }
+// }
 

@@ -67,12 +67,34 @@
  * Fade-move animation for second dialog
  */
 .mfp-bg {
-    background:$primary-color;
+    background:transparentize($primary-color, .5);
 }
+.mfp-content > div > div {
+    border-radius:$global-radius;
+    width:100%;
+    float:none;
+    margin:3rem auto;
+    @media #{$medium-up} {
+        width:70%;
+    }
+    @media #{$large-up} {
+        width:60%;
+    }
+}
+
 .mfp-close-btn-in .mfp-close {
     color:$white;
     transition:color 200ms ease;
     transtion-property:color, transform;
+    top:3.5rem;
+    right:0;
+    left:auto;
+    @media #{$medium-up} {
+        right:16%
+    }
+    @media #{$large-up} {
+        right:21%
+    }
     &:hover {
         transform:rotate(520deg);
         color:$alert-color;
