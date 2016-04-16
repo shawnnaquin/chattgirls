@@ -41,6 +41,8 @@ class wpsm_faq {
 			wp_enqueue_style('wpsm_faq_sh_line-edtor', wpshopmart_faq_directory_url.'assets/css/jquery-linedtextarea.css');
 			wp_enqueue_script( 'wpsm_faq_sh-line-edit-js', wpshopmart_faq_directory_url.'assets/js/jquery-linedtextarea.js');
 			
+			wp_enqueue_script( 'wpsm_faq_sh-bootstrap-js', wpshopmart_faq_directory_url.'assets/js/bootstrap.js');
+			
 			//tooltip
 			wp_enqueue_style('wpsm_faq_sh_tooltip', wpshopmart_faq_directory_url.'assets/tooltip/darktooltip.css');
 			wp_enqueue_script( 'wpsm_faq_sh-tooltip-js', wpshopmart_faq_directory_url.'assets/tooltip/jquery.darktooltip.js');

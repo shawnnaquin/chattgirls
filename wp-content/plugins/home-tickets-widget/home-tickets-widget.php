@@ -30,6 +30,7 @@ class home_tickets_widget extends WP_Widget {
                         $args = array(
                           'posts_per_page'  => 1,
                           'post_type'       => 'bout',
+                          'order'           => 'ASC',
                           'meta_key'        => 'display_month',
                           'meta_key'        => 'display_day',
                           'meta_key'        => 'opponent_name',

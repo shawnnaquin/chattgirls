@@ -40,7 +40,7 @@ $De_Settings = unserialize(get_option('faq_default_Settings'));
 </style>
 <Script>
 
- //minimum flake size script
+ //font slider size script
   jQuery(function() {
     jQuery( "#title_size_id" ).slider({
 		orientation: "horizontal",
@@ -59,7 +59,7 @@ $De_Settings = unserialize(get_option('faq_default_Settings'));
 </script>
 <Script>
 
- //minimum flake size script
+ //font slider size script
   jQuery(function() {
     jQuery( "#des_size_id" ).slider({
 		orientation: "horizontal",

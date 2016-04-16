@@ -1,5 +1,5 @@
 html, body {
-    background-image:linear-gradient(to bottom, $primary-color 0%, darken($secondary-color, 15%) 25%);
+    // background-image:linear-gradient(to bottom, $primary-color 0%, darken($secondary-color, 15%) 25%);
     height:auto;
       background-size:cover;
       background-repeat:no-repeat;
@@ -115,3 +115,15 @@ $page-loader-bar-color: $secondary-color !default;
 //         .expand--text { color: $color-teal;}
 //     }
 // }
+
+#page {
+  .main-content {
+    @include breakpoint(small) {
+      @include grid-column(12, 0);
+    }
+
+    @include breakpoint(medium) {
+      @include grid-column(12, 0);
+    }
+  }
+}

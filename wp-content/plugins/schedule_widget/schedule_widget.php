@@ -25,16 +25,19 @@ class schedule_widget extends WP_Widget {
 							<?php echo $before_widget; ?>
 									<?php if ( $title ) ?>
 											 <h2><?php echo date('Y'); ?> <?php echo $title ?></h2>
-												<a class="button" href="/events"><?php echo $message; ?></a>
-												<?php 
 
+											 <?php 
 												// args
 												$args = array(
 													'numberposts' => 10,
+													'order'     => 'ASC',
 													'post_type'   => 'bout',
 													'meta_key'    => 'display_day',
 													'meta_key'    => 'location',
-													'meta_key'    => 'home_or_away'
+													'meta_key'   => 'opponent_logo',
+													'meta_key'    => 'home_or_away',
+													'meta_key'	=> 'opponent_link',
+													'meta_key'	=> 'map_link'
 												);
 
 												// query
@@ -43,31 +46,64 @@ class schedule_widget extends WP_Widget {
 												?>
 												<?php if( $the_query->have_posts() ): ?>
 														
-													<?php while( $the_query->have_posts() ) : $the_query->the_post(); ?>
+												<?php while( $the_query->have_posts() ) : $the_query->the_post(); ?>
 
-															<!-- home or away? -->
-															<?php if ( get_field('home_or_away') == 'Home'): ?>
-																<a class="bout home" href="<?php the_permalink(); ?>">
-															<?php else: ?>
-																<a class="bout" href="<?php the_permalink(); ?>">
-															<?php endif; ?>
-															<div data-equalizer="bout" > 
-															<div class="bout-under-text" href="#" data-equalizer-watch="bout"  >
-																<div class="bout-under-text-button">Buy Tickets</div>
-															</div>
+												<!-- home or away? -->
+												<?php if ( get_field('home_or_away') == 'Home'): ?>
+													<div class="bout home" href="<?php the_permalink(); ?>">
+												<?php else: ?>
+													<div class="bout" href="<?php the_permalink(); ?>">
+												<?php endif; ?>
+														<div>
 
-															<div class="bout-under" data-equalizer-watch="bout" >
+															<div class="bout-under">
 
-																<div class="bout-date">
-																	<div class="bout-date-day">
-																		<?php the_field('display_day'); ?>.
-																	</div>
-																	<div class="bout-date-month">
-																		<?php the_field('display_month'); ?>
-																	</div>
+																<div class="bout-wrapper columns small-12 no-padding">
+																	<div class="bout-date small-5 columns">
+																		<div class="bout-date-day">
+																			<?php the_field('display_day'); ?>.
+																		</div>
+																		<div class="bout-date-month">
+																			<?php the_field('display_month'); ?>
+																		</div>
+																	</div> <!-- bout-date -->
+
+																	<div class="vs-logos small-7 columns">
+																	
+																	  <div class="vs-logos-home">
+																	  	<a href="<?php site_url(); ?>">
+																	  		<img src="http://roll.com/wp-content/uploads/crglogo_1-e1453139559423.png" />
+																	  	</a>
+																	  </div>
+
+																	  <div class="vs-logos-text">
+																	    vs.
+																	  </div>
+
+																	  <div class="vs-logos-away">
+																	    <?php $img = get_field('opponent_logo'); ?>
+																	    <a href="<?php the_field('opponent_link'); ?>" title="" target="_blank" >
+																	    	<img src="<?php echo $img['url']; ?>" alt="<?php echo $img['alt']; ?>"/>
+																	    </a>
+																	  </div>
+
+																	</div> <!-- vs-logos -->
 																</div>
 
-																<div class="bout-info">
+																<div class="bout-info js-bout-info small-12 columns no-padding">
+
+																	<div class="bout-under-text" href="#" data-equalizer-watch="bout"  >
+																		<a class="bout-under-text-button" href="#ticketsite">Buy Tickets</a>
+																		<?php 
+																			if ( get_field('home_or_away') == 'Home') {
+																				$url = 'https://www.google.com/maps/place/Chattanooga+Convention+Center/@35.0421656,-85.3148647,17z/data=!3m1!4b1!4m2!3m1!1s0x88605fe003a11409:0xc5d1acbee121b58a';
+																			} else {
+																				$url = get_field('map_link');
+																			}
+																		?>
+																		<a class="bout-under-text-button" href="<?php echo $url ?>" target="_blank">View Map</a>
+																	</div>
+
 																	<div class="bout-info-title">
 																		<p>
 																			<?php the_field('which_team'); ?>
@@ -91,10 +127,10 @@ class schedule_widget extends WP_Widget {
 																	</div> <!-- info-location -->
 																</div> <!-- info -->
 															</div> <!-- under -->
-															</div>
-															</a>
-													<?php endwhile; ?>
-												<?php endif; ?>
+														</div>
+													</div>
+												<?php endwhile; ?>
+											<?php endif; ?>
 
 												<?php wp_reset_query();  // Restore global post data stomped by the_post(). ?>
 

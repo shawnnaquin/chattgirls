@@ -60,7 +60,13 @@ class featured_skater_widget extends WP_Widget {
                               </div>
                               <div class="columns small-6 featured-skater-info">
                                   <div class="small-12 columns featured-skater-name no-padding">
-                                    <h3 class="featured-skater-name"><?php if ( get_field('display_name') ): echo get_field('display_name'); else: echo the_title(); endif; ?> <br/>#<?php echo get_field('number'); ?></h3>
+                                    <?php
+                                      $num = get_field('number');
+                                      if ( get_field('display_name') ) { 
+                                        $dn = get_field('display_name');
+                                      }
+                                    ?> 
+                                    <h3 class="featured-skater-name"><?php if ($dn) { echo $dn; } else { echo the_title(); } ?> <br/> #<?php echo $num; ?></h3>
                                   </div>
                                   <div class="small-12 columns featured-skater-years no-padding">
                                     <p class="featured-skater-label">Years with CRG:</p>

@@ -1,3 +1,4 @@
+
 .slick-slider {
     box-shadow: 2px 2px 30px rgba(0,0,0,.2);
     .slick {
@@ -46,8 +47,14 @@
     }
 }
 
+.home-left-sidebar, .home-middle-sidebar,
+.home-right-sidebar {
+    border-radius:0 0 $global-radius $global-radius;
+    div {
+        border-radius:0 0 $global-radius $global-radius;
+    }
+}
 .home-left-sidebar {
-    background:transparentize($primary-color, .1);
 }
 .home-middle-sidebar {
     background:transparentize($primary-color, .3);

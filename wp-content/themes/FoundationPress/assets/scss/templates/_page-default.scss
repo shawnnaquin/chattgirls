@@ -1,6 +1,5 @@
 #page {
   @include grid-row();
-  margin-top: 3rem;
 
   .main-content {
     @include breakpoint(small) {
@@ -12,4 +11,7 @@
     }
   }
 
+}
+#masthead {
+    background:$primary-color;
 }

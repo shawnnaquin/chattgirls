@@ -295,16 +295,10 @@
                         }, 300);
 
                     }
-                    $(window).on('resize', function() {
-                        setTimeout(function(){
-                            if ( $('.js-add-equalizer').attr('data-equalizer') ) {
-                                  $('.js-add-equalizer').foundation('applyHeight');
-                            }
-                        }, 100);
-                    });
 
                     // this needs to be at the bottom of this function
                     App.utils.loader(elements.$loader);
+
                 },
             },
 
@@ -403,15 +397,6 @@
             },
             home: {
                 init: function(){
-                    console.log('home init large');
-                    $('.js-add-equalizer')
-                        .attr('data-equalizer', 'page');
-
-                    $('.js-add-equalizer-watch')
-                        .removeClass('js-add-equalizer-watch')
-                        .attr('data-equalizer-watch', 'page');
-
-                    App.main.equalizer = new Foundation.Equalizer( $('.js-add-equalizer') );     
                 },
                 destroy: function(){
                 },
@@ -449,17 +434,12 @@
         var pages = {
             all: {
                 init: function(){
-                    console.log('medium');
                 },
                 destroy: function(){
-
                 },
             },
             home: {
                 init: function(){
-                    if ( $('.js-add-equalizer').attr('data-equalizer') ) {
-                        $('.js-add-equalizer').foundation('destroy');
-                    }
                 },
                 destroy: function(){
 

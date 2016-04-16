@@ -20,7 +20,7 @@ include( ABSPATH . 'wp-admin/admin-header.php' );
 
 <h1><?php printf( __( 'Welcome to WordPress %s' ), $display_version ); ?></h1>
 
-<div class="about-text"><?php printf( __( 'Thank you for updating! WordPress %s makes your site more connected and responsive.' ), $display_version ); ?></div>
+<div class="about-text"><?php printf( __( 'Thank you for updating! WordPress %s streamlines your workflow, whether you&#8217;re writing or building your site.' ), $display_version ); ?></div>
 
 <div class="wp-badge"><?php printf( __( 'Version %s' ), $display_version ); ?></div>
 
@@ -113,22 +113,12 @@ return;
 
 // These are strings returned by the API that we want to be translatable
 __( 'Project Leaders' );
-__( 'Extended Core Team' );
-__( 'Core Developers' );
-__( 'Recent Rockstars' );
 __( 'Core Contributors to WordPress %s' );
 __( 'Contributing Developers' );
 __( 'Cofounder, Project Lead' );
 __( 'Lead Developer' );
 __( 'Release Lead' );
-__( 'User Experience Lead' );
+__( 'Release Design Lead' );
+__( 'Release Deputy' );
 __( 'Core Developer' );
-__( 'Core Committer' );
-__( 'Guest Committer' );
-__( 'Developer' );
-__( 'Designer' );
-__( 'Docs Committer' );
-__( 'XML-RPC' );
-__( 'Internationalization' );
 __( 'External Libraries' );
-__( 'Icon Design' );

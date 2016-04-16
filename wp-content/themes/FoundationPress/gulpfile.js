@@ -93,7 +93,7 @@ gulp.task('browser-sync', ['build'], function() {
 
   browserSync.init(files, {
     // Proxy address
-    proxy: URL,
+    proxy: 'roll.com',
 
     // Port #
     // port: PORT

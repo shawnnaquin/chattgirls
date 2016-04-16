@@ -1,0 +1,24 @@
+@include breakpoint(small) {
+    #featured-hero {
+        margin:0;
+        height:3rem;
+        }
+
+        .no-featured-image-set {
+        }
+}
+
+@include breakpoint(medium) {
+    #featured-hero {
+        height:5rem;
+        background-size:cover;
+        background-position:center bottom;
+        }
+}
+@include breakpoint(xlarge) {
+    #featured-hero {
+        height:8rem;
+        background-size:cover;
+        background-position:center bottom;
+        }
+}

@@ -5,6 +5,7 @@ Template Name: Skaters
 // args
 
 get_header(); ?>
+<?php get_template_part( 'parts/featured-image' ); ?>
 <style>
     .js-height img {
         display:block;
@@ -20,6 +21,7 @@ get_header(); ?>
     $args = array(
         'post_type'=>'skater',
         'orderby' => 'menu_order',
+        'order'     => 'ASC',
         'meta_key' => 'display_name',
         'meta_key' => 'number',
         'meta_key' => 'years_with',
@@ -47,7 +49,10 @@ get_header(); ?>
                             <button class="button bright">View More</button>
                         </div>
                         <div>
-                            <h3><?php echo the_title();?> #<?php echo get_field('number');?></h3>
+                            <h3>
+                                <?php echo the_title();?> #<?php echo get_field('number');?>
+                                <button class="large button bright">View More</button>
+                            </h3>
                         </div>
                     </a>
 
@@ -61,7 +66,9 @@ get_header(); ?>
                             </div> -->
                             <div class="row">
                                 <div class="small-12 columns featured-skater-name no-padding">
-                                    <h3 class="featured-skater-name"><?php if ( get_field('display_name') ): echo get_field('display_name'); else: echo the_title(); endif; ?> <br/>#<?php echo get_field('number'); ?></h3>
+                                    <h3 class="featured-skater-name">
+                                    <?php echo the_title(); ?>
+                                    <br/>#<?php echo get_field('number'); ?></h3>
                                 </div>
                             </div>
 

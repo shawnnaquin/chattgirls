@@ -1,0 +1,17 @@
+#page-sidebar-left {
+  .main-content {
+      @include grid-column(12,0);
+  }
+
+  .sidebar {
+    @include breakpoint(small) {
+      @include grid-column(12,0);
+    }
+
+    @include breakpoint(medium) {
+      @include grid-column(4,0);
+      @include grid-col-pos(-8);
+      margin-top: 1rem;
+    }
+  }
+}

@@ -1,0 +1,9 @@
+#page-full-width {
+  .main-content {
+    @include breakpoint(small) {
+      @include grid-column(12,0);
+    }
+
+  }
+
+}

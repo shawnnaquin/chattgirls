@@ -60,7 +60,7 @@
 		
 		
 		<div class="js-big-logo logo">
-			<?php echo file_get_contents($upload_dir['baseurl'] . "/rollergirls_opt.svg")?>
+			<a href="<?php echo site_url(); ?>"><?php echo file_get_contents($upload_dir['baseurl'] . "/rollergirls_opt.svg"); ?></a>
 		</div>
 
 		<div class="logo-text">
@@ -78,7 +78,7 @@
 			</div> -->
 			<div class="top-bar-left">
 				<div class="js-small-logo logo">
-					<?php echo file_get_contents($upload_dir['baseurl'] . "/rollergirls_opt.svg")?>
+					<a href="<?php echo site_url(); ?>"><?php echo file_get_contents($upload_dir['baseurl'] . "/rollergirls_opt.svg"); ?></a>
 				</div>
 			</div>
 			<div class="top-bar-right">

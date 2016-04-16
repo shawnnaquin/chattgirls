@@ -30,6 +30,7 @@ $fast: 150ms;
 .columns.no-padding {
   @extend .no-padding;
 }
+
 // foundation variables
 
 // 1. Global
@@ -44,7 +45,8 @@ $grid-row-width: 100%;
 ----------------------------------------------------------------------------------------------------------------------*/
 $primary-color: #05050a;
 $secondary-color: #8bb8ef;
-$third-color: #a7a7d8;
+// $third-color: #a7a7d8;
+$third-color: #6D6F89;
 $success-color: #3adb76;
 $warning-color: #ffae00;
 $alert-color: #ff0055;
@@ -59,7 +61,7 @@ $slate-text: #436068;
 $slate-gray: #c1c1c1;
 
 
-$body-background: $primary-color;
+$body-background: $dark-gray;
 $body-font-color: $white;
 
 /* fonts
@@ -128,7 +130,7 @@ $anchor-text-decoration-hover: none;
 
 /* button
 ----------------------------------------------------------------------------------------------------------------------*/
-$button-padding: 0.85em 3em;
+$button-padding: 0.85em 1em;
 $button-margin: 0 auto;
 $button-fill: solid;
 $button-background: $secondary-color;
@@ -154,6 +156,14 @@ $button-opacity-disabled: 0.25;
     &.bright {
       background:$alert-color;
       color:$white;
+    }
+    &.reverse {
+      background:$primary-color;
+      color:$secondary-color;
+      &:hover {
+        background:$secondary-color;
+        color:$primary-color;
+      }
     }
 }
 

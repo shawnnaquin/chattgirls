@@ -5,7 +5,7 @@ Template Name: Personnel
 // args
 
 get_header(); ?>
-
+<?php get_template_part( 'parts/featured-image' ); ?>
 <div role="main">
 
     <?php do_action( 'foundationpress_before_content' ); ?>
@@ -29,13 +29,15 @@ get_header(); ?>
     <?php if( $the_query->have_posts() ): ?>
         <?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
             <div class="js-height small-12 medium-6 large-3 xlarge-2 xxlarge-2 columns no-padding">
-            <div class="popup skater" href="#<?php echo get_field('number');?>" style="background-image:url('<?php the_post_thumbnail_url( 'large' ); ?> ');">
-                    <div class="overlay">
-                    </div>
-                    <div>
-                        <a href="#"><h3><?php echo the_title();?></h3></a>
-                    </div>
+            <a class="popup skater" href="#<?php echo get_field('number');?>" style="background-image:url('<?php the_post_thumbnail_url( 'large' ); ?> ');">
+                <div class="overlay">
                 </div>
+                <div>
+                    <h3>
+                        <?php echo the_title();?>
+                    </h3>
+                </div>
+            </a>
             </div>
         <?php endwhile; ?>
     <?php endif; ?>
@@ -63,13 +65,15 @@ get_header(); ?>
     <?php if( $the_query->have_posts() ): ?>
         <?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
             <div class="js-height small-12 medium-6 large-3 xlarge-2 xxlarge-2 columns no-padding">
-            <div class="popup skater" href="#<?php echo get_field('number');?>" style="background-image:url('<?php the_post_thumbnail_url( 'large' ); ?> ');">
-                    <div class="overlay">
-                    </div>
-                    <div>
-                        <a href="#"><h3><?php echo the_title();?></h3></a>
-                    </div>
+            <a class="popup skater" href="#<?php echo get_field('number');?>" style="background-image:url('<?php the_post_thumbnail_url( 'large' ); ?> ');">
+                <div class="overlay">
                 </div>
+                <div>
+                    <h3>
+                        <?php echo the_title();?>
+                    </h3>
+                </div>
+            </a>
             </div>
         <?php endwhile; ?>
     <?php endif; ?>
@@ -93,13 +97,15 @@ get_header(); ?>
     <?php if( $the_query->have_posts() ): ?>
         <?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
             <div class="js-height small-12 medium-6 large-3 xlarge-2 xxlarge-2 columns no-padding">
-                <div class="popup skater" href="#<?php echo get_field('number');?>" style="background-image:url('<?php the_post_thumbnail_url( 'large' ); ?> ');">
-                    <div class="overlay">
-                    </div>
-                    <div>
-                        <a href="#"><h3><?php echo the_title();?></h3></a>
-                    </div>
+            <a class="popup skater" href="#<?php echo get_field('number');?>" style="background-image:url('<?php the_post_thumbnail_url( 'large' ); ?> ');">
+                <div class="overlay">
                 </div>
+                <div>
+                    <h3>
+                        <?php echo the_title();?>
+                    </h3>
+                </div>
+            </a>
             </div>
         <?php endwhile; ?>
     <?php endif; ?>
@@ -123,13 +129,15 @@ get_header(); ?>
     <?php if( $the_query->have_posts() ): ?>
         <?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
             <div class="js-height small-12 medium-6 large-3 xlarge-2 xxlarge-2 columns no-padding">
-            <div class="popup skater" href="#<?php echo get_field('number');?>" style="background-image:url('<?php the_post_thumbnail_url( 'large' ); ?> ');">
-                    <div class="overlay">
-                    </div>
-                    <div>
-                        <h3><?php echo the_title();?></h3>
-                    </div>
+            <a class="popup skater" href="#" style="background-image:url('<?php the_post_thumbnail_url( 'large' ); ?> ');">
+                <div class="overlay">
                 </div>
+                <div>
+                    <h3>
+                        <?php echo the_title();?>
+                    </h3>
+                </div>
+            </a>
             </div>
         <?php endwhile; ?>
     <?php endif; ?>

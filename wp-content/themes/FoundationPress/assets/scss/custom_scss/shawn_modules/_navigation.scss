@@ -145,7 +145,7 @@ body:not(.home) .page-loader-wrapper {
 		}
 		a {
 			line-height:1rem;
-			color:$body-background;
+			color:$primary-color;
 			transition:color $med ease;
 			&:hover{
 				color:$secondary-color;
