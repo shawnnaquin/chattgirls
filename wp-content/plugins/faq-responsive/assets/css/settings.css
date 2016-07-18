@@ -210,3 +210,12 @@ width: 80%;
 .wp-picker-container, .wp-picker-container:active{
 display: inline-block;
 }
+
+.wpsm_off{
+	
+	margin-bottom:10px;
+	opacity:0.6;
+}
+.wp-color-result{
+	height: 25px;
+}

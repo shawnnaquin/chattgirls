@@ -31,6 +31,10 @@ class wpsm_faq {
 			wp_enqueue_script( 'wpsm_faq_sh-color-pic', wpshopmart_faq_directory_url.'assets/js/color-picker.js', array( 'wp-color-picker' ), false, true );
 			 wp_enqueue_style('wpsm_faq_sh-panel-style', wpshopmart_faq_directory_url.'assets/css/panel-style.css');
 			  
+			 wp_enqueue_style('wpsm_faq_sh_remodal-css', wpshopmart_faq_directory_url .'assets/modal/remodal.css');
+			wp_enqueue_style('wpsm_faq_sh_remodal-default-theme-css', wpshopmart_faq_directory_url .'assets/modal/remodal-default-theme.css');
+			 
+			  
 			//font awesome css
 			wp_enqueue_style('wpsm_faq_sh-font-awesome', wpshopmart_faq_directory_url.'assets/css/font-awesome/css/font-awesome.min.css');
 			wp_enqueue_style('wpsm_faq_sh_bootstrap', wpshopmart_faq_directory_url.'assets/css/bootstrap.css');
@@ -50,6 +54,8 @@ class wpsm_faq {
 			wp_enqueue_style('wpsm_faq_sh_settings-css', wpshopmart_faq_directory_url.'assets/css/settings.css');
 			wp_enqueue_script('faq_sh_font-icon-picker-js', wpshopmart_faq_directory_url.'assets/js/fontawesome-iconpicker.js',array('jquery'));
 			wp_enqueue_script('faq_sh_call-icon-picker-js', wpshopmart_faq_directory_url.'assets/js/call-icon-picker.js',array('jquery'), false, true);
+			wp_enqueue_script('faq_sh_remodal-min-js',wpshopmart_faq_directory_url.'assets/modal/remodal.min.js',array('jquery'), false, true);
+	
 		
 			}
 	}
@@ -87,6 +93,8 @@ class wpsm_faq {
 		add_meta_box ('faq_shortcode', __('Faq Shortcode', wpshopmart_faq_text_domain), array(&$this, 'wpsm_pic_faq_shortcode'), 'wpsm_faq_r', 'normal', 'low');
 		add_meta_box('faq_rateus', __('Rate Us If You Like This Plugin', wpshopmart_faq_text_domain), array(&$this, 'wpsm_faq_rateus_meta_box_function'), 'wpsm_faq_r', 'side', 'low');
 		add_meta_box('faq_setting', __('Faq Settings', wpshopmart_faq_text_domain), array(&$this, 'wpsm_add_faq_setting_meta_box_function'), 'wpsm_faq_r', 'side', 'low');
+		add_meta_box('accordion_designs', __('Accordion/Faq Design', wpshopmart_faq_text_domain), array(&$this, 'wpsm_add_faq_sh_designs_meta_box_function'), 'wpsm_faq_r', 'normal', 'low');
+	
 	}
 	
 	public function wpsm_add_faq_meta_box_function($post){
@@ -147,11 +155,48 @@ class wpsm_faq {
 		<?php 
 	}
 	
+	public function wpsm_add_faq_sh_designs_meta_box_function(){
+		?>
+		
+		<h1>Accordion/Faq Pro Designs</h1>
+			<div style="overflow:hidden;display:block;width:100%;padding-top:20px">
+				<?php for($i=1;$i<=8;$i++){ 
+				if($i==2){
+					$var = "Selected";
+					
+				}
+				else{
+					$var = "Available In Pro";
+				}
+				?>
+				<div class="col-md-3">
+					<div class="demoftr">	
+						
+						<div class="">
+							<div class="wpsm_home_portfolio_showcase">
+								<div class="wpsm_ribbon"><a target="_blank" href="http://wpshopmart.com/plugins/accordion-pro/"><span><?php echo $var; ?></span></a></div>
+								<img class="wpsm_img_responsive ftr_img" src="<?php echo wpshopmart_faq_directory_url.'assets/images/design/accordion-'.$i.'.png'?>">
+								</div>
+						</div>
+						<div style="padding:13px;overflow:hidden; background: #EFEFEF; border-top: 1px dashed #ccc;">
+							<h3 class="text-center pull-left" style="margin-top: 10px;margin-bottom: 10px;font-weight:900">Design <?php echo $i; ?></h3>
+							<a type="button"  class="pull-right btn btn-danger design_btn" id="templates_btn<?php echo $i; ?>" target="_blank" href="http://demo.wpshopmart.com/accordion-pro/accordion-template-<?php echo $i; ?>/" >Check Demo</a>
+								</div>		
+					</div>	
+				</div>
+				<?php } ?>
+				<a class="btn btn-success btn-lg " href="http://wpshopmart.com/plugins/accordion-pro/" target="_blank">Get Accordion/Faq Pro Only In $6</a>
+			</div>
+		<?php		
+		
+	}
+	
 	public function wpsm_faq_rateus_meta_box_function(){
 		?>
 		<style>
 		#faq_rateus{
-			background:url(<?php echo wpshopmart_faq_directory_url.'assets/images/rate-bg.jpg'; ?>)!important;
+			background-color: #E74B42;
+			   text-align:center;
 			}
 			#faq_rateus .hndle , #faq_rateus .handlediv{
 			display:none;
@@ -181,6 +226,16 @@ class wpsm_faq {
 			.wpsm-rate-us span.dashicons-star-filled:before {
 				content: "\f155";
 				font-size: 40px;
+			}
+			#faq_rateus .button-hero{
+				    background: #fff;
+					color: #000;
+					box-shadow: none;
+					text-shadow: none;
+					font-weight: 900;
+					font-size: 23px;
+					border:1px solid #000;
+				
 			}
 		</style>
 		   <h1>Rate Us </h1>

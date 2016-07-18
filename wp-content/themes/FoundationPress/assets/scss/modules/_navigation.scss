@@ -1,11 +1,11 @@
 /* Navigation breakpoints */
 
 .main-navigation {
-  @include show-for(medium);
+  @include show-for(large);
 }
 
 .title-bar {
-  @include hide-for(medium);
+  @include hide-for(large);
 }
 
 /* Mobile menu */

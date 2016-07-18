@@ -28,6 +28,32 @@ function arphabet_widgets_init() {
         'after_title'   => '</h2>',
     ) );
 
+    register_sidebar( array(
+        'name'          => 'Join Us Sidebar',
+        'id'            => 'join_us_sidebar',
+        'before_widget' => '<div class="columns small-12 no-padding">',
+        'after_widget'  => '</div>',
+       'before_title'  => '<h2 class="rounded">',
+       'after_title'   => '</h2>',
+    ) );
+
+    register_sidebar( array(
+        'name'          => 'Derby FAQ Sidebar',
+        'id'            => 'derby_faq_sidebar',
+        'before_widget' => '<div class="columns small-12 no-padding">',
+        'after_widget'  => '</div>',
+       'before_title'  => '<h2 class="rounded">',
+       'after_title'   => '</h2>',
+    ) );
+    register_sidebar( array(
+        'name'          => 'Sponsor Packages Sidebar',
+        'id'            => 'sponsor_packages_sidebar',
+        'before_widget' => '<div class="columns small-12 no-padding">',
+        'after_widget'  => '</div>',
+       'before_title'  => '<h2 class="rounded">',
+       'after_title'   => '</h2>',
+    ) );
+
 }
 
 add_action( 'widgets_init', 'arphabet_widgets_init' );

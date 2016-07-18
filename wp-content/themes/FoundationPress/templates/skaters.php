@@ -1,4 +1,4 @@
-<?php 
+<?php
 /*
 Template Name: Skaters
 */
@@ -41,10 +41,49 @@ get_header(); ?>
     $the_query = new WP_Query( $args );
     ?>
     <div class="row">
+
+    <!-- preload images -->
+    <?php if( $the_query->have_posts() ): ?>
+        <div style="display:none; height:0; width:0; opacity:0; visibility:hidden;">
+        <?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
+                <?php $img = get_field('action_shot'); ?>
+                    <img src="<?php echo $img['sizes']['large']; ?>" alt="hidden" />
+                    <img src="<?php echo $img['sizes']['xlarge']; ?>" alt="hidden" />
+                    <img src="<?php echo $img['sizes']['xxlarge']; ?>" alt="hidden" />
+
+        <?php endwhile; ?>
+        </div>
+    <?php endif; ?>
+    <!-- end preload -->
+
         <?php if( $the_query->have_posts() ): ?>
             <?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
+
+                <?php $img = get_field('action_shot'); ?>
+
+                <style>
+
+                    .featured-skater-widget.number-<?php echo get_field('number'); ?> {
+                        background-image:url('<?php echo $img['sizes']['large']; ?>');
+                    }
+
+                    @media screen and (min-width:1200px) {
+                        .featured-skater-widget.number-<?php echo get_field('number'); ?> {
+                            background-image:url('<?php echo $img['sizes']['xlarge']; ?>');
+                        }
+                    }
+
+                    @media screen and (min-width:1400px) {
+                        .featured-skater-widget.number-<?php echo get_field('number'); ?> {
+                            background-image:url('<?php echo $img['sizes']['xxlarge']; ?>');
+                        }
+                    }
+
+                </style>
+
                 <div class="js-height small-12 medium-6 large-3 xlarge-2 xxlarge-2 columns no-padding">
-                    <a class="popup skater" href="#<?php echo get_field('number');?>" style="background-image:url('<?php the_post_thumbnail_url( 'large' ); ?> ');">
+
+                    <a class="skater" href="#<?php echo get_field('number');?>" style="background-image:url('<?php the_post_thumbnail_url( 'large' ); ?> ');">
                         <div class="overlay">
                             <button class="button bright">View More</button>
                         </div>
@@ -56,64 +95,88 @@ get_header(); ?>
                         </div>
                     </a>
 
-                    <div id="<?php echo get_field('number');?>" class="zoom-anim-dialog mfp-hide">
-                        <div class="featured-skater-widget number-<?php echo get_field('number'); ?>" style="background-image:url('<?php echo get_field('action_shot'); ?>');" >
+                    <div id="popup-<?php echo get_field('number');?>" class="mfp-hide popup">
+                        <div class="featured-skater-widget-wrapper">
+                        <div class="featured-skater-widget number-<?php echo get_field('number'); ?>" >
 
-<!--                             <div class="row">
-                                <div class="columns small-offset-3 small-6 featured-skater-image">
-                                    <?php the_post_thumbnail( 'full' ); ?>
-                                </div>
-                            </div> -->
-                            <div class="row">
+                            <!-- <div class="row"> -->
                                 <div class="small-12 columns featured-skater-name no-padding">
                                     <h3 class="featured-skater-name">
                                     <?php echo the_title(); ?>
                                     <br/>#<?php echo get_field('number'); ?></h3>
                                 </div>
-                            </div>
+                            <!-- </div> -->
 
-                            <div class="row">
+                            <!-- <div class="row"> -->
                                 <div class="featured-skater-info">
+
+                                <?php if ( get_field('years_with') ) : ?>
                                     <div class="featured-skater-years small-12" >
                                         <p class="featured-skater-label">Years with CRG:</p>
                                         <p class="featured-skater-answer"><?php echo get_field('years_with');?></p>
                                     </div>
+                                <?php endif; ?>
+
+                                <?php if ( get_field('gear') ) : ?>
                                     <div class="featured-skater-years small-12" >
                                         <p class="featured-skater-label">Gear:</p>
                                         <p class="featured-skater-answer"><?php echo get_field('gear');?></p>
                                     </div>
+                                <?php endif; ?>
+
+                                <?php if ( get_field('occupation') ) : ?>
                                     <div class="featured-skater-years small-12" >
                                         <p class="featured-skater-label">Occupation:</p>
                                         <p class="featured-skater-answer"><?php echo get_field('occupation');?></p>
                                     </div>
+                                <?php endif; ?>
+
+                                <?php if ( get_field('likes') ) : ?>
                                     <div class="featured-skater-years small-12" >
                                         <p class="featured-skater-label">Likes:</p>
                                         <p class="featured-skater-answer"><?php echo get_field('likes');?></p>
                                     </div>
+                                <?php endif; ?>
+
+                                <?php if ( get_field('dislikes') ) : ?>
                                     <div class="featured-skater-years small-12" >
                                         <p class="featured-skater-label">dislikes:</p>
                                         <p class="featured-skater-answer"><?php echo get_field('dislikes');?></p>
                                     </div>
+                                <?php endif; ?>
+
+                                <?php if ( get_field('prior_athletic') ) : ?>
                                     <div class="featured-skater-years small-12" >
                                         <p class="featured-skater-label">Prior Athletic Experience:</p>
                                         <p class="featured-skater-answer"><?php echo get_field('prior_athletic');?></p>
                                     </div>
+                                <?php endif; ?>
+
+                                <?php if ( get_field('why') ) : ?>
                                     <div class="featured-skater-years small-12" >
                                         <p class="featured-skater-label">Why I Joined Roller Derby:</p>
                                         <p class="featured-skater-answer"><?php echo get_field('why');?></p>
                                     </div>
+                                <?php endif; ?>
+
+                                <?php if ( get_field('favorite_moment') ) : ?>
                                     <div class="featured-skater-years small-12" >
                                         <p class="featured-skater-label">Favorite Roller Derby Moment:</p>
                                         <p class="featured-skater-answer"><?php echo get_field('favorite_moment');?></p>
                                     </div>
+                                <?php endif; ?>
+
+                                <?php if ( get_field('hardest_thing') ) : ?>
                                     <div class="featured-skater-years small-12 end" >
                                         <p class="featured-skater-label">Hardest thing about Roller Derby:</p>
                                         <p class="featured-skater-answer"><?php echo get_field('hardest_thing');?></p>
                                     </div>
-                                </div>
-                            </div>
-                        </div>
+                                <?php endif; ?>
 
+                                </div>
+                            <!-- </div> -->
+                        </div>
+                        </div>
                     </div>
 
                     <?php //$sharrre_url = '/join-us'; $data_text = 'Join Us!'; include( $url . '/parts/social.php' );?>

@@ -30,7 +30,7 @@
 							<input type="text" id="faq_title[]" name="faq_title[]" value="<?php echo  $faq_title; ?>" placeholder="Enter Faq Title Here" class="wpsm_ac_label_text">
 							<span class="ac_label"><?php _e('Faq Description',wpshopmart_faq_text_domain); ?></span>
 							<textarea  id="faq_desc[]" name="faq_desc[]"  placeholder="Enter Faq Description Here" class="wpsm_ac_label_text"><?php echo $faq_desc; ?></textarea>
-							<button type="button" class="btn btn-primary btn-block html_editor_button" data-toggle="modal" data-target=".bs-example-modal-lg" id="<?php echo $i; ?>"  onclick="open_editor(<?php echo $i; ?>)">Use WYSIWYG Editor </button>
+							<a type="button" class="btn btn-primary btn-block html_editor_button" data-remodal-target="modal" href="#" id="<?php echo $i; ?>"  onclick="open_editor(<?php echo $i; ?>)">Use WYSIWYG Editor </a>
 							
 							<span class="ac_label"><?php _e('Faq Icon',wpshopmart_faq_text_domain); ?></span>
 							<div class="form-group input-group">
@@ -64,8 +64,8 @@
 							<input type="text" id="faq_title[]" name="faq_title[]" value="Sample Title" placeholder="Enter Faq Title Here" class="wpsm_ac_label_text">
 							<span class="ac_label"><?php _e('Faq Description',wpshopmart_faq_text_domain); ?></span>
 							<textarea  id="faq_desc[]" name="faq_desc[]"  placeholder="Enter Faq Description Here" class="wpsm_ac_label_text">Sample Description</textarea>
-							<button type="button" class="btn btn-primary btn-block html_editor_button" data-toggle="modal" data-target=".bs-example-modal-lg" id="<?php echo $i; ?>"  onclick="open_editor(<?php echo $i; ?>)">Use WYSIWYG Editor </button>
-						
+							<a type="button" class="btn btn-primary btn-block html_editor_button" data-remodal-target="modal" href="#" id="<?php echo $i; ?>"  onclick="open_editor(<?php echo $i; ?>)">Use WYSIWYG Editor </a>
+							
 							<span class="ac_label"><?php _e('Faq Icon',wpshopmart_faq_text_domain); ?></span>
 							<div class="form-group input-group">
 								<input data-placement="bottomRight" id="faq_title_icon[]" name="faq_title_icon[]" class="form-control icp icp-auto" value="fa-laptop" type="text" readonly="readonly" />
@@ -89,36 +89,24 @@
 </div>
 
 
-<!-- Modal -->
-	<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"  data-backdrop="static" data-keyboard="false">
-	  <div class="modal-dialog modal-lg" role="document">
-		<div class="modal-content">
-		  <div class="modal-header">
-			<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-			<h4 class="modal-title" id="myModalLabel">Html Editor Area</h4>
-		  </div>
-		  <div class="modal-body">
-				<style>
-				.switch-tmce {
-					display: none;
-				}
-				</style>
-				<?php
-
-				$content = '';
-				$editor_id = 'get_text';
-
-				wp_editor( $content, $editor_id );
-
-				?>
-				<input type="hidden" value="" id="get_id" />
-		  </div>
-		  <div class="modal-footer">
-			<button type="button" class="btn btn-primary" data-dismiss="modal" onclick="insert_html()">Insert Code In Description</button>
-		  </div>
-		</div>
-	  </div>
-	</div>
+<!-- Modal Popup For Editor -->
+<div class="remodal" data-remodal-options=" closeOnOutsideClick: false" data-remodal-id="modal" role="dialog" aria-labelledby="modal1Title" aria-describedby="modal1Desc">
+  <button data-remodal-action="close" class="remodal-close" aria-label="Close"></button>
+  <div>
+	<h2 id="modal1Title">Faq Editor</h2>
+	<p id="modal1Desc">
+	  <?php
+		$content = '';
+		$editor_id = 'get_text';
+		wp_editor( $content, $editor_id );
+	?>
+	<input type="hidden" value="" id="get_id" />
+	</p>
+  </div>
+  <br>
+  <button data-remodal-action="cancel" class="remodal-cancel">Cancel</button>
+  <button data-remodal-action="confirm" class="remodal-confirm" onclick="insert_html()">OK</button>
+</div>
 
 
 

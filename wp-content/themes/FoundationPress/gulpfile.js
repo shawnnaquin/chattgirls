@@ -10,10 +10,12 @@ var sequence    = require('run-sequence');
 var colors      = require('colors');
 var dateFormat  = require('dateformat');
 var del         = require('del');
+var ftp = require( 'vinyl-ftp' );
+var ftppass = require('./.ftppass.json');
 
 // Enter URL of your local server here
 // Example: 'http://localwebsite.dev'
-var URL = '';
+var URL = 'http://chattanoogarollergirls.com/roux';
 
 // Check for --production flag
 var isProduction = !!(argv.production);
@@ -52,6 +54,10 @@ var PATHS = {
     'assets/components/slick-carousel/slick/slick.js',
     'assets/components/nprogress/nprogress.js',
     'assets/components/magnific-popup/dist/jquery.magnific-popup.js',
+    'assets/components/perfect-scrollbar/js/perfect-scrollbar.jquery.js',
+    'assets/components/jquery-validate/jquery.validate.js',
+    'assets/components/jquery-validate/jquery.validate.additional-methods.js',
+
     // Motion UI
     'assets/components/motion-ui/motion-ui.js',
 
@@ -86,22 +92,52 @@ var PATHS = {
 // Browsersync task
 gulp.task('browser-sync', ['build'], function() {
 
-  var files = [
-            '**/*.php',
-            'assets/images/**/*.{png,jpg,gif}'
-          ];
+  // var files = [
+  //           './',
+  //           'assets/images/**/*.{png,jpg,gif}'
+  //         ];
 
-  browserSync.init(files, {
+  browserSync.init('./', {
     // Proxy address
-    proxy: 'roll.com',
-
+    proxy: URL
     // Port #
     // port: PORT
   });
+
 });
 
-// Compile Sass into CSS
-// In production, the CSS is compressed
+var ftpOptions = {
+    host:     'ftp.chattanoogarollergirls.com',
+    user:     ftppass.auth.user,
+    password: ftppass.auth.pass,
+    parallel: 10
+};
+
+var ftpDest = '/public_html/roux/wp-content/themes/FoundationPress/';
+
+gulp.task( 'ftp-js', ['javascript'], function () {
+
+    var conn = ftp.create(ftpOptions);
+
+    return gulp.src( 'assets/javascript/foundation.js', { base: '.', buffer: false } )
+        .pipe(  conn.dest( ftpDest ) )
+        .pipe(browserSync.stream());// return gulp.src(PATHS.javascript)
+
+} );
+
+gulp.task( 'ftp-css', ['sass'], function () {
+    var css = [
+      'assets/stylesheets/foundation.css',
+      'assets/stylesheets/foundation.css.map'
+    ];
+
+    var conn = ftp.create(ftpOptions);
+
+    return gulp.src( css, { base: '.', buffer: false } )
+        .pipe( conn.dest(  ftpDest ) )
+        .pipe(browserSync.stream());// return gulp.src(PATHS.javascript)
+});
+
 gulp.task('sass', function() {
   // Minify CSS if run wtih --production flag
   var minifycss = $.if(isProduction, $.minifyCss());
@@ -120,8 +156,8 @@ gulp.task('sass', function() {
     }))
     .pipe(minifycss)
     .pipe($.if(!isProduction, $.sourcemaps.write('.')))
-    .pipe(gulp.dest('assets/stylesheets'))
-    .pipe(browserSync.stream({match: '**/*.css'}));
+    .pipe(gulp.dest('assets/stylesheets'));
+    // .pipe(browserSync.stream({match: '**/*.css'}));
 });
 
 // Lint all JS files in custom directory
@@ -156,8 +192,7 @@ gulp.task('javascript', function() {
     .pipe($.concat('foundation.js'))
     .pipe($.if(isProduction, uglify))
     .pipe($.if(!isProduction, $.sourcemaps.write()))
-    .pipe(gulp.dest('assets/javascript'))
-    .pipe(browserSync.stream());
+    .pipe(gulp.dest('assets/javascript'));
 });
 
 // Copy task
@@ -253,13 +288,14 @@ gulp.task('default', ['build', 'browser-sync'], function() {
   }
 
   // Sass Watch
-  gulp.watch(['assets/scss/**/*.scss'], ['clean:css', 'sass'])
+  // , 'sftp-css'
+  gulp.watch(['assets/scss/**/*.scss'], ['clean:css', 'sass', 'ftp-css'])
     .on('change', function(event) {
       logFileChange(event);
     });
 
   // JS Watch
-  gulp.watch(['assets/javascript/custom/**/*.js'], ['clean:javascript', 'javascript', 'lint'])
+  gulp.watch(['assets/javascript/custom/**/*.js'], ['clean:javascript', 'javascript', 'lint', 'ftp-js'])
     .on('change', function(event) {
       logFileChange(event);
     });

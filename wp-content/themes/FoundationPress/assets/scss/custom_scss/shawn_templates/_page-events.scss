@@ -1,0 +1,34 @@
+*[data-name="events"] {
+    #page .main-content {
+        padding-left:0!important;
+        padding-right:0!important;
+        padding-top:0!important;
+    }
+
+    .simcal-default-calendar {
+        .simcal-current {
+            h3 {
+                // display:none;
+                margin-top:2.5rem;
+                font-size:rem-calc(72);
+                margin-bottom:2.5rem;
+                color:$primary-color;
+            }
+        }
+        &-grid {
+            .simcal-day > div {
+                border:0!important;
+                span:nth-child(1) {
+                    background-color:transparent!important;
+                    font-size:rem-calc(8);
+                    padding:rem-calc(8);
+                }
+            }
+            .simcal-today > div {
+                background:$secondary-color;
+                color:$white;
+            }
+
+        }
+    }
+}

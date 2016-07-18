@@ -22,16 +22,50 @@
 /** The name of the database for WordPress */
 //define('WP_CACHE', true); //Added by WP-Cache Manager
 define( 'WPCACHEHOME', '/Users/eliza/Desktop/freelance/chattgirls/wp-content/plugins/wp-super-cache/' ); //Added by WP-Cache Manager
-define('DB_NAME', 'chattgirls');
+
+
+
+
+
+/*********** TEST ************/
+
+// define('DB_NAME', 'chattgirls');
 
 /** MySQL database username */
-define('DB_USER', 'root');
+// define('DB_USER', 'root');
 
 /** MySQL database password */
-define('DB_PASSWORD', 'Gilbert1579');
+// define('DB_PASSWORD', 'Gilbert1579');
+
+/** MySQL hostname */
+// define('DB_HOST', 'localhost');
+
+/*********** TEST ************/
+
+
+
+
+
+
+/*********** REMOTE ************/
+
+define('DB_NAME', 'chattan7_2016');
+
+/** MySQL database username */
+define('DB_USER', 'chattan7_roux');
+
+/** MySQL database password */
+define('DB_PASSWORD', 'Jy%sfA2vTn!7m~CF');
 
 /** MySQL hostname */
 define('DB_HOST', 'localhost');
+//
+/*********** REMOTE ************/
+
+
+
+
+
 
 /** Database Charset to use in creating database tables. */
 define('DB_CHARSET', 'utf8mb4');

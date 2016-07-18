@@ -3,3 +3,14 @@ wp-content/themes/grunterie/node_modules/
 wp-content/themes/grunterie/css/*
 wp-content/uploads
 wp-content/uploads/*
+.ftppass.json
+.chattpass
+wp-content/themes/Foundatoin
+node_modules/
+wp-content/themes/foundationPress/node_modules/
+wp-content/themes/twentyten/
+wp-content/themes/twentytwelve/
+wp-content/themes/twentythirteen/
+wp-content/themes/twentyten/
+wp-content/themes/twentyeleven/
+wp-content/themes/twentythirteen/

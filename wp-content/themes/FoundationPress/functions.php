@@ -1,4 +1,7 @@
 <?php
+update_option( 'siteurl', 'http://chattanoogarollergirls.com/roux' );
+update_option( 'home', 'http://chattanoogarollergirls.com/roux' );
+
 /**
  * Author: Ole Fredrik Lie
  * URL: http://olefredrik.com

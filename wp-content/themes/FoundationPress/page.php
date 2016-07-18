@@ -14,7 +14,6 @@
 get_header(); ?>
 
 <?php get_template_part( 'parts/featured-image' ); ?>
-<?php echo get_the_ID(); ?>
 
 <div id="page" role="main">
 	<?php do_action( 'foundationpress_before_content' ); ?>
@@ -36,7 +35,7 @@ get_header(); ?>
 					<?php do_action( 'foundationpress_page_after_comments' ); ?>
 				</article>
 			</div>
-			<div class="small-12 medium-6 medium-pull-6 large-4 large-pull-8 columns no-padding">
+			<div class="small-12 medium-6 medium-pull-6 large-4 large-pull-8 columns no-padding js-sidebar">
 				<?php get_sidebar(); ?>
 			</div>
 		<?php endwhile;?>

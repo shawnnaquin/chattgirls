@@ -12,7 +12,7 @@ $slow: 700ms;
 $med: 300ms;
 $fast: 150ms;
 
-// helpers 
+// helpers
 .no-padding {
     padding-right:0;
     padding-left:0;
@@ -25,7 +25,7 @@ $fast: 150ms;
     marin-left:0;
     marin-top:0;
     marin-bottom:0;
-    marin:0; 
+    marin:0;
 }
 .columns.no-padding {
   @extend .no-padding;
@@ -55,6 +55,7 @@ $medium-gray: #bec0c2;
 $dark-gray: #8a8a8a;
 $black: #0a0a0a;
 $white: #ffffff;
+$don-juan: #59444A;
 
 $slate: #2c2c3a;
 $slate-text: #436068;
@@ -96,11 +97,11 @@ $header-margin-bottom: 0;
 
 $header-sizes: (
   small: (
-    'h1': 24,
-    'h2': 20,
-    'h3': 19,
-    'h4': 18,
-    'h5': 17,
+    'h1': 60,
+    'h2': 52,
+    'h3': 36,
+    'h4': 24,
+    'h5': 18,
     'h6': 16,
   ),
   medium: (
@@ -166,4 +167,70 @@ $button-opacity-disabled: 0.25;
       }
     }
 }
+
+
+// 7. Accordion
+// ------------
+
+$accordion-background: $white;
+$accordion-plusminus: true;
+$accordion-item-color: foreground($accordion-background, $primary-color);
+$accordion-item-background-hover: $light-gray;
+$accordion-item-padding: 1.25rem 1rem;
+$accordion-content-background: $white;
+$accordion-content-border: 1px solid $light-gray;
+$accordion-content-color: foreground($accordion-background, $primary-color);
+$accordion-content-padding: 1rem;
+
+// 8. Accordion Menu
+// -----------------
+
+$accordionmenu-arrows: true;
+$accordionmenu-arrow-color: $primary-color;
+
+// 19. Forms
+// ---------
+
+$fieldset-border: 0;
+$fieldset-padding: 0;
+$fieldset-margin: 0;
+$legend-padding: 0;
+$form-spacing: rem-calc(32);
+$helptext-color: #333;
+$helptext-font-size: rem-calc(13);
+$helptext-font-style: italic;
+$input-prefix-color: $black;
+$input-prefix-background: $light-gray;
+$input-prefix-border: 0;
+$input-prefix-padding: 0;
+$form-label-color: $primary-color;
+$form-label-font-size: rem-calc(12);
+$form-label-font-weight: $global-weight-normal;
+$form-label-line-height: 1.8;
+$select-background: $slate;
+$select-triangle-color: $white;
+$select-radius: $global-radius*0.5;
+$input-color: $slate-text;
+$input-font-family: inherit;
+$input-font-size: rem-calc(14);
+$input-background: $primary-color;
+$input-background-focus: $white;
+$input-background-disabled: $light-gray;
+$input-border: 1px solid $primary-color;
+$input-border-focus: 1px solid $light-gray;
+$input-shadow: 0;
+$input-shadow-focus: 0;
+$input-cursor-disabled: default;
+$input-transition: background-color 300ms ease;
+$input-number-spinners: true;
+$input-radius: $global-radius*0.5;
+
+// 20. Label
+// ---------
+
+$label-background: $primary-color;
+$label-color: foreground($label-background);
+$label-font-size: 0.8rem;
+$label-padding: 0.33333rem 0.5rem;
+$label-radius: $global-radius;
 

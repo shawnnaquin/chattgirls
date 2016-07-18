@@ -12,13 +12,13 @@
     #featured-hero {
         height:5rem;
         background-size:cover;
-        background-position:center bottom;
+        background-position:center;
         }
 }
 @include breakpoint(xlarge) {
     #featured-hero {
         height:8rem;
         background-size:cover;
-        background-position:center bottom;
+        background-position:center;
         }
 }

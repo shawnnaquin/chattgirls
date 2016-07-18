@@ -1,0 +1,206 @@
+body[data-name="contact"] {
+    h1 {
+        color:$primary-color;
+    }
+    .entry-content {
+        margin-top:rem-calc(48);
+    }
+    .contact-form {
+        > div {
+            > p {
+
+            }
+            label {
+                > select.message_select-lablel {}
+                > span.message_select-select {}
+                p {
+                    span {
+
+                    }
+                }
+                > div {
+                    div.success-badge {}
+                    div.error-badge {}
+                    input {
+
+                    }
+                    textarea{
+
+                    }
+                }
+            }
+            button.submit {
+
+            }
+        }
+    }
+    *:focus {
+        border:0;
+        outline:none;
+    }
+    .contact-form {
+        font-style:italic;
+    }
+    .form-hide {
+        opacity:0;
+        margin-top:rem-calc(24);
+        transition:opacity 600ms ease;
+        transition-delay:200ms;
+    }
+
+    input, textarea, select {
+        color:$white;
+        font-size:rem-calc(16);
+        margin-bottom:rem-calc(16);
+        &.empty {
+            color:$slate-text;
+        }
+        &.empty:not(:focus) {
+            color:$slate-text;
+        }
+        &:focus {
+            color:$primary-color;
+        }
+        &::-webkit-input-placeholder {color: $slate-text;}
+        &:-moz-placeholder { /* Firefox 18- */color: $slate-text;}
+        &::-moz-placeholder {  /* Firefox 19+ */color: $slate-text;}
+        &:-ms-input-placeholder {color: $slate-text;}
+    }
+
+    textarea {
+        overflow:hidden;
+    }
+    select {
+        margin-bottom:rem-calc(8);
+        &:focus {
+            color:$white;
+            background-color:$primary-color;
+        }
+        &.selected {
+            background-color:$primary-color;
+        }
+    }
+
+    label {
+        > p {
+            font-size:rem-calc(10);
+            margin-bottom:rem-calc(8);
+            padding-left:rem-calc(16);
+            opacity:0;
+            .pass-test {
+                color:$success-color;
+                &.success {
+                    color:$success-color;
+                }
+                &.error {
+                    color:$alert-color;
+                }
+            }
+            .pass-message {
+                opacity:0;
+            }
+        }
+
+        &.success i.error span {
+            color:$success-color;
+        }
+        &.error i.error span {
+            color:red;
+        }
+    }
+    .human, .submit-container {
+        margin-top:rem-calc(48);
+    }
+    .human {
+        @include grid-column(8);
+        padding-left:0!important;
+        transition:opacity 300ms ease;
+    }
+    .selected {
+        opacity:1!important;
+    }
+    .message_human input {
+        width:85%;
+    }
+    .submit-container {
+        @include grid-column(4);
+        padding-right:0!important;
+        text-align:right;
+    }
+    p.human-text {
+        font-size:rem-calc(14);
+        font-style:normal;
+        margin-bottom:rem-calc(8);
+        button {
+            margin-left:rem-calc(8);
+        }
+    }
+
+    .message_select_email {
+        padding-left:rem-calc(16);
+        font-size:rem-calc(10);
+    }
+    .input-container {
+        position:relative;
+    }
+    .warning {
+        width:rem-calc(20);
+        position:absolute;
+        height:rem-calc(61);
+        top:auto;
+        bottom:0;
+        right:rem-calc(21);
+        z-index:1;
+        opacity:0;
+        transition:opacity 800ms ease;
+        border-top:1px solid transparent;
+        border-bottom:1px transparent;
+        text-align:center;
+        i {
+            line-height:3.5rem;
+            color:white;
+        }
+        &-error {
+            background:red;
+            opacity:0;
+        }
+        &-success {
+            background:$success-color;
+        }
+    }
+
+    label {
+        &.success {
+            input, textarea, select {
+                border:1px solid $success-color;
+                &:focus {
+                    border:1px solid transparent;
+                }
+                &.empty {
+                    border:1px solid transparent;
+                }
+            }
+            .warning-success {
+                opacity:1;
+            }
+        }
+        &.error {
+            input, textarea, select {
+                border:1px solid red;
+                &:focus {
+                    border:1px solid transparent;
+                }
+                &.empty {
+                    border:1px solid transparent;
+                }
+            }
+            .warning-error {
+                opacity:1;
+            }
+        }
+    }
+
+}
+
+
+

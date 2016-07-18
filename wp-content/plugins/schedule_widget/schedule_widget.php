@@ -20,19 +20,26 @@ class schedule_widget extends WP_Widget {
 		function widget($args, $instance) { 
 				extract( $args );
 				$title      = apply_filters('widget_title', $instance['title']);
-				$message    = $instance['message'];
+				$homepage_amt      = $instance['homepage_amt'];
+				$interior_amt      = $instance['interior_amt'];
 				?>
 							<?php echo $before_widget; ?>
 									<?php if ( $title ) ?>
 											 <h2><?php echo date('Y'); ?> <?php echo $title ?></h2>
 
-											 <?php 
-												// args
+											 <?php
+											 	
+											 	$amt = $interior_amt;
+
+											 	if ( is_front_page() ) {
+											 		$amt = $homepage_amt;
+											 	}
+
 												$args = array(
-													'numberposts' => 10,
+													'posts_per_page' => $amt,
 													'order'     => 'ASC',
 													'post_type'   => 'bout',
-													'meta_key'    => 'display_day',
+													'meta_key'    => 'dis	play_day',
 													'meta_key'    => 'location',
 													'meta_key'   => 'opponent_logo',
 													'meta_key'    => 'home_or_away',
@@ -55,7 +62,6 @@ class schedule_widget extends WP_Widget {
 													<div class="bout" href="<?php the_permalink(); ?>">
 												<?php endif; ?>
 														<div>
-
 															<div class="bout-under">
 
 																<div class="bout-wrapper columns small-12 no-padding">
@@ -71,8 +77,8 @@ class schedule_widget extends WP_Widget {
 																	<div class="vs-logos small-7 columns">
 																	
 																	  <div class="vs-logos-home">
-																	  	<a href="<?php site_url(); ?>">
-																	  		<img src="http://roll.com/wp-content/uploads/crglogo_1-e1453139559423.png" />
+																	  	<a href="#" class="js-noclick">
+																	  		<img src="<?php echo get_option('site_logo'); ?>" />
 																	  	</a>
 																	  </div>
 
@@ -92,16 +98,20 @@ class schedule_widget extends WP_Widget {
 
 																<div class="bout-info js-bout-info small-12 columns no-padding">
 
-																	<div class="bout-under-text" href="#" data-equalizer-watch="bout"  >
-																		<a class="bout-under-text-button" href="#ticketsite">Buy Tickets</a>
-																		<?php 
-																			if ( get_field('home_or_away') == 'Home') {
-																				$url = 'https://www.google.com/maps/place/Chattanooga+Convention+Center/@35.0421656,-85.3148647,17z/data=!3m1!4b1!4m2!3m1!1s0x88605fe003a11409:0xc5d1acbee121b58a';
-																			} else {
-																				$url = get_field('map_link');
-																			}
-																		?>
-																		<a class="bout-under-text-button" href="<?php echo $url ?>" target="_blank">View Map</a>
+																	<div class="bout-under-text" href="#">
+																		<div class="bout-under-text-wrapper">
+																			<div class="bout-under-text-container">
+																				<a class="bout-under-text-button" href="#ticketsite">Buy Tickets</a>
+																				<?php 
+																					if ( get_field('home_or_away') == 'Home') {
+																						$url = get_option('bout_map');
+																					} else {
+																						$url = get_field('map_link');
+																					}
+																				?>
+																				<a class="bout-under-text-button" href="<?php echo $url ?>" target="_blank">View Map</a>
+																			</div>
+																		</div>
 																	</div>
 
 																	<div class="bout-info-title">
@@ -121,7 +131,7 @@ class schedule_widget extends WP_Widget {
 																		<div class="bout-info-location-street">
 																			<?php echo $address[0]; // street address ?> 
 																		</div>
-																		<div class="bout-info-location-city">
+																		<div class="bout-info-location-city js-city">
 																			<?php echo $address[2].','.$address[3]; // city, state zip ?>
 																		</div>
 																	</div> <!-- info-location -->
@@ -143,7 +153,8 @@ class schedule_widget extends WP_Widget {
 		function update($new_instance, $old_instance) {     
 				$instance = $old_instance;
 				$instance['title'] = strip_tags($new_instance['title']);
-				$instance['message'] = strip_tags($new_instance['message']);
+				$instance['homepage_amt'] = strip_tags($new_instance['homepage_amt']);
+				$instance['interior_amt'] = strip_tags($new_instance['interior_amt']);
 				return $instance;
 		}
  
@@ -151,16 +162,26 @@ class schedule_widget extends WP_Widget {
 		function form($instance) {  
  
 				$title      = esc_attr($instance['title']);
-				$message    = esc_attr($instance['message']);
+				$homepage_amt      = esc_attr($instance['homepage_amt']);
+				$interior_amt      = esc_attr($instance['interior_amt']);
+
 				?>
-				 <p>
+
+				<p>
 					<label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title:'); ?></label> 
 					<input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo $title; ?>" />
 				</p>
+
 				<p>
-					<label for="<?php echo $this->get_field_id('message'); ?>"><?php _e('Simple Message'); ?></label> 
-					<input class="widefat" id="<?php echo $this->get_field_id('message'); ?>" name="<?php echo $this->get_field_name('message'); ?>" type="text" value="<?php echo $message; ?>" />
+					<label for="<?php echo $this->get_field_id('homepage_amt'); ?>"><?php _e('Amount of posts to show on home-page:'); ?></label> 
+					<input class="widefat" id="<?php echo $this->get_field_id('homepage_amt'); ?>" name="<?php echo $this->get_field_name('homepage_amt'); ?>" type="text" value="<?php echo $homepage_amt; ?>" />
 				</p>
+
+				<p>
+					<label for="<?php echo $this->get_field_id('interior_amt'); ?>"><?php _e('Amount of posts to show on interior pages:'); ?></label> 
+					<input class="widefat" id="<?php echo $this->get_field_id('interior_amt'); ?>" name="<?php echo $this->get_field_name('interior_amt'); ?>" type="text" value="<?php echo $interior_amt; ?>" />
+				</p>
+
 				<?php 
 		}
  

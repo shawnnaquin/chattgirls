@@ -2,7 +2,7 @@
     background: #fff;
     margin: 0 15px 15px 0;
     padding: 30px;
-	width:42%;
+	width:48%;
 	cursor:move;
 	float:left;
 	box-shadow: 0 0 20px rgba(0,0,0,.2);
@@ -103,7 +103,7 @@ display:block;
 @media (max-width:1500px) {
 .wpsm_ac-panel {
    
-	width:38%;
+	width:47%;
 	    padding: 21px;
 	
 }
@@ -112,11 +112,11 @@ display:block;
     margin-bottom: -22px;
 	}
 }
-@media (max-width:900px) {
+@media (max-width:1200px) {
 	.wpsm_ac-panel {
    
     
-	width:85%;
+	width:95% !important;
 	cursor:move;
 	float:left;
 	
@@ -127,7 +127,7 @@ display:block;
 @media (max-width:460px) {
 	.wpsm_ac-panel {
    
-	width:85%;
+	width:95% important;
 	cursor:move;
 	float:left;
 	
@@ -143,4 +143,103 @@ display:block;
   background-color: #31a3dd !important;
   border: 1px solid #31a3dd!important;
 
+}
+
+
+.ftr_img {
+
+background: #ffffff;
+padding: 8px;
+border-color: #ffffff;
+}
+.demoftr{
+margin-bottom:20px;
+}
+
+.demoftr {
+    background: transparent;
+    box-shadow: 0 0 20px rgba(0,0,0,.2);
+    padding: 0px;
+}
+.wpsm_img_responsive {
+    width: 100%;
+    display: block;
+}
+
+#accordion_designs .hndle  , #accordion_designs .handlediv {
+				display:none;
+				
+			}
+			#accordion_designs{
+				margin-top:20px;
+				background:transparent;
+				padding:0px;
+				box-shadow:none;
+				border:0px;
+				border-bottom: 2px dashed rgba(0,0,0,0.2);
+				margin-bottom:30px;
+			}
+			#accordion_designs  h1{
+				
+				font-weight:900;
+				margin-bottom:30px;
+			}
+			
+			/* ribbon */
+
+
+.wpsm_ribbon {
+	position: absolute;
+    right: -5px;
+    top: -5px;
+    z-index: 1;
+    overflow: hidden;
+    width: 170px;
+    height: 170px;
+    text-align: right;
+}
+.wpsm_ribbon span {
+ font-size: 15px;
+   ont-size: 15px;
+    font-weight: bold;
+    color: #FFF;
+    text-transform: none;
+    text-align: center;
+    line-height: 36px;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    width: 170px;
+    display: block;
+    background: #79A70A;
+     background: linear-gradient(rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.7) 100%);
+    box-shadow: 0 3px 10px -5px rgba(0, 0, 0, 1);
+    position: absolute;
+    top: 30px;
+    right: -37px;
+    
+}
+.wpsm_ribbon span::before {
+  content: "";
+  position: absolute; left: 0px; top: 100%;
+  z-index: -1;
+  border-left: 3px solid rgba(0,0,0,0.7);
+  border-right: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  border-top: 3px solid rgba(0,0,0,0.7);
+}
+.wpsm_ribbon span::after {
+  content: "";
+  position: absolute; right: 0px; top: 100%;
+  z-index: -1;
+  border-left: 3px solid transparent;
+  border-right: 3px solid rgba(0,0,0,0.7);
+  border-bottom: 3px solid transparent;
+  border-top: 3px solid rgba(0,0,0,0.7);
+}
+#accordion_designs .wpsm_ribbon{
+	right: 10px;
+}
+.design_btn{
+	text-decoration:none;
+	
 }

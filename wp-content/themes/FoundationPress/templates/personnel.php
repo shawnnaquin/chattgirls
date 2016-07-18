@@ -1,4 +1,4 @@
-<?php 
+<?php
 /*
 Template Name: Personnel
 */
@@ -9,7 +9,7 @@ get_header(); ?>
 <div role="main">
 
     <?php do_action( 'foundationpress_before_content' ); ?>
-    
+
     <!-- TRAINER || 1st query -->
     <?php
     $args = array(
@@ -29,7 +29,7 @@ get_header(); ?>
     <?php if( $the_query->have_posts() ): ?>
         <?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
             <div class="js-height small-12 medium-6 large-3 xlarge-2 xxlarge-2 columns no-padding">
-            <a class="popup skater" href="#<?php echo get_field('number');?>" style="background-image:url('<?php the_post_thumbnail_url( 'large' ); ?> ');">
+            <a class="popup skater" href="#<?php echo get_field('number');?>" style="background-image:url('<?php the_post_thumbnail_url( 'medium' ); ?> ');">
                 <div class="overlay">
                 </div>
                 <div>
@@ -44,7 +44,7 @@ get_header(); ?>
     </div>
 
     <?php wp_reset_query();  // Restore global post data stomped by the_post(). ?>
-    
+
 
 
     <!-- OFFICIAL || 2nd query -->

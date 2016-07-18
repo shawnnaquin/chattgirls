@@ -1,37 +1,67 @@
-
-
 <?php
 /*
 Template Name: Front
 */
-$image_src = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
 ?>
-<?php
-get_header(); ?>
+
+<?php get_header();
+$skate_left = get_template_directory_uri () . '/assets/images/ui/left.png';
+$skate_right = get_template_directory_uri () . '/assets/images/ui/right.png';
+?>
+
 <style type="text/css">
-body {
-	background-image:url('<?php echo $image_src ?>');
-}
+	body {
+		background-image:url('<?php echo $image_src ?>');
+	}
 </style>
+<div class="slick-wrapper">
+        <button type="button" data-role="none" class="slick-pre slick-arrow" aria-label="Previous" role="button">
+        	<span>Previous</span>
+	        <i class="fa fa-arrow-left" aria-hidden="true"></i>
+	        <img src="<?php echo $skate_right; ?>" />
+        </button>
+
+        <button type="button" data-role="none" class="slick-nex slick-arrow" aria-label="Next" role="button">
+        	<span>Next</span>
+	        <i class="fa fa-arrow-right" aria-hidden="true"></i>
+	        <img src="<?php echo $skate_right; ?>" />
+        </button>
 
 <?php do_action( 'foundationpress_before_content' ); ?>
 	<?php while ( have_posts() ) : the_post(); ?>
+		<ul class="slick slick-slider-home">
 
-		<div class="slick slick-slider-home">
-			<?php
-				$media_items = get_attachments_by_media_tags('media_tags=featured&return_type=li');
-				if ($media_items) {
-				    echo $media_items;
-				}
-			?>
-		</div>
-		<div class="" >
-			<div class="small-12 medium-4 columns no-padding home-left-sidebar" >
+		<?php global $post;
+		    $my_query = get_posts('numberposts=-1&post_type=main_banner');
+		    foreach($my_query as $post) :
+		        setup_postdata($post);
+		        $link = get_post_meta($post->ID, 'site-url', true);
+		        $subtitle = get_post_meta($post->ID, 'subtitle', true);
+		?>
+		        <li>
+		        	<a href="<?php echo $link; ?>">
+						<div class="slick-slide-titles">
+							<div class="slick-slide-titles-wrapper">
+								<h1><?php the_title(); ?></h1>
+								<h2><?php echo $subtitle ?></h2>
+							</div>
+				        </div>
+		        	</a>
+		        	<?php the_post_thumbnail('full'); ?>
+		        </li>
+		<?php endforeach; ?>
+		</ul>
+</div>
+	<div class="front-wrapper js-front-wrapper" >
+
+			<div class="small-12 medium-4 columns no-padding js-spacer" style="display:none; height:1px;"></div>
+
+			<div class="small-12 medium-4 columns no-padding home-left-sidebar js-sidebar" >
 				<div>
 					<?php get_sidebar(); ?>
 				</div>
 			</div>
-			
+
 			<div class="small-12 medium-8 large-4 columns no-padding home-middle-sidebar" >
 				<?php dynamic_sidebar( 'home_middle_sidebar' ); ?>
 			</div>

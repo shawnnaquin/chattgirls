@@ -22,16 +22,18 @@
 		<link rel="apple-touch-icon-precomposed" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/icons/apple-touch-icon-precomposed.png">
 		<?php wp_head(); ?>
 	</head>
-	<body <?php body_class(); ?> >
+	<?php global $post;
+	$slug = get_post( $post )->post_name; ?>
+	<body <?php body_class(); ?> data-name="<?php echo $slug; ?>" style="background-image:url('<?php echo get_option('background_image'); ?>');">
 	<?php do_action( 'foundationpress_after_body' ); ?>
-	
+
 	<?php if ( get_theme_mod( 'wpt_mobile_menu_layout' ) == 'offcanvas' ) : ?>
 
 
 	<div class="off-canvas-wrapper">
 		<div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
 			<?php get_template_part( 'parts/mobile-off-canvas' ); ?>
-			<?php endif; ?>			
+			<?php endif; ?>
 
 	<?php $upload_dir = wp_upload_dir(); ?>
 	<div class="page-loader-wrapper js-page-loader-wrapper">
@@ -48,37 +50,50 @@
 
 	<?php do_action( 'foundationpress_layout_start' ); ?>
 
-	<header id="masthead" class="site-header" role="banner">
-		<div class="ham">
-			<button class="menu-icon" type="button" data-toggle="offCanvas"></button>
-		</div>
-		<div class="title-bar" data-responsive-toggle="site-navigation">
-			<div class="title-bar-title">
-				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
-			</div>
-		</div>
-		
-		
-		<div class="js-big-logo logo">
-			<a href="<?php echo site_url(); ?>"><?php echo file_get_contents($upload_dir['baseurl'] . "/rollergirls_opt.svg"); ?></a>
-		</div>
+		<header id="masthead" class="site-header" role="banner">
 
 		<div class="logo-text">
 			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
 		</div>
 
+		<div class="title-bar">
+			<!-- <div class="title-bar-title">
+				<a href="<?php // echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php // bloginfo( 'name' ); ?></a>
+			</div> -->
+			<!-- <a class="mobile-logo" href="<?php // echo site_url(); ?>"><?php // echo file_get_contents(get_option('site_logo')); ?></a> -->
+			<div class="ham">
+				<button class="menu-icon" type="button" data-toggle="offCanvas"></button>
+			</div>
+		</div>
+
+
+		<?php
+			if ( get_option('site_logo_vector') ) {
+				$vector = file_get_contents( get_option('site_logo_vector') );
+			} else {
+				$class = 'no-svg';
+			}
+		?>
+
+		<div class="js-big-logo big-logo <?php echo $class ?>">
+			<a href="<?php echo site_url(); ?>">
+				<?php if ( !empty($vector) ) : echo $vector; endif; ?>
+				<img src="<?php echo get_option('site_logo'); ?>" alt="site logo" role="logo" />
+			</a>
+		</div>
+
 		<nav id="site-navigation" class="main-navigation top-bar" role="navigation">
 
 			<!-- </div> -->
-<!-- 			
+<!--
 				<ul class="menu">
 					<li class="logo"></li>
 					<li class="home"></li>
 				</ul>
 			</div> -->
 			<div class="top-bar-left">
-				<div class="js-small-logo logo">
-					<a href="<?php echo site_url(); ?>"><?php echo file_get_contents($upload_dir['baseurl'] . "/rollergirls_opt.svg"); ?></a>
+				<div class="js-small-logo small-logo">
+					<a href="<?php echo site_url(); ?>"><img src="<?php echo get_option('site_logo'); ?>" alt="site logo" role="logo" /></a>
 				</div>
 			</div>
 			<div class="top-bar-right">

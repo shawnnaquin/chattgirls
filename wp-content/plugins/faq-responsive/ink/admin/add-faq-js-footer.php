@@ -1,12 +1,12 @@
 <script>
-var i = 1000;
+var j = 1000;
 	function add_new_accordion(){
 	var output = '<li class="wpsm_ac-panel single_acc_box" >'+
 		'<span class="ac_label"><?php _e("Faq Title",wpshopmart_faq_text_domain); ?></span>'+
 		'<input type="text" id="faq_title[]" name="faq_title[]" value="" placeholder="Enter Faq Title Here" class="wpsm_ac_label_text">'+
 		'<span class="ac_label"l><?php _e("Faq Description",wpshopmart_faq_text_domain); ?></span>'+
 		'<textarea  id="faq_desc[]" name="faq_desc[]"  placeholder="Enter Faq Description Here" class="wpsm_ac_label_text"></textarea>'+
-		'<button type="button" class="btn btn-primary btn-block html_editor_button" data-toggle="modal" data-target=".bs-example-modal-lg" id="'+i+'" onclick="open_editor('+i+')">Use WYSIWYG Editor </button>'+
+		'<a type="button" class="btn btn-primary btn-block html_editor_button" data-remodal-target="modal" href="#"  id="'+j+'" onclick="open_editor('+j+')">Use WYSIWYG Editor </a>'+
 		'<span class="ac_label"><?php _e("Faq Icon",wpshopmart_faq_text_domain); ?></span>'+
 		'<div class="form-group input-group" >'+
 		'	<input data-placement="bottomRight" id="faq_title_icon[]" name="faq_title_icon[]" class="form-control icp icp-auto" value="fa-laptop" type="text" readonly="readonly" />'+
@@ -20,6 +20,7 @@ var i = 1000;
 		'<a class="remove_button" href="#delete" id="remove_bt"><i class="fa fa-trash-o"></i></a>'+
 		'</li>';
 	jQuery(output).hide().appendTo("#accordion_panel").slideDown("slow");
+	j++;
 	call_icon();
 	}
 	jQuery(document).ready(function(){
@@ -73,13 +74,19 @@ var i = 1000;
 	
 	
 	function open_editor(id){
+		
+
 		var value = jQuery("#"+id).closest('li').find('textarea').val();
+		
+		 jQuery("#get_text-html").click();
 		jQuery("#get_text").val(value);
+		
 		jQuery("#get_id").val(jQuery("#"+id).attr('id'));
 	 }
 	
 	
 	function insert_html(){
+		jQuery("#get_text-html").click();
 		var html_text = jQuery("#get_text").val();
 		var id = jQuery("#get_id").val();
 		jQuery("#"+id).closest('li').find('textarea').val(html_text);

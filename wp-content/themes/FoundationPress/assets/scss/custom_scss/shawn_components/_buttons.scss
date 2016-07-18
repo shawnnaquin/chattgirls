@@ -14,9 +14,6 @@
         // display:none;
         opacity:1;
         transition:opacity 400ms ease;
-        @media #{$large-up} { 
-            opacity:0;
-        }
     }
     &-a {
         float:left;

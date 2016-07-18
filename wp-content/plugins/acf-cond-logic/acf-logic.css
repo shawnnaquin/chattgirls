@@ -1,0 +1,13 @@
+.show-acf {
+    display:block!important;
+    opacity:0;
+    animation-name:show;
+    animation-duration:300ms;
+    animation-fill-mode:forwards;
+    animation-timing-function: ease;
+    animation-iteration-count: 1;
+}
+
+@keyframes show {
+    100% {opacity:1;}
+}

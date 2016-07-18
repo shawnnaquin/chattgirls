@@ -463,6 +463,8 @@ if(isset($_POST['action_faq']) == "default_settins_action")
 					
 					</div>
 		    	</div>
+				<div style="margin-top:10px;display:block;overflow:hidden;width:100%;"> <a style="margin-top:10px" href="http://wpshopmart.com/plugins/accordion-pro/" target="_balnk">Get 500+ Google Fonts In Premium Version</a> </div>
+			
 			</td>
 		</tr>
 		<tr>
@@ -505,12 +507,86 @@ if(isset($_POST['action_faq']) == "default_settins_action")
 						<img src="<?php echo wpshopmart_faq_directory_url.'assets/tooltip/img/noise.png'; ?>">
 					</div>
 		    	</div>
+				<div style="margin-top:10px;display:block;overflow:hidden;width:100%;"> <a style="margin-top:10px" href="http://wpshopmart.com/plugins/accordion-pro/" target="_balnk">Unlock 2 More Overlays Styles In Premium Version</a> </div>
+			
 			</td>
 		</tr>
-		
+		<tr>
+			<th scope="row"><label><?php _e('Page Scroll To Accordion',wpshopmart_faq_text_domain); ?></label></th>
+			<td>
+				<div class="switch wpsm_off">
+					<input type="radio" class="switch-input" name="acc_scroll" value="yes" id="enable_acc_scroll"   checked>
+					<label for="enable_acc_scroll" class="switch-label switch-label-off"><?php _e('Yes',wpshopmart_faq_text_domain); ?></label>
+					<input type="radio" class="switch-input" name="acc_scroll" value="no" id="disable_acc_scroll"  >
+					<label for="disable_acc_scroll" class="switch-label switch-label-on"><?php _e('No',wpshopmart_faq_text_domain); ?></label>
+					<span class="switch-selection"></span>
+				</div>
+				<div style="margin-top:10px;display:block;overflow:hidden;width:100%;"> <a style="margin-top:10px" href="http://wpshopmart.com/plugins/accordion-pro/" target="_balnk">Available In Premium Version</a> </div>
+			</td>
+		</tr>
+		<tr>
+			<th scope="row"><label><?php _e('ON Hover Accordion ',wpshopmart_faq_text_domain); ?></label></th>
+			<td>
+				<div class="switch wpsm_off">
+					<input type="radio" class="switch-input" name="acc_hover" value="yes" id="enable_acc_hover"   checked>
+					<label for="enable_acc_hover" class="switch-label switch-label-off"><?php _e('Yes',wpshopmart_faq_text_domain); ?></label>
+					<input type="radio" class="switch-input" name="acc_hover" value="no" id="disable_acc_hover"  >
+					<label for="disable_acc_hover" class="switch-label switch-label-on"><?php _e('No',wpshopmart_faq_text_domain); ?></label>
+					<span class="switch-selection"></span>
+				</div>
+				<div style="margin-top:10px;display:block;overflow:hidden;width:100%;"> <a style="margin-top:10px" href="http://wpshopmart.com/plugins/accordion-pro/" target="_balnk">Available In Premium Version</a> </div>
+			</td>
+		</tr>
+		<tr>
+			<th scope="row"><label><?php _e('Open Close Icon',wpshopmart_faq_text_domain); ?></label></th>
+			<td>
+				<img class="wpsm_img_responsive"  src="<?php echo wpshopmart_faq_directory_url.'assets/images/snap-1.png'; ?>" />
+				<a style="margin-top:10px" href="http://wpshopmart.com/plugins/accordion-pro/" target="_balnk">Available In Premium Version</a>
+			</td>
+		</tr>
+		<tr>
+			<th scope="row"><label><?php _e('Content Animation ',wpshopmart_faq_text_domain); ?></label></th>
+			<?php $content_animation = "0" ?>
+		<td><select name="content_animation" id="content_animation" class="standard-dropdown" style="width:100%" >
+					
+					<option value="0"  <?php if($content_animation == '0' ) { echo "selected"; } ?> >Content Animation</option>
+					<option disabled value="fadeIn"  <?php if($content_animation == 'fadeIn' ) { echo "selected"; } ?> >fadeIn</option>
+					<option disabled value="fadeInLeft"    <?php if($content_animation == 'fadeInLeft' ) { echo "selected"; } ?> >fadeInLeft</option>
+					<option disabled value="fadeInRight"    <?php if($content_animation == 'fadeInRight' ) { echo "selected"; } ?> >fadeInRight</option>
+					<option disabled value="fadeInUp"    <?php if($content_animation == 'fadeInUp' ) { echo "selected"; } ?> >fadeInUp</option>
+					<option disabled value="fadeInDown"    <?php if($content_animation == 'fadeInDown' ) { echo "selected"; } ?> >fadeInDown</option>
+					<option disabled value="flip"    <?php if($content_animation == 'flip' ) { echo "selected"; } ?> >flip</option>
+					<option disabled value="flipX"    <?php if($content_animation == 'flipX' ) { echo "selected"; } ?> >flipX</option>
+					<option disabled value="flipY"    <?php if($content_animation == 'flipY' ) { echo "selected"; } ?> >flipY</option>
+					<option disabled value="zoomIn"    <?php if($content_animation == 'zoomIn' ) { echo "selected"; } ?> >ZoomIn</option>
+					<option disabled value="zoomInLeft"    <?php if($content_animation == 'zoomInLeft' ) { echo "selected"; } ?> >ZoomInLeft</option>
+					<option disabled value="zoomInRight"    <?php if($content_animation == 'zoomInRight' ) { echo "selected"; } ?> >ZoomInRight</option>
+					<option  disabled value="zoomInUp"    <?php if($content_animation == 'zoomInUp' ) { echo "selected"; } ?> >ZoomInUp</option>
+					<option disabled value="zoomInDown"    <?php if($content_animation == 'zoomInDown' ) { echo "selected"; } ?> >ZoomInDown</option>
+					<option  disabled value="bounce"    <?php if($content_animation == 'bounce' ) { echo "selected"; } ?> >bounce</option>
+					<option disabled value="bounceIn"    <?php if($content_animation == 'bounceIn' ) { echo "selected"; } ?> >bounceIn</option>
+					<option disabled value="bounceInLeft"    <?php if($content_animation == 'bounceInLeft' ) { echo "selected"; } ?> >bounceInLeft</option>
+					<option disabled value="bounceInRight"    <?php if($content_animation == 'bounceInRight' ) { echo "selected"; } ?> >bounceInRight</option>
+					<option disabled value="bounceInUp"    <?php if($content_animation == 'bounceInUp' ) { echo "selected"; } ?> >bounceInUp</option>
+					<option disabled value="bounceInDown"    <?php if($content_animation == 'bounceInDown' ) { echo "selected"; } ?> >bounceInDown</option>
+					<option disabled value="flash"    <?php if($content_animation == 'flash' ) { echo "selected"; } ?> >flash</option>
+					<option disabled value="pulse"    <?php if($content_animation == 'pulse' ) { echo "selected"; } ?> >pulse</option>
+					<option disabled value="rubberBand"    <?php if($content_animation == 'rubberBand' ) { echo "selected"; } ?> >rubberBand</option>
+					<option disabled value="shake"    <?php if($content_animation == 'shake' ) { echo "selected"; } ?> >shake</option>
+					<option disabled value="swing"    <?php if($content_animation == 'swing' ) { echo "selected"; } ?> >swing</option>
+					<option disabled value="tada"    <?php if($content_animation == 'tada' ) { echo "selected"; } ?> >tada</option>
+					<option disabled value="wobble"    <?php if($content_animation == 'wobble' ) { echo "selected"; } ?> >wobble</option>
+					<option disabled value="lightSpeedIn"    <?php if($content_animation == 'lightSpeedIn' ) { echo "selected"; } ?> >lightSpeedIn</option>
+					<option disabled value="rollIn"    <?php if($content_animation == 'rollIn' ) { echo "selected"; } ?> >rollIn</option>
+						
+				</select>
+				<div style="margin-top:10px;display:block;overflow:hidden;width:100%;"> <a style="margin-top:10px" href="http://wpshopmart.com/plugins/accordion-pro/" target="_balnk">Available In Premium Version</a> </div>
+			
+			</td>	
+		</tr>
 		<script>
 		jQuery(function() {
-
+		jQuery(".wpsm_off *").attr("disabled", "disabled").off('click');
 		  
 		  // Target a single one
 		  jQuery("#custom_css").linedtextarea();

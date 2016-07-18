@@ -1,3 +1,7 @@
+html body.page-template-skaters {
+    background-image:none!important;
+}
+
 .skater {
     float:left;
     position:relative;
@@ -24,13 +28,17 @@
             display:block;
         }
         h3 {
+            font-family:$body-font-family;
+            font-size:rem-calc(36);
+            line-height:1.5;
             display:table-cell;
             vertical-align:middle;
             width:100%;
             padding-left:1rem;
             padding-right:1rem;
+            letter-spacing:0;
         }
-        @media #{$large-up} { 
+        @media #{$large-up} {
             opacity:0;
             transform:translateY(-25%);
             height:100%;
@@ -56,12 +64,13 @@
         z-index: 1;
         width: 40%;
         left: 25%;
-        top: 35%;
+        bottom: 20%;
         transition:top 200ms ease;
         transition-property:left, top, opacity;
         &.large {
             display:none;
             opacity:0;
+            transition:background-color 300ms ease;
         }
         @media #{$large-up} {
             display:none;
@@ -84,11 +93,11 @@
         .button {
             opacity:1;
             left:30%;
-            top:35%;
+            bottom:20%;
             &.large {
                 left:auto;
                 top:auto;
-                margin-top:.5rem;
+                margin-top:rem-calc(24);
             }
         }
     }
@@ -97,9 +106,8 @@
 .page-template-skaters, .page-template-personnel {
     background:#5c5855;
     section.container {
+        background:#5c5855;
         @media #{$large-up} {
-            margin-top: 5rem;
-            border-top: 5px solid transparent;
             animation-name:borderTrans;
             animation-duration:1600ms;
             animation-delay:400ms;
@@ -118,11 +126,34 @@
         opacity:0;
         transition:opacity 300ms cubic-bezier(0.6, 0.04, 0.98, 0.335);
     }
+
     .featured-skater-widget {
+        position:absolute;
+        z-index:1;
+        top:0;
+        left:0;
+        width:100%;
+        height:100%;
+
         background-color:$primary-color;
         padding:1rem;
         background-size:cover;
         background-position:center top;
+        border-radius:$global-radius;
+        &-wrapper {
+            float: none;
+            position: relative;
+            opacity:0;
+            transition:opacity 400ms ease;
+            min-height:rem-calc(1100);
+            @media #{$medium-up} {
+                min-height:rem-calc(1375);
+            }
+            @media #{$large-up} {
+
+            }
+        }
+
         @media #{$medium-up} {
             padding:5rem;
             background-color:$primary-color;
@@ -139,7 +170,7 @@
         div > h3 {
             text-align:center;
         }
-        // indiviual pictures 
+        // indiviual pictures
 
         @mixin bg-pos($num) {
             background-position:$num center;
@@ -172,7 +203,7 @@
         border-radius:$global-radius;
         padding:1rem;
         margin-bottom:1rem;
-        height:auto; 
+        height:auto;
         overflow:hidden;
 
         @media #{$medium-up} {

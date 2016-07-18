@@ -21,7 +21,7 @@ if(isset($PostID) && isset($_POST['wpsm_faq_setting_save_action'])) {
 			$title_size 		     = sanitize_text_field($_POST['title_size']);
 			$des_size         	     = sanitize_text_field($_POST['des_size']);
 			$font_family             = sanitize_text_field($_POST['font_family']);
-			$custom_css              = stripslashes(sanitize_text_field($_POST['custom_css']));
+			$custom_css              = stripslashes($_POST['custom_css']);
 			
 			
 			

@@ -1,58 +1,218 @@
-
-.slick-slider {
-    box-shadow: 2px 2px 30px rgba(0,0,0,.2);
-    .slick {
-        &-track {
-            height:auto;
-            @media #{$xlarge-up} {
-                height:400px;
-            }
-        }
-        &-arrow {
-            position:absolute;
-            opacity:.8;
-            font-size:1.5rem;
-            top:45%;
-            left:0;
-            z-index:10;
-            text-align:center;
-            display:block;
-            width:4rem;
-            text-shadow:2px 2px 8px transparentize($black,.8);
-            transition:color $med ease;
-            transition-property:color, text-shadow;
-            &:hover {
-                color:$secondary-color;
-                text-shadow:2px 2px 8px transparentize($white,.8);
-            }
-            @media #{$medium-up} {
-                font-size:3rem;
-            }
-            @media #{$xlarge-up} {
-                font-size:5rem;
-                width:6rem;
-            }
-            &.slick-next {
-                left:auto;
-                right:0;
-            }
-        }
-        &-slide img {
+body {
+    // display:none;
+}
+ul.slick-slider {
+    margin:0;
+}
+.slick {
+    &-wrapper {
+        position:relative;
+        @include grid-column(12,0);
+    }
+    &-slider {
+        box-shadow: 2px 2px 30px rgba(0,0,0,.2);
+        &-home {
+            float:left;
             width:100%;
         }
     }
-    &-home {
-        float:left;
-        width:100%;
+}
+
+.front-wrapper {
+    @include grid-column(12,0);
+    @include grid-column-end;
+}
+
+.slick {
+    // &-track {
+    // }
+    &-arrow {
+        position:absolute;
+        display:block;
+        top:0;
+        left:0;
+        z-index:1;
+        height:100%;
+        width:30vw;
+        font-family:$header-font-family;
+        text-transform:uppercase;
+        color:$primary-color;
+        font-size:rem-calc(24);
+
+        span, i , img {
+            position:absolute;
+            top:0;
+            left:0;
+            transition:transform $med ease;
+        }
+        span {
+            top:rem-calc(4);
+            color:$white;
+            text-shadow:2px 2px 10px transparentize($primary-color,.5);
+            transform:translateX(rem-calc(-500));
+            transition-delay:100ms;
+            transition-timing-funciton:cubic-bezier(0.39, 0.575, 0.565, 1);
+        }
+
+        i {
+            top:rem-calc(28);
+            transform:translateX(rem-calc(-500));
+            transition-delay:200ms;
+            transition-timing-funciton:cubic-bezier(0.215, 0.61, 0.355, 1);
+        }
+
+        img {
+            transform:translateX(rem-calc(-500));
+            transition-delay:300ms;
+            transition-timing-funciton:cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        @media #{$medium-up} {
+            font-size:rem-calc(42);
+            span {
+                top:rem-calc(4);
+            }
+
+            i {
+                top:rem-calc(46);
+            }
+        }
+        @media #{$large-up} {
+            font-size:rem-calc(64);
+            span {
+                top:rem-calc(16);
+            }
+
+            i {
+                top:rem-calc(78);
+            }
+        }
+
+        @media #{$xlarge-up} {
+            font-size:rem-calc(72);
+            span {
+                top:rem-calc(24);
+            }
+
+            i {
+                top:rem-calc(96);
+            }
+        }
+
+        @media #{$xxlarge-up} {
+            font-size:rem-calc(96);
+            span {
+                top:rem-calc(32);
+            }
+
+            i {
+                top:rem-calc(120);
+            }
+        }
+
+        //left
+        &.slick-pre {
+            span, i {
+                left:auto;
+                right:0;
+            }
+
+            span {
+                left:8vw;
+
+                @media #{$medium-up} {
+                    font-size:rem-calc(36);
+                }
+                @media #{$large-up} {
+                    font-size:rem-calc(56);
+                }
+                @media #{$xlarge-up} {
+                    font-size:rem-calc(64);
+                }
+
+                @media #{$xxlarge-up} {
+                    font-size:rem-calc(82);
+                }
+
+            }
+
+            i {
+                right:6vw;
+                color:$alert-color;
+            }
+
+            img {
+                left:-8vw;
+                transform:scaleX(-1) translateX(rem-calc(700));
+            }
+            &:hover {
+                span, i {
+                    transform: translateX(0);
+                }
+                img {
+                    transform:scaleX(-1) translateX(0);
+                }
+            }
+            &.active {
+                span, i {
+                    transform: translateX(0);
+                }
+                img {
+                    transform:scaleX(-1) translateX(0);
+                }
+            }
+        }
+
+        //right
+        &.slick-nex {
+            left:auto;
+            right:0;
+
+            span {
+                left:6vw;
+                transform:translateX(rem-calc(500));
+            }
+
+            i {
+                left:6vw;
+                color:$success-color;
+                transform:translateX(rem-calc(500));
+            }
+
+            img {
+                left:8vw;
+                transform:translateX(rem-calc(500));
+            }
+
+        }
+        &:hover {
+            span, i, img {
+                transform:translateX(0);
+            }
+        }
+        &.active {
+            span, i, img {
+                transform:translateX(0);
+            }
+        }
     }
+
+    &-slide {
+        position:relative;
+        float:left;
+        img {
+            width:100%;
+            opacity:1;
+        }
+    }
+    // &-current {
+    // }
 }
 
 .home-left-sidebar, .home-middle-sidebar,
 .home-right-sidebar {
     border-radius:0 0 $global-radius $global-radius;
-    div {
-        border-radius:0 0 $global-radius $global-radius;
-    }
+    overflow:hidden;
 }
 .home-left-sidebar {
 }
@@ -60,5 +220,5 @@
     background:transparentize($primary-color, .3);
 }
 .home-right-sidebar {
-    background:transparentize($third-color,.4);
+    background:transparentize(darken($secondary-color, 85%), .2);
 }

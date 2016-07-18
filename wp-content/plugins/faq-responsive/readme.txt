@@ -1,37 +1,41 @@
-=== Faq Responsive ===
+=== FAQ ===
 Contributors: wpshopmart
 Donate link: http://www.wpshopmart.com
-Tags:  AJAX, analytics, answer, answers, categories, custom post type with accordion, easy faq, Facebook, FAQ, FAQ Accordion, FAQ categories, faq list, faq page, FAQ Plugin, faq with accordion, FAQs, frequently asked questions, help, help desk, helpdesk, jquery ui accordion, jquery-ui, knowledge base, knowledgebase, questions, responsive, shortcodes, simple FAQ, social media, statistics, submit questions, widget, widgets, woocommerce, WooCommerce FAQ,  woocommerce tab, wordpress, wordpress faq, WordPress Plugin, faq responsive, responsive faq, wordpress faq plugin, collapse, accordion, responsive accordion, faq page, css3, html5, jquery, javascript, css3 accordion, css3 faq, animation, animated faq, bootstrap, faq bootstrap, accordion bootstrap  
+Tags: Accordion, accordion bootstrap, AJAX, analytics, animated faq, animation, answer, answers, Bootstrap, categories, collapse, css3, css3 accordion, css3 faq, custom post type with accordion, easy faq, Facebook, FAQ, FAQ Accordion, faq bootstrap, FAQ categories, faq list, faq page, FAQ Plugin, faq responsive, faq with accordion, FAQs, frequently asked questions, help, help desk, helpdesk, html5, javascript, jquery, jquery ui accordion, jquery ui, knowledge base, knowledge base, questions, responsive, responsive accordion, Responsive FAQ, shortcodes, simple FAQ, social media, statistics, submit questions, toggle, toggle content, widget, widgets, woocommerce, WooCommerce FAQ, woocommerce tab, wordpress, WordPress FAQ, WordPress FAQ plugin, WordPress Plugins  
 Requires at least: 3.3
-Tested up to: 4.5
-Stable tag: 1.2.2
+Tested up to: 4.5.2
+Stable tag: 1.3.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Most easiest drag & drop FAQ builder for WordPress. You can generate Unlimited FAQ with unlimited colour scheme.
+FAQ Responsive is most easiest drag & drop FAQ builder for WordPress. You can add Unlimited FAQ with unlimited color scheme.
 
 == Description ==
 
-This is a highly customizable FAQ builder for wordpress. You can add unlimited FAQ with unlimited colour. FAQ Responsive is also support Font Awesome Icon.
+This is a highly customizable FAQ builder for wordpress. You can add unlimited FAQ with unlimited color. FAQ Responsive is also support Font Awesome Icon.
 You can easy sort your FAQ position using backend.  FAQ Responsive Plugin is built-in bootstrap. FAQ Responsive design is new and also open close icon is different. 
 
-= FAQ Responisve Shortcode =
+= FAQ Responsive Shortcode =
 
 > `[WPSM_FAQ id=xx]`
 
 here xx is cpt id for FAQ
 
+### Check Demo
+
+* [FAQ](http://demo.wpshopmart.com/faq-responsive/)
+
 ### Features Of Plugin
 
 * Responsive Design 
-* Xpert FAQ is responsive and friendly to any mobile devices
+* FAQ is responsive and friendly to any mobile devices
 * Limitless FAQ anywhere in the theme
 * Drag and Drop builder Api integrated.
 * Draggable FAQ items for easy sorting
 * Use via short-codes
 * Widget option available
 * Awesome input field for FAQs content
-* Unlimited colour option
+* Unlimited color option
 * number option available 
 * Bootstrap framework based
 * Less for quick customization
@@ -44,6 +48,41 @@ here xx is cpt id for FAQ
 * Multiple Advanced Custom Field Available
 * All browser compatible
 
+### FAQ/Accordion Pro Features
+
+* Responsive Design 
+* 8 Design Templates 
+* 500+ Google Fonts
+* 12 open/Close Icons Set
+* 30+ Content Animation
+* 4 types of background Overlay
+* On Hover Accordion
+* Preview Option
+* Widget Option
+* Limitless accordion anywhere in the theme
+* Drag and Drop builder Api integrated.
+* Draggable accordion items for easy sorting
+* Use via short-codes
+* Awesome input field for accordions content
+* Unlimited colour option
+* Bootstrap framework based
+* Less for quick customization
+* Font Awesome Icon Support
+* Border Color Customization
+* Font Awesome Icon Picker Integrated
+* Two different styles Integrated
+* Hide All Accordion on page load or display all  
+* Gulp for instant workflow
+* Highly customized for User Experience
+* Slick Frontend and backend UI
+* Add and remove accordion item from backend.
+* Multiple Advanced Custom Field Available
+* All browser compatible
+
+### Check Demos
+
+* [FAQ/Accordion Pro - Live Demo](http://demo.wpshopmart.com/accordion-pro/)
+* [Upgrade To FAQ/Accordion Pro](http://wpshopmart.com/plugins/accordion-pro/)
 
 
 = Responsive Design =
@@ -110,6 +149,23 @@ Please use WordPress support forum to ask any query regarding any issue.
 
 == Changelog ==
 
+= 1.3.4 =
+* Add help comments for Developer
+
+= 1.3.3 =
+* Miner bug Fixed.
+
+= 1.3.2 =
+* Add Demo Page link.
+
+= 1.3.1 =
+* Text Domain error resolved.
+
+= 1.3 20-May-2016 =
+* Update WYSIWYG Editor.
+* Add Visual Mode With Faq Editor.
+* Resolve Add Links Issue. 
+* Small updates in css classes
 
 = 1.2.2 15-04-2016 =
 * spelling mistake resolved

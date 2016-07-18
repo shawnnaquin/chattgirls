@@ -7,7 +7,6 @@ Author: wordpress codex
 Version: 1
 Author URI: https://wordpress.com
 */
-
 class home_tickets_widget extends WP_Widget {
  
  
@@ -25,7 +24,6 @@ class home_tickets_widget extends WP_Widget {
               <?php echo $before_widget; ?>
 
                         <?php 
-
                         // args
                         $args = array(
                           'posts_per_page'  => 1,
@@ -39,21 +37,15 @@ class home_tickets_widget extends WP_Widget {
                           'meta_key'        => 'home_or_away',
                           'meta_value'      => 'Home'
                         );
-
                         // query
                         $the_query = new WP_Query( $args );
-
                         ?>
-                        <div class="home-tickets-widget">
-                        <h2>Tickets</h2>
-                        <p class="buy"><a href="#">Buy Tickets</a> for Chattanooga Roller Girls’<br/>next home bout</p>
-                        <p class="at">&#64;the</p>
+                        <div class="home-tickets-widget tickets-widget">
                         <?php if( $the_query->have_posts() ): ?>
                         <?php while ( $the_query->have_posts() ) : $the_query->the_post();
                             $location = get_field('location');
                             $address = explode( ',' , $location['address']);
                         ?>
-                        <a href="#" class="venue"><?php echo $address[0]; // place address ?> </a>
                         <h2>Next <span>Home</span> Bout</h2>
                         <div class="vs">
                           <div class="vs-date">
@@ -69,7 +61,7 @@ class home_tickets_widget extends WP_Widget {
                           
                             <div class="vs-logos-home">
                               <?php $upload_dir = wp_upload_dir(); ?>
-                              <a href="<?php echo site_url(); ?>">
+                              <a href="<?php echo site_url(); ?>" class="js-noclick">
                               <?php echo file_get_contents($upload_dir['baseurl'] . "/rollergirls_opt.svg")?>
                               </a>
                             </div>
@@ -89,18 +81,11 @@ class home_tickets_widget extends WP_Widget {
                         </div>
                         <a class="button bright">buy tickets</a>
 
-                          <?php 
-                            $url = get_template_directory();
-                          ?>
-                          
-                         <?php $sharrre_url = '/events'; $data_text = 'Chattanooga Roller Girls!'; include( $url . '/parts/social.php' );?>
-
                         <?php endwhile; ?>
                         <?php endif; ?>
                         <?php wp_reset_query();  // Restore global post data stomped by the_post(). ?>
                         </div>
-
-
+                        
               <?php echo $after_widget; ?>
         <?php
     }
