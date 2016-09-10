@@ -45,6 +45,16 @@ function arphabet_widgets_init() {
        'before_title'  => '<h2 class="rounded">',
        'after_title'   => '</h2>',
     ) );
+
+    register_sidebar( array(
+        'name'          => 'ScoreBoards Sidebar',
+        'id'            => 'scoreboards_sidebar',
+        'before_widget' => '<div class="columns small-12 no-padding">',
+        'after_widget'  => '</div>',
+       'before_title'  => '<h2 class="rounded">',
+       'after_title'   => '</h2>',
+    ) );
+
     register_sidebar( array(
         'name'          => 'Sponsor Packages Sidebar',
         'id'            => 'sponsor_packages_sidebar',
@@ -52,6 +62,14 @@ function arphabet_widgets_init() {
         'after_widget'  => '</div>',
        'before_title'  => '<h2 class="rounded">',
        'after_title'   => '</h2>',
+    ) );
+    register_sidebar( array(
+        'name'          => 'Footer Social Area',
+        'id'            => 'footer_social_area',
+        'before_widget' => '<div class="columns small-4 no-padding">',
+        'after_widget'  => '</div>',
+       'before_title'  => '<div class="footer-social-title">',
+       'after_title'   => '</div>',
     ) );
 
 }

@@ -9,15 +9,15 @@ Author URI: https://wordpress.com
 */
 
 class schedule_widget extends WP_Widget {
- 
- 
+
+
 		/** constructor -- name this the same as the class above */
 		function schedule_widget() {
-				parent::WP_Widget(false, $name = 'Schedule Widget');    
+				parent::WP_Widget(false, $name = 'Schedule Widget');
 		}
- 
+
 		/** @see WP_Widget::widget -- do not rename this */
-		function widget($args, $instance) { 
+		function widget($args, $instance) {
 				extract( $args );
 				$title      = apply_filters('widget_title', $instance['title']);
 				$homepage_amt      = $instance['homepage_amt'];
@@ -28,7 +28,7 @@ class schedule_widget extends WP_Widget {
 											 <h2><?php echo date('Y'); ?> <?php echo $title ?></h2>
 
 											 <?php
-											 	
+
 											 	$amt = $interior_amt;
 
 											 	if ( is_front_page() ) {
@@ -44,7 +44,8 @@ class schedule_widget extends WP_Widget {
 													'meta_key'   => 'opponent_logo',
 													'meta_key'    => 'home_or_away',
 													'meta_key'	=> 'opponent_link',
-													'meta_key'	=> 'map_link'
+													'meta_key'	=> 'map_link',
+													'meta_key'	=> 'ticket_link'
 												);
 
 												// query
@@ -52,7 +53,7 @@ class schedule_widget extends WP_Widget {
 
 												?>
 												<?php if( $the_query->have_posts() ): ?>
-														
+
 												<?php while( $the_query->have_posts() ) : $the_query->the_post(); ?>
 
 												<!-- home or away? -->
@@ -75,7 +76,7 @@ class schedule_widget extends WP_Widget {
 																	</div> <!-- bout-date -->
 
 																	<div class="vs-logos small-7 columns">
-																	
+
 																	  <div class="vs-logos-home">
 																	  	<a href="#" class="js-noclick">
 																	  		<img src="<?php echo get_option('site_logo'); ?>" />
@@ -101,8 +102,8 @@ class schedule_widget extends WP_Widget {
 																	<div class="bout-under-text" href="#">
 																		<div class="bout-under-text-wrapper">
 																			<div class="bout-under-text-container">
-																				<a class="bout-under-text-button" href="#ticketsite">Buy Tickets</a>
-																				<?php 
+																				<a href="<?php echo get_field('ticket_link'); ?>" class="bout-under-text-button" target="_blank" >Buy Tickets</a>
+																				<?php
 																					if ( get_field('home_or_away') == 'Home') {
 																						$url = get_option('bout_map');
 																					} else {
@@ -122,14 +123,14 @@ class schedule_widget extends WP_Widget {
 																		</p>
 																	</div>
 
-																	<?php 
+																	<?php
 																	$location = get_field('location');
 																	$address = explode( ',' , $location['address']);
 																	?>
 
 																	<div class="bout-info-location">
 																		<div class="bout-info-location-street">
-																			<?php echo $address[0]; // street address ?> 
+																			<?php echo $address[0]; // street address ?>
 																		</div>
 																		<div class="bout-info-location-city js-city">
 																			<?php echo $address[2].','.$address[3]; // city, state zip ?>
@@ -148,19 +149,19 @@ class schedule_widget extends WP_Widget {
 							<?php echo $after_widget; ?>
 				<?php
 		}
- 
+
 		/** @see WP_Widget::update -- do not rename this */
-		function update($new_instance, $old_instance) {     
+		function update($new_instance, $old_instance) {
 				$instance = $old_instance;
 				$instance['title'] = strip_tags($new_instance['title']);
 				$instance['homepage_amt'] = strip_tags($new_instance['homepage_amt']);
 				$instance['interior_amt'] = strip_tags($new_instance['interior_amt']);
 				return $instance;
 		}
- 
+
 		/** @see WP_Widget::form -- do not rename this */
-		function form($instance) {  
- 
+		function form($instance) {
+
 				$title      = esc_attr($instance['title']);
 				$homepage_amt      = esc_attr($instance['homepage_amt']);
 				$interior_amt      = esc_attr($instance['interior_amt']);
@@ -168,24 +169,24 @@ class schedule_widget extends WP_Widget {
 				?>
 
 				<p>
-					<label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title:'); ?></label> 
+					<label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title:'); ?></label>
 					<input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo $title; ?>" />
 				</p>
 
 				<p>
-					<label for="<?php echo $this->get_field_id('homepage_amt'); ?>"><?php _e('Amount of posts to show on home-page:'); ?></label> 
+					<label for="<?php echo $this->get_field_id('homepage_amt'); ?>"><?php _e('Amount of posts to show on home-page:'); ?></label>
 					<input class="widefat" id="<?php echo $this->get_field_id('homepage_amt'); ?>" name="<?php echo $this->get_field_name('homepage_amt'); ?>" type="text" value="<?php echo $homepage_amt; ?>" />
 				</p>
 
 				<p>
-					<label for="<?php echo $this->get_field_id('interior_amt'); ?>"><?php _e('Amount of posts to show on interior pages:'); ?></label> 
+					<label for="<?php echo $this->get_field_id('interior_amt'); ?>"><?php _e('Amount of posts to show on interior pages:'); ?></label>
 					<input class="widefat" id="<?php echo $this->get_field_id('interior_amt'); ?>" name="<?php echo $this->get_field_name('interior_amt'); ?>" type="text" value="<?php echo $interior_amt; ?>" />
 				</p>
 
-				<?php 
+				<?php
 		}
- 
- 
+
+
 } // end class example_widget
 add_action('widgets_init', create_function('', 'return register_widget("schedule_widget");'));
 ?>

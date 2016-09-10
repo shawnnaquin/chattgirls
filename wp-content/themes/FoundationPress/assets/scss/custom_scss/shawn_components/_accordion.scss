@@ -1,0 +1,54 @@
+.accordion {
+    @include grid-column(12,0);
+}
+
+.accordion-content {
+    @include grid-column(12,0);
+    &-scoreboard {
+        font-size:rem-calc(14);
+        font-weight:300;
+        .scoreboard {
+            &-bout {
+                padding-top:rem-calc(8);
+                padding-bottom:rem-calc(8);
+                margin-bottom:rem-calc(8);
+                &:nth-child(even) {
+                    background:rgb(250,250,250);
+                }
+            }
+
+            &-bout-info {
+                > div {
+                    display:inline-block;
+                    float:left;
+                    margin-right:rem-calc(8);
+                }
+            }
+        }
+
+        .acronym {
+            text-transform:uppercase;
+        }
+
+        .home-score, .away-score {
+            &.win {
+                color:darken($success-color,20%);
+                .score {
+                    color:darken($success-color,10%);
+                }
+            }
+        }
+
+        .win {
+            .win-or-loss-span {
+                color:$success-color;
+            }
+        }
+        .loss {
+            .win-or-loss-span {
+                color:red;
+            }
+        }
+
+    }
+}

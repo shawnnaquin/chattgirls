@@ -44,6 +44,7 @@ $grid-row-width: 100%;
 /* colors
 ----------------------------------------------------------------------------------------------------------------------*/
 $primary-color: #05050a;
+$primary-lighter: lighten($primary-color, 5%);
 $secondary-color: #8bb8ef;
 // $third-color: #a7a7d8;
 $third-color: #6D6F89;
@@ -92,7 +93,7 @@ $global-radius: rem-calc(10);
 $header-font-family: bangers, helvetica;
 $header-font-weight: bold;
 $header-color: $white;
-$header-lineheight: 3rem;
+$header-lineheight: 1;
 $header-margin-bottom: 0;
 
 $header-sizes: (

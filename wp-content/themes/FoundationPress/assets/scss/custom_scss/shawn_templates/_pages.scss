@@ -29,13 +29,15 @@ html body.page-template-skaters {
         }
         h3 {
             font-family:$body-font-family;
-            font-size:rem-calc(36);
-            line-height:1.5;
+            font-size:rem-calc(32);
+            line-height:1.25;
             display:table-cell;
             vertical-align:middle;
             width:100%;
             padding-left:1rem;
             padding-right:1rem;
+            padding-top:rem-calc(8);
+            padding-bottom:rem-calc(8);
             letter-spacing:0;
         }
         @media #{$large-up} {
@@ -63,8 +65,8 @@ html body.page-template-skaters {
         position: absolute;
         z-index: 1;
         width: 40%;
-        left: 25%;
-        bottom: 20%;
+        left: 0%;
+        bottom: 30%;
         transition:top 200ms ease;
         transition-property:left, top, opacity;
         &.large {
@@ -72,6 +74,7 @@ html body.page-template-skaters {
             opacity:0;
             transition:background-color 300ms ease;
         }
+
         @media #{$large-up} {
             display:none;
             &.large {
@@ -93,7 +96,7 @@ html body.page-template-skaters {
         .button {
             opacity:1;
             left:30%;
-            bottom:20%;
+            bottom:30%;
             &.large {
                 left:auto;
                 top:auto;
@@ -220,7 +223,9 @@ html body.page-template-skaters {
 }
 .page-template-personnel {
     .no-padding > h3 {
-        background:$primary-color;
+        background:$primary-lighter;
+        padding-top:rem-calc(32);
+        padding-bottom:rem-calc(32);
     }
     a {
         cursor:default;

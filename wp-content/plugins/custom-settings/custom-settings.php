@@ -47,6 +47,9 @@ add_filter('admin_init', 'my_general_settings_register_fields');
         register_setting('general', 'bout_map', 'esc_attr');
         add_settings_field('bout_map', '<label for="bout_map">'.__('Bout Map URL' , 'bout_map' ).'</label>' , 'bout_map_html', 'general');
 
+        register_setting('general', 'team_acronym', 'esc_attr');
+        add_settings_field('team_acronym', '<label for="team_acronym">'.__('Team Acronym' , 'team_acronym' ).'</label>' , 'team_acronym', 'general');
+
         register_setting('general', 'background_image', 'esc_attr');
         add_settings_field('background_image', '<label for="background_image">'.__('Site Background Image' , 'background_image' ).'</label>' , 'background_image_html', 'general');
 
@@ -56,6 +59,24 @@ add_filter('admin_init', 'my_general_settings_register_fields');
         register_setting('general', 'site_logo_vector', 'esc_attr');
         add_settings_field('site_logo_vector', '<label for="site_logo_vector">'.__('Site Logo Vector<br/><small>(*.svg)<br/>(optional)</small>' , 'site_logo_vector' ).'</label>' , 'site_logo_vector', 'general');
 
+        register_setting('general', 'site_logo_vector', 'esc_attr');
+        add_settings_field('site_logo_vector', '<label for="site_logo_vector">'.__('Site Logo Vector<br/><small>(*.svg)<br/>(optional)</small>' , 'site_logo_vector' ).'</label>' , 'site_logo_vector', 'general');
+
+        register_setting('general', 'facebook', 'esc_attr');
+        add_settings_field('facebook', '<label for=facebook">'.__('Facebook Link<br/>' , 'facebook' ).'</label>' , 'facebook', 'general');
+
+        register_setting('general', 'twitter', 'esc_attr');
+        add_settings_field('twitter', '<label for=twitter">'.__('Twitter Link<br/>' , 'twitter' ).'</label>' , 'twitter', 'general');
+
+        register_setting('general', 'instagram', 'esc_attr');
+        add_settings_field('instagram', '<label for=instagram">'.__('Instagram Link<br/>' , 'instagram' ).'</label>' , 'instagram', 'general');
+
+    }
+
+    function team_acronym()
+    {
+        $team_acronym = get_option( 'team_acronym', '' );
+        echo '<input type="text" class="long-text" id="team_acronym" name="team_acronym" value="' . $team_acronym . '" />';
     }
 
     function bout_map_html()
@@ -82,4 +103,42 @@ add_filter('admin_init', 'my_general_settings_register_fields');
         echo '<input type="text" class="long-text" id="site_logo_vector" name="site_logo_vector" value="' . $site_logo_vector . '" />';
     }
 
+    function instagram()
+    {
+        $instagram = get_option( 'instagram', '' );
+        echo '<input type="text" class="long-text" id="instagram" name="instagram" value="' . $instagram . '" />';
+    }
+    function twitter()
+    {
+        $twitter = get_option( 'twitter', '' );
+        echo '<input type="text" class="long-text" id="twitter" name="twitter" value="' . $twitter . '" />';
+    }
+    function facebook()
+    {
+        $facebook = get_option( 'facebook', '' );
+        echo '<input type="text" class="long-text" id="facebook" name="facebook" value="' . $facebook . '" />';
+    }
+
+    add_action('admin_head', 'custom_styles');
+
+    function custom_styles() {
+      echo '<style>
+        .cpac-column-value-image, .cpac-column-value-image > img {
+            width:50px!important;
+            height:50px!important;
+        }
+        .widefat td {
+            vertical-align:middle;
+        }
+      </style>';
+    }
+
 ?>
+
+
+
+
+
+
+
+

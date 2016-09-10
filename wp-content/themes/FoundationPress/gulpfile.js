@@ -57,13 +57,20 @@ var PATHS = {
     'assets/components/perfect-scrollbar/js/perfect-scrollbar.jquery.js',
     'assets/components/jquery-validate/jquery.validate.js',
     'assets/components/jquery-validate/jquery.validate.additional-methods.js',
-
-    // Motion UI
+    'assets/components/smoothstate/src/jquery.smoothState.js',
     'assets/components/motion-ui/motion-ui.js',
 
-    // Include your own custom scripts (located in the custom folder)
-    'assets/javascript/custom/*.js'
+    'assets/javascript/custom/*.js',
+    'assets/javascript/greensock/**/*.js',
+
+    'assets/javascript/app/setup.js',
+    'assets/javascript/app/app.js',
+    'assets/javascript/app/utils.js',
+    'assets/javascript/app/modules/*.js',
+    'assets/javascript/app/interface.js'
+
   ],
+
   sass: [
     'assets/components/foundation-sites/scss',
     'assets/components/motion-ui/src',
@@ -99,9 +106,9 @@ gulp.task('browser-sync', ['build'], function() {
 
   browserSync.init('./', {
     // Proxy address
-    proxy: URL
+    proxy: URL,
     // Port #
-    // port: PORT
+    port: 3001
   });
 
 });
@@ -134,6 +141,7 @@ gulp.task( 'ftp-css', ['sass'], function () {
     var conn = ftp.create(ftpOptions);
 
     return gulp.src( css, { base: '.', buffer: false } )
+        .pipe( conn.newer( ftpDest ) )
         .pipe( conn.dest(  ftpDest ) )
         .pipe(browserSync.stream());// return gulp.src(PATHS.javascript)
 });
@@ -156,8 +164,8 @@ gulp.task('sass', function() {
     }))
     .pipe(minifycss)
     .pipe($.if(!isProduction, $.sourcemaps.write('.')))
-    .pipe(gulp.dest('assets/stylesheets'));
-    // .pipe(browserSync.stream({match: '**/*.css'}));
+    .pipe(gulp.dest('assets/stylesheets'))
+    .pipe(browserSync.stream({match: '**/*.css'}));
 });
 
 // Lint all JS files in custom directory
